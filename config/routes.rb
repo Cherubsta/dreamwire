@@ -1,4 +1,12 @@
 Dreamwire::Application.routes.draw do
+  get 'landing' => 'pages#landing'
+
+  get 'login' => 'pages#login'
+
+  get 'signup' => 'pages#signup'
+
+  root :to => 'pages#home'
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
@@ -48,7 +56,6 @@ Dreamwire::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  # root :to => 'welcome#index'
 
   # See how all your routes lay out with "rake routes"
 
