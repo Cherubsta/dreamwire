@@ -1,11 +1,14 @@
+$bodyBackground: #02060D;
+$textColor: white;
 $baseFontFamily: Open Sans;
+$blue: #3890E9;
 @import url(http://fonts.googleapis.com/css?family=Open+Sans);
 
 @import 'bootstrap';
 
-body {
-	background-color: rgb(2, 6, 13);
-}
+/*body {
+	
+}*/
 
 @import 'bootstrap-responsive';
 
@@ -24,10 +27,6 @@ body {
 
 .color-blue {
 	color: #3890E9;
-}
-
-.color-white {
-	color: rgb(255, 255, 255);
 }
 
 .color-orange {

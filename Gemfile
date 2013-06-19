@@ -2,6 +2,8 @@ source 'https://rubygems.org'
 
 gem 'rails', '3.2.12'
 gem 'jquery-rails'
+gem "paperclip", "~> 3.0"
+gem 'aws-sdk'
 
 group :production do
   gem 'pg'
