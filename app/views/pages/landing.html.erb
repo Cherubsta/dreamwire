@@ -27,7 +27,7 @@
 				<img src="http://s3.amazonaws.com/DW-Assets/p4.png" alt="p4" class="landing-image-shadow">
 			</div>
 		</div>
-		<p class="font-large color-white">
+		<p class="font-large">
 			<i>It's 3 a.m. and you just woke up from <br />this incredible dream...</i>
 		</p>
 		<div class="row margin-top no-space span12">
@@ -50,13 +50,13 @@
 		<img src="http://s3.amazonaws.com/DW-Assets/p-group.png" alt="p-group">
 	</div>
 
-	<p class="margin-top landing-subcopy-font-phone color-white hidden-desktop">
+	<p class="margin-top landing-subcopy-font-phone hidden-desktop">
 		<i>It's 3 a.m. and you just woke up from <br />this incredible dream...</i>
 	</p>
 
 	<div class="row margin-top hidden-phone visible-desktop">
 		<div class="span6">
-			<p class="font-hero color-white">
+			<p class="font-hero">
 				Capture your most memorable dreams <br />-in words and images- <br />and turn them into life memories.
 			</p>
 		</div>
@@ -78,9 +78,7 @@
 
 	<div class="border-line margin-top"></div>
 
-	<div class="margin-top">
-		<?php echo $show_this; ?>
-	</div>
+	<%= render 'layouts/mailchimp' %>
 
 	<div class="border-line margin-top"></div>
 
