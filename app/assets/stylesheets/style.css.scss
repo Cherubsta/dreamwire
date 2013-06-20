@@ -70,6 +70,7 @@ $blue: #3890E9;
 	margin-left: auto;
 	text-align: center;
 }
+
 .landing-input {
 	background: -moz-linear-gradient(center top , #BCBCBE, #FFFFFF) repeat scroll 0 0 transparent;
 	background: -webkit-gradient(linear, left top, left bottom, from(#BCBCBE), to(#FFFFFF));
@@ -82,9 +83,17 @@ $blue: #3890E9;
     font-size: 1.1em;
     min-width: 30%;
 }
+
 .landing-button {
 	height: 50px;
   font-size: 18px;
+}
+
+.landing-image {
+	box-shadow: 0 3px 3px #071529;
+	moz-border-radius: 6px;
+	-webkit-border-radius: 6px;
+	border-radius: 6px;
 }
 
 /*Adjust input placeholder*/
