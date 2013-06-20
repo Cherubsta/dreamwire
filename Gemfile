@@ -4,6 +4,7 @@ gem 'rails', '3.2.12'
 gem 'jquery-rails'
 gem "paperclip", "~> 3.0"
 gem 'aws-sdk'
+gem 'bcrypt-ruby'
 
 group :production do
   gem 'pg'
