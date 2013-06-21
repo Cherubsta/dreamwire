@@ -1,15 +1,14 @@
 Dreamwire::Application.routes.draw do
-  get "users/new"
-
   resources :users
-  
-  get 'home' => 'pages#home'
-  
-  get 'login' => 'pages#login'
-
-  get 'signup' => 'pages#signup'
 
   root :to => 'pages#landing'
+
+  get "users/new"
+  
+  match '/signup',  to: 'users#new'
+
+  get 'home' => 'pages#home'
+  get 'login' => 'pages#login'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

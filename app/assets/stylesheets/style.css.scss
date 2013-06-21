@@ -10,6 +10,7 @@ $btnPrimaryBackground: #3890E9;
 @import 'bootstrap-responsive';
 
 /*General Pages*/
+
 .center {
 	float: none; 
 	margin-left: auto; 
@@ -18,6 +19,7 @@ $btnPrimaryBackground: #3890E9;
 }
 
 /*Landing Page*/
+
 .no-space [class*='span'] {
     margin-left: 4px;
 }
@@ -94,6 +96,7 @@ $btnPrimaryBackground: #3890E9;
 }
 
 /*Adjust input placeholder*/
+
 ::-webkit-input-placeholder { /* WebKit browsers */
     color:    #133F9E;
     font-size: 18px;
@@ -109,4 +112,11 @@ $btnPrimaryBackground: #3890E9;
 :-ms-input-placeholder { /* Internet Explorer 10+ */
     color:    #133F9E;
     font-size: 18px;
+}
+
+/*Forms*/
+
+.field_with_errors {
+	@extend .control-group;
+	@extend .error;
 }
