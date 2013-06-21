@@ -6,6 +6,7 @@ Dreamwire::Application.routes.draw do
   get "users/new"
   
   match '/signup',  to: 'users#new'
+  match '/avatar',  to: 'users#avatar'
 
   get 'home' => 'pages#home'
   get 'login' => 'pages#login'
