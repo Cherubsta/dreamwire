@@ -1,3 +1,5 @@
+<% provide(:title, 'dreamwire - wake up, and discover your dreams') %>
+
 <div class="center background-image">
 	<h1>
 		<img src='http://s3.amazonaws.com/DW-Assets/landing-logo-blue.png' alt='dreamwire'>
@@ -5,10 +7,7 @@
 	<p class="color-blue font-large visible-desktop">
 		wake up, and discover your dreams
 	</p>
-	<p class="logo-color font-large visible-tablet">
-		wake up, and discover your dreams
-	</p>
-	<p class="color-blue landing-subcopy-font-phone visible-phone">
+	<p class="color-blue visible-phone">
 		wake up, and discover your dreams
 	</p>
 
@@ -50,7 +49,7 @@
 		<img src="http://s3.amazonaws.com/DW-Assets/p-group.png" alt="p-group">
 	</div>
 
-	<p class="margin-top landing-subcopy-font-phone hidden-desktop">
+	<p class="margin-top hidden-desktop">
 		<i>It's 3 a.m. and you just woke up from <br />this incredible dream...</i>
 	</p>
 
@@ -68,26 +67,27 @@
 	</div>
 
 	<div class="margin-top hidden-desktop">
-		<iframe src="http://player.vimeo.com/video/67280102?title=0&amp;byline=0&amp;portrait=0&amp;color=ff9933" 
-					       width="250" height="140" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen>
+		<iframe src="http://player.vimeo.com/video/67280102?title=0&amp;byline=0&amp;portrait=0&amp;
+		             color=ff9933" width="250" height="140" frameborder="0" webkitAllowFullScreen 
+		             mozallowfullscreen allowFullScreen>
 		</iframe> 
-		<p class="margin-top landing-subcopy-font-phone">
+		<p class="margin-top">
 			Capture your most memorable dreams <br />-in words and images- <br />and turn them into life memories.
 		</p>
 	</div>
 
 	<div class="border-line margin-top"></div>
-
 	<%= render 'layouts/mailchimp' %>
-
 	<div class="border-line margin-top"></div>
-
-
+	<div class="margin-top">
+		<%= link_to 'Start Dreaming', signup_path, class: 'btn btn-primary btn-large' %>
+	</div>
+	<div class="border-line margin-top"></div>
 	<div class="margin-top-bottom color-orange">
 		<small>
 			Questions/comments? Send a wire to 
-			<a href="http://twitter.com/dreamwireco" target="_blank">@dreamwireco</a>
-				or <a href="mailto:support@dreamwire.co">Email</a>
+			<%= link_to('@dreamwireco', 'http://twitter.com/dreamwireco', :target => '_blank') %> 
+					or <%= link_to('Email', 'mailto:support@dreamwire.co') %>
 			<p class="landing-font-sub">
 				Photographs courtesy <a href="http://500px.com" target="_blank">500px</a>
 			</p>	
