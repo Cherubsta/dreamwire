@@ -1,15 +1,16 @@
 Dreamwire::Application.routes.draw do
   resources :users
+  resources :sessions, only: [:new, :create, :destroy]
 
-  root :to => 'pages#landing'
+  root to: 'pages#landing'
 
   get "users/new"
   
-  match '/signup',  to: 'users#new'
-  match '/avatar',  to: 'users#avatar'
+  match '/signup',   to: 'users#new'
+  match '/signin',   to: 'sessions#new'
+  match '/signout',  to: 'sessions#destroy', via: :delete
 
   get 'home' => 'pages#home'
-  get 'login' => 'pages#login'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
