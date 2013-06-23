@@ -1,15 +1,24 @@
 <% provide(:title, @user.name) %>
-<%= link_to 'Dreamwire', root_path %> | <%= link_to 'Settings', edit_user_path(current_user) %>
-<h1>
-	<%= image_tag @user.avatar.url(:thumb) %>
-	<%= @user.name %>
-</h1>
-<div class="color-orange">
-	<h3 >Welcome to dreamwire.</h3>
-	<h3>A memorable dream is one that sticks with you.</h3>
-	<h3>Be inspired. Capture it in a beautiful and symbolic image.</h3>
-	<h1>...</h1>
-	<li>
-		<%= link_to "Sign Out", signout_path, method: "delete" %>
-	</li>
+<%= link_to 'Dreamwire', root_path %> | 
+<%= link_to 'Settings', edit_user_path(current_user) %> |
+<%= link_to "New Dream", create_path %> |
+<%= link_to "Sign Out", signout_path, method: "delete" %>
+
+<div class="row">
+	<aside class="span4">
+		<h1>
+			<%= image_tag @user.avatar.url(:thumb) %>
+			<%= @user.name %>
+		</h1>
+	</aside>
+	<div class="span8">
+		<% if @user.posts.any? %>
+			<h4> <%= pluralize(@user.posts.count, "Dream") %> </h4>
+			<ol class="posts">
+				<%= render @user.posts %>
+			</ol>	
+		<% else %>
+			<%= render 'layouts/welcome' %>	
+		<% end %>	
+	</div>
 </div>

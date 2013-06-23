@@ -1,6 +1,7 @@
 class User < ActiveRecord::Base
   attr_accessible :name, :email, :password, :password_confirmation, :avatar
   has_secure_password
+  has_many :posts, dependent: :destroy #destroys user posts when user is destroyed
   has_attached_file :avatar, :styles => { :medium => "300x300>", :thumb => "100x100>" }, 
                     :default_url => "http://s3.amazonaws.com/DW-Assets/missing.png"
 

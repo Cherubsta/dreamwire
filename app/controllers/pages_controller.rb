@@ -1,11 +1,9 @@
 class PagesController < ApplicationController
   def home
-  end
-
-  def landing
-  	if signed_in?
-  		redirect_to @current_user
-  	end
+    if signed_in?
+      @post = current_user.posts.build
+      redirect_to @current_user
+    end
   end
 
   def login

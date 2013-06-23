@@ -1,2 +1,97 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<% provide(:title, 'dreamwire - wake up, and discover your dreams') %>
+
+<div class="center background-image">
+	<h1>
+		<img src='http://s3.amazonaws.com/DW-Assets/landing-logo-blue.png' alt='dreamwire'>
+	</h1>
+	<p class="color-blue font-large visible-desktop">
+		wake up, and discover your dreams
+	</p>
+	<p class="color-blue visible-phone">
+		wake up, and discover your dreams
+	</p>
+
+	<div class="hidden-phone visible-desktop">
+		<div class="row margin-top-bottom no-space span12">
+			<div class="span3">
+				<img src="http://s3.amazonaws.com/DW-Assets/p1.png" alt="p1" class="landing-image">
+			</div>
+			<div class="span3">
+				<img src="http://s3.amazonaws.com/DW-Assets/p2.png" alt="p2" class="landing-image">
+			</div>
+			<div class="span3">
+				<img src="http://s3.amazonaws.com/DW-Assets/p3.png" alt="p3" class="landing-image">
+			</div>
+			<div class="span3">
+				<img src="http://s3.amazonaws.com/DW-Assets/p4.png" alt="p4" class="landing-image">
+			</div>
+		</div>
+		<p class="font-large">
+			<i>It's 3 a.m. and you just woke up from <br />this incredible dream...</i>
+		</p>
+		<div class="row margin-top no-space span12">
+			<div class="span3">
+				<img src="http://s3.amazonaws.com/DW-Assets/p5.png" alt="p5" class="landing-image">
+			</div>
+			<div class="span3">
+				<img src="http://s3.amazonaws.com/DW-Assets/p6.png" alt="p6" class="landing-image">
+			</div>
+			<div class="span3">
+				<img src="http://s3.amazonaws.com/DW-Assets/p7.png" alt="p7" class="landing-image">
+			</div>
+			<div class="span3">
+				<img src="http://s3.amazonaws.com/DW-Assets/p8.png" alt="p8" >
+			</div>
+		</div>
+	</div>
+
+	<div class="hidden-desktop">
+		<img src="http://s3.amazonaws.com/DW-Assets/p-group.png" alt="p-group">
+	</div>
+
+	<p class="margin-top hidden-desktop">
+		<i>It's 3 a.m. and you just woke up from <br />this incredible dream...</i>
+	</p>
+
+	<div class="row margin-top hidden-phone visible-desktop">
+		<div class="span6">
+			<p class="font-hero">
+				Capture your most memorable dreams <br />-in words and images- <br />and turn them into life memories.
+			</p>
+		</div>
+		<div class="span4 margin-top">
+			<iframe src="http://player.vimeo.com/video/67280102?title=0&amp;byline=0&amp;portrait=0&amp;color=ff9933" 
+						       width="420" height="236" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen>
+			</iframe>
+		</div>
+	</div>
+
+	<div class="margin-top hidden-desktop">
+		<iframe src="http://player.vimeo.com/video/67280102?title=0&amp;byline=0&amp;portrait=0&amp;
+		             color=ff9933" width="250" height="140" frameborder="0" webkitAllowFullScreen 
+		             mozallowfullscreen allowFullScreen>
+		</iframe> 
+		<p class="margin-top">
+			Capture your most memorable dreams <br />-in words and images- <br />and turn them into life memories.
+		</p>
+	</div>
+
+	<div class="border-line margin-top"></div>
+	<%= render 'layouts/mailchimp' %>
+	<div class="border-line margin-top"></div>
+	<div class="margin-top">
+		<%=# link_to 'Start Dreaming', signup_path, class: 'btn btn-primary btn-large' %>
+		<%= link_to 'Sign In', signin_path, class: 'btn btn-inverse btn-large' %>
+	</div>
+	<div class="border-line margin-top"></div>
+	<div class="margin-top-bottom color-orange">
+		<small>
+			Questions/comments? Send a wire to 
+			<%= link_to('@dreamwireco', 'http://twitter.com/dreamwireco', :target => '_blank') %> 
+					or <%= link_to('Email', 'mailto:support@dreamwire.co') %>
+			<p class="landing-font-sub">
+				Photographs courtesy <a href="http://500px.com" target="_blank">500px</a>
+			</p>	
+		</small>
+	</div>
+</div>

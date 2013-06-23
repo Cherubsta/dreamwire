@@ -1,11 +1,13 @@
 Dreamwire::Application.routes.draw do
   resources :users
   resources :sessions, only: [:new, :create, :destroy]
+  resources :posts, only: [:create, :destroy]
 
-  root to: 'pages#landing'
+  root to: 'pages#home'
 
   get "users/new"
   
+  match '/create',      to: 'posts#create'
   match '/signup',      to: 'users#new'
   match '/signin',      to: 'sessions#new'
   match '/signout',     to: 'sessions#destroy', via: :delete
