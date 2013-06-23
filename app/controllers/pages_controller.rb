@@ -3,6 +3,9 @@ class PagesController < ApplicationController
   end
 
   def landing
+  	if signed_in?
+  		redirect_to @current_user
+  	end
   end
 
   def login
