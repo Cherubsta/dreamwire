@@ -1,6 +1,5 @@
 <% provide(:title, @user.name) %>
-<%= link_to 'Dreamwire', root_path %>
-<%= link_to 'Settings', edit_user_path(current_user) %>
+<%= link_to 'Dreamwire', root_path %> | <%= link_to 'Settings', edit_user_path(current_user) %>
 <h1>
 	<%= image_tag @user.avatar.url(:thumb) %>
 	<%= @user.name %>
