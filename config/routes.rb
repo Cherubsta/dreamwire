@@ -7,7 +7,8 @@ Dreamwire::Application.routes.draw do
 
   get "users/new"
   
-  match '/create',      to: 'posts#create'
+  match 'pages/feed',   to: 'pages#feed'
+  match 'posts/new',    to: 'posts#new'
   match '/signup',      to: 'users#new'
   match '/signin',      to: 'sessions#new'
   match '/signout',     to: 'sessions#destroy', via: :delete

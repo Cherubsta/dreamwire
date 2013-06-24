@@ -1,13 +1,18 @@
 class PostsController < ApplicationController
 	before_filter :signed_in_user, only: [:create, :destroy]
 
+	def new
+		@post = current_user.posts.build(params[:post])
+	end
+
 	def create
 		@post = current_user.posts.build(params[:post])
 		if @post.save
 			flash[:success] = "Dream Saved!"
-			redirect_to root_path
+			redirect_to @current_user
 		else
-			render 'posts/create'
+			@feed_items = current_user.feed
+			render 'posts/new'
 		end
 	end
 

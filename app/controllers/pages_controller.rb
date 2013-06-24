@@ -6,8 +6,14 @@ class PagesController < ApplicationController
     end
   end
 
-  def login
+  def feed
+    if signed_in?
+      @feed_items = current_user.feed
+    end
   end
+
+  def login
+  end 
 
   def signup
   end

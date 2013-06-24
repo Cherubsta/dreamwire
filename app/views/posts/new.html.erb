@@ -1,9 +1,10 @@
 <% provide(:title, 'Capture Dream') %>
-<%= link_to 'Dreamwire', root_path %> | 
+<%= link_to 'Dreamwire', root_path %>
 
 <div class="row margin-top">
 	<div class="span4">
 		<%= form_for(@post) do |f| %>
+		<%= render 'shared/error_messages', object: @post %>
 			<div class="field">
 				<%= f.text_area :content, placeholder: "Narrate your dream..." %>
 			</div>

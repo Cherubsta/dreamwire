@@ -1,13 +1,16 @@
 <% provide(:title, @user.name) %>
 <%= link_to 'Dreamwire', root_path %> | 
 <%= link_to 'Settings', edit_user_path(current_user) %> |
-<%= link_to "New Dream", create_path %> |
+<a href='../posts/new'>New Dream</a> |
+<a href='../pages/feed'>LiveWire</a> |
 <%= link_to "Sign Out", signout_path, method: "delete" %>
 
 <div class="row">
 	<aside class="span4">
-		<h1>
+		<a href="<%= user_path(current_user) %>">
 			<%= image_tag @user.avatar.url(:thumb) %>
+		</a>
+		<h1>	
 			<%= @user.name %>
 		</h1>
 	</aside>
