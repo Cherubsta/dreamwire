@@ -23,9 +23,7 @@ class PostsController < ApplicationController
   end
 
   def show
-  	if signed_in?
-      @post = Post.find(params[:id])
-    end
+    @post = Post.find(params[:id])
   end
 
 	def destroy
