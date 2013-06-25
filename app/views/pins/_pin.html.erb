@@ -1,0 +1,8 @@
+<div>
+	<%= pin.content %>
+	<%= pin.user_id %>
+</div>
+
+<span><%= link_to 'Show', pin %></span> |
+<span><%= link_to 'Edit', edit_pin_path(pin) %></span> |
+<span><%= link_to 'Destroy', pin, method: :delete, data: { confirm: 'Are you sure?' } %></span>

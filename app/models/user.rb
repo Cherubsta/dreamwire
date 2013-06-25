@@ -1,7 +1,7 @@
 class User < ActiveRecord::Base
   attr_accessible :name, :email, :password, :password_confirmation, :avatar
   has_secure_password
-  has_many :posts, dependent: :destroy #destroys user posts when user is destroyed
+  # has_many :posts, dependent: :destroy #destroys user posts when user is destroyed
   has_attached_file :avatar, :styles => { :medium => "300x300>", :thumb => "100x100>" }, 
                     :default_url => "http://s3.amazonaws.com/DW-Assets/missing.png"
 
@@ -14,11 +14,6 @@ class User < ActiveRecord::Base
                     uniqueness: { case_sensitive: false }
   validates :password, length: { minimum: 6 }
   validates :password_confirmation, presence: true
-
-  def feed
-    Post.where("user_id = ?", id)
-    
-  end
 
   private
     def create_remember_token
