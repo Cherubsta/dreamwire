@@ -1,4 +1,7 @@
 class PinsController < ApplicationController
+  before_filter :signed_in_user, except: [:index]
+                                 #could also do-> only: [:create, :destroy, etc] 
+
   # GET /pins
   # GET /pins.json
   def index
@@ -24,7 +27,7 @@ class PinsController < ApplicationController
   # GET /pins/new
   # GET /pins/new.json
   def new
-    @pin = Pin.new
+    @pin = current_user.pins.new
 
     respond_to do |format|
       format.html # new.html.erb
@@ -34,17 +37,17 @@ class PinsController < ApplicationController
 
   # GET /pins/1/edit
   def edit
-    @pin = Pin.find(params[:id])
+    @pin = current_user.pins.find(params[:id])
   end
 
   # POST /pins
   # POST /pins.json
   def create
-    @pin = Pin.new(params[:pin])
+    @pin = current_user.pins.new(params[:pin])
 
     respond_to do |format|
       if @pin.save
-        format.html { redirect_to @pin, notice: 'Pin was successfully created.' }
+        format.html { redirect_to @pin, notice: 'Dream Saved!' }
         format.json { render json: @pin, status: :created, location: @pin }
       else
         format.html { render action: "new" }
@@ -56,11 +59,11 @@ class PinsController < ApplicationController
   # PUT /pins/1
   # PUT /pins/1.json
   def update
-    @pin = Pin.find(params[:id])
+    @pin = current_user.pins.find(params[:id])
 
     respond_to do |format|
       if @pin.update_attributes(params[:pin])
-        format.html { redirect_to @pin, notice: 'Pin was successfully updated.' }
+        format.html { redirect_to @pin, notice: 'Dream updated!' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
@@ -72,7 +75,7 @@ class PinsController < ApplicationController
   # DELETE /pins/1
   # DELETE /pins/1.json
   def destroy
-    @pin = Pin.find(params[:id])
+    @pin = current_user.pins.find(params[:id])
     @pin.destroy
 
     respond_to do |format|

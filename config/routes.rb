@@ -1,7 +1,6 @@
 Dreamwire::Application.routes.draw do
   resources :pins
 
-
   resources :users
   resources :sessions, only: [:new, :create, :destroy]
   # resources :posts, only: [:create, :destroy]

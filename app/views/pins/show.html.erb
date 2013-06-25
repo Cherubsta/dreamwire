@@ -1,15 +1,12 @@
+<% provide(:title, 'DreamView') %>
 <p id="notice"><%= notice %></p>
-
+<h2>
+  <%= @pin.user.name %>
+</h2>
 <p>
-  <b>Content:</b>
   <%= @pin.content %>
 </p>
-
-<p>
-  <b>User:</b>
-  <%= @pin.user_id %>
-</p>
-
-
-<%= link_to 'Edit', edit_pin_path(@pin) %> |
+<%= if current_user == @pin.user %>
+	<%= link_to 'Edit', edit_pin_path(@pin) %> |
+<% end %>
 <%= link_to 'Back', pins_path %>

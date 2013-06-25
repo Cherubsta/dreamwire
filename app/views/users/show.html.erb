@@ -1,8 +1,8 @@
 <% provide(:title, @user.name) %>
 <%= link_to 'Dreamwire', root_path %> | 
 <%= link_to 'Settings', edit_user_path(current_user) %> |
-<a href='../posts/new'>New Dream</a> |
-<a href='../posts/feed'>LiveWire</a> |
+<%= link_to 'New Dream', new_pin_path %> |
+<%= link_to 'LiveWire', pins_path %> |
 <%= link_to "Sign Out", signout_path, method: "delete" %>
 
 <div class="row">
