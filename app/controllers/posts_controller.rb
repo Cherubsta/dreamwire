@@ -16,6 +16,18 @@ class PostsController < ApplicationController
 		end
 	end
 
+	def feed
+    if signed_in?
+      @feed_items = current_user.feed
+    end
+  end
+
+  def show
+  	if signed_in?
+      @post = Post.find(params[:id])
+    end
+  end
+
 	def destroy
 	end
 end
