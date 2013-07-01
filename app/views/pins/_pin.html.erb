@@ -1,13 +1,15 @@
 <div>
+	<%= image_tag pin.user.avatar.url(:thumb) %>
+	<%= link_to pin.user.name, pin.user %>
 	<%= pin.content %>
-	<%= pin.user_id %>
+	<%#= pin.user_id %>
 </div>
 <small>Posted <%= time_ago_in_words pin.created_at %> ago.</small>
-<%= if current_user == pin.user %>  <!-- in partials, the @ sign for pins is unneccesary -->
+<% if current_user == pin.user %>  <!-- in partials, the @ sign for pins is unneccesary -->
 	<div>
 		<span><%= link_to 'Show', pin %></span> |
 		<span><%= link_to 'Edit', edit_pin_path(pin) %></span> |
 		<span><%= link_to 'Destroy', pin, method: :delete, data: { confirm: 'Are you sure?' } %></span>
-		<div class="border-line margin-top-bottom"></div>
 	</div>
 <% end %>
+<div class="border-line margin-top-bottom"></div>
