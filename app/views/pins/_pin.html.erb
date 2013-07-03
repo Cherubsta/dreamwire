@@ -1,6 +1,8 @@
 <div>
-	<%= image_tag pin.user.avatar.url(:thumb) %>
-	<%= link_to pin.user.name, pin.user %>
+	<% if current_page?(controller: 'pins') %>
+		<%= image_tag pin.user.avatar.url(:thumb) %>
+		<%= link_to pin.user.name, pin.user %>
+	<% end %>
 	<%= pin.content %>
 	<%#= pin.user_id %>
 </div>
