@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-  attr_accessible :name, :email, :password, :password_confirmation, :avatar
+  attr_accessible :name, :email, :username, :password, :password_confirmation, :avatar
   has_secure_password
   has_many :pins, dependent: :destroy #destroys user posts when user is destroyed
   has_attached_file :avatar, :styles => { :medium => "300x300>", :thumb => "100x100>" }, 
@@ -14,6 +14,7 @@ class User < ActiveRecord::Base
                     uniqueness: { case_sensitive: false }
   validates :password, length: { minimum: 6 }
   validates :password_confirmation, presence: true
+  validates :username, presence: true, uniqueness: { case_sensitive: false }
 
   private
     def create_remember_token

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130625184540) do
+ActiveRecord::Schema.define(:version => 20130723033853) do
 
   create_table "pins", :force => true do |t|
     t.text     "content"
@@ -34,6 +34,7 @@ ActiveRecord::Schema.define(:version => 20130625184540) do
     t.datetime "avatar_updated_at"
     t.string   "remember_token"
     t.boolean  "admin",               :default => false
+    t.string   "username"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
