@@ -11,13 +11,21 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130723033853) do
+ActiveRecord::Schema.define(:version => 20130728232446) do
 
   create_table "pins", :force => true do |t|
     t.text     "content"
     t.integer  "user_id"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",                   :null => false
+    t.datetime "updated_at",                   :null => false
+    t.boolean  "privacy",    :default => true
+    t.string   "title"
+    t.datetime "date"
+    t.boolean  "nightmare"
+    t.boolean  "lucid"
+    t.boolean  "recurring"
+    t.boolean  "fragmented"
+    t.text     "hashtag"
   end
 
   add_index "pins", ["user_id", "created_at"], :name => "index_pins_on_user_id_and_created_at"
