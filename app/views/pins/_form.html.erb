@@ -12,13 +12,12 @@
 	<% end %>
 
 	<div class="field">
-		<%= f.label :content, "Record Dream" %><br />
 		<%= f.text_field :title, :placeholder => "Dream title" %><br />
 		<%= f.text_area :content, :placeholder => "Narrate your dream..." %>
 	</div>
 
 	<div class="field">
-		<%= f.radio_button :privacy, "1", :checked => 'checked' %>
+		<%= f.radio_button :privacy, "1" %>
 		<%= f.label(:private_true, "Private") %>
 		<%= f.radio_button :privacy, "0" %>
 		<%= f.label(:private_false, "Public") %>

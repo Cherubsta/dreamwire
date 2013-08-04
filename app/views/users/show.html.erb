@@ -20,6 +20,8 @@
 	<div class="span8">
 		<% if @user.pins.any? %>
 			<h3>My Dreams (<%= @user.pins.count %>)</h3>
+		<% else %>
+			<h3>Welcome to Dreamwire... Record your first dream.</h3>
 		<% end %>
 		<ol class="">
 			<%= render @user.pins %>
