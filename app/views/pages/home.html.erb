@@ -1,5 +1,38 @@
 <% provide(:title, 'dreamwire - wake up, and discover your dreams') %>
 
+<script type="text/javascript">
+	$.fn.cycle.defaults.autostop = 5;
+	// $.fn.cycle.defaults.fit = 0;
+	// $.fn.cycle.defaults.cssAfter = null;
+	// $.fn.cycle.defaults.cssBefore = null;
+	$(function() {
+	  // run the code in the markup!
+	  $('code').each(function() {
+	    eval($(this).text());
+	  });
+	});
+	$('#s1').cycle({
+		fx: 'fade',
+		pause: 1,
+		delay: 1000
+	});
+	$('#s2').cycle({
+		fx: 'fade',
+		pause: 1,
+		delay: 23000
+	});
+	$('#s3').cycle({
+		fx: 'fade',
+		pause: 1,
+		delay: 16000
+	});
+	$('#s4').cycle({
+		fx: 'fade',
+		pause: 1,
+		delay: 6000
+	});
+</script>
+
 <div class="center background-image">
 	<h1>
 		<img src='http://s3.amazonaws.com/DW-Assets/landing-logo-blue.png' alt='dreamwire'>
@@ -12,35 +45,39 @@
 	</p>
 
 	<div class="hidden-phone visible-desktop">
-		<div class="row margin-top-bottom no-space span12">
+		<div class="row margin-top-bottom no-space pics-row span12">
 			<div class="span3">
 				<img src="http://s3.amazonaws.com/DW-Assets/p1.png" alt="p1" class="landing-image">
 			</div>
-			<div class="span3">
-				<img src="http://s3.amazonaws.com/DW-Assets/p2.png" alt="p2" class="landing-image">
+			<div class="span3" id="s1" style="position: relative; left: 40px;">
+				<img src="http://s3.amazonaws.com/DW-Assets/p2.png" alt="p1" class="landing-image">
+				<img src="http://s3.amazonaws.com/DW-Assets/p9.png" alt="p1" class="landing-image">
 			</div>
 			<div class="span3">
-				<img src="http://s3.amazonaws.com/DW-Assets/p3.png" alt="p3" class="landing-image">
+				<img src="http://s3.amazonaws.com/DW-Assets/p3.png" alt="p1" class="landing-image">
 			</div>
-			<div class="span3">
-				<img src="http://s3.amazonaws.com/DW-Assets/p4.png" alt="p4" class="landing-image">
+			<div class="span3" id="s2" style="position: relative; left: 40px;">
+				<img src="http://s3.amazonaws.com/DW-Assets/p4.png" alt="p1" class="landing-image">
+				<img src="http://s3.amazonaws.com/DW-Assets/p10.png" alt="p1" class="landing-image">
 			</div>
 		</div>
 		<p class="font-large">
 			<i>It's 3 a.m. and you just woke up from <br />this incredible dream...</i>
 		</p>
-		<div class="row margin-top no-space span12">
+		<div class="row margin-top-bottom no-space pics-row span12">
 			<div class="span3">
-				<img src="http://s3.amazonaws.com/DW-Assets/p5.png" alt="p5" class="landing-image">
+				<img src="http://s3.amazonaws.com/DW-Assets/p5.png" alt="p1" class="landing-image">
+			</div>
+			<div class="span3" id="s3" style="position: relative; left: 40px;">
+				<img src="http://s3.amazonaws.com/DW-Assets/p6.png" alt="p1" class="landing-image">
+				<img src="http://s3.amazonaws.com/DW-Assets/p11.png" alt="p1" class="landing-image">
 			</div>
 			<div class="span3">
-				<img src="http://s3.amazonaws.com/DW-Assets/p6.png" alt="p6" class="landing-image">
+				<img src="http://s3.amazonaws.com/DW-Assets/p7.png" alt="p1" class="landing-image">
 			</div>
-			<div class="span3">
-				<img src="http://s3.amazonaws.com/DW-Assets/p7.png" alt="p7" class="landing-image">
-			</div>
-			<div class="span3">
-				<img src="http://s3.amazonaws.com/DW-Assets/p8.png" alt="p8" >
+			<div class="span3" id="s4" style="position: relative; left: 40px;">
+				<img src="http://s3.amazonaws.com/DW-Assets/p8.png" alt="p1" class="landing-image">
+				<img src="http://s3.amazonaws.com/DW-Assets/p12.png" alt="p1" class="landing-image">
 			</div>
 		</div>
 	</div>

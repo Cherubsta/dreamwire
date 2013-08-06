@@ -50,8 +50,8 @@ $btnPrimaryBackground: #3890E9;
 }
 
 .margin-top-bottom {
-	margin-top: 2.3em;
-	margin-bottom: 2.3em;
+	margin-top: 2.1em;
+	margin-bottom: 2.1em;
 }
 
 .margin-top {
@@ -93,6 +93,14 @@ $btnPrimaryBackground: #3890E9;
 	moz-border-radius: 6px;
 	-webkit-border-radius: 6px;
 	border-radius: 6px;
+}
+
+.pics-row {
+	min-height: 180px;
+}
+
+.pic-adjust {
+	width: 180px;
 }
 
 /*Adjust input placeholder*/
