@@ -14,5 +14,26 @@
 	</div>
 <% end %>
 
+<% if @dream.nightmare == true %> 
+	Nightmare
+<% end %>
+<% if @dream.lucid == true %> 
+	Lucid
+<% end %>
+<% if @dream.recurring == true %> 
+	Recurring
+<% end %>
+<% if @dream.fragmented == true %> 
+	Fragmented
+<% end %>
+
+<p>Dreamt: <%= time_ago_in_words @dream.created_at %> ago.</p>
+
+<p>Vividness: <%#= @dream.vividness %></p>
+
+<p>Emotion upon waking: <%#= @dream.emotion %></p>
+
+<p>Tags: <%= @dream.hashtag %></p>
+
 <%= link_to 'Back', @dream %> | 
 <%= link_to 'Edit', edit_dream_path(@dream) %>

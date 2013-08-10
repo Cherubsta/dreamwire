@@ -1,14 +1,14 @@
 require 'test_helper'
 
-class PinsControllerTest < ActionController::TestCase
+class DreamsControllerTest < ActionController::TestCase
   setup do
-    @pin = pins(:one)
+    @dream = dreams(:one)
   end
 
   test "should get index" do
     get :index
     assert_response :success
-    assert_not_nil assigns(:pins)
+    assert_not_nil assigns(:dreams)
   end
 
   test "should get new" do
@@ -16,34 +16,34 @@ class PinsControllerTest < ActionController::TestCase
     assert_response :success
   end
 
-  test "should create pin" do
-    assert_difference('Pin.count') do
-      post :create, pin: { content: @pin.content, user_id: @pin.user_id }
+  test "should create dream" do
+    assert_difference('Dream.count') do
+      post :create, dream: { content: @dream.content, user_id: @dream.user_id }
     end
 
-    assert_redirected_to pin_path(assigns(:pin))
+    assert_redirected_to dream_path(assigns(:dream))
   end
 
-  test "should show pin" do
-    get :show, id: @pin
+  test "should show dream" do
+    get :show, id: @dream
     assert_response :success
   end
 
   test "should get edit" do
-    get :edit, id: @pin
+    get :edit, id: @dream
     assert_response :success
   end
 
-  test "should update pin" do
-    put :update, id: @pin, pin: { content: @pin.content, user_id: @pin.user_id }
-    assert_redirected_to pin_path(assigns(:pin))
+  test "should update dream" do
+    put :update, id: @dream, dream: { content: @dream.content, user_id: @dream.user_id }
+    assert_redirected_to dream_path(assigns(:dream))
   end
 
-  test "should destroy pin" do
-    assert_difference('Pin.count', -1) do
-      delete :destroy, id: @pin
+  test "should destroy dream" do
+    assert_difference('Dream.count', -1) do
+      delete :destroy, id: @dream
     end
 
-    assert_redirected_to pins_path
+    assert_redirected_to dreams_path
   end
 end
