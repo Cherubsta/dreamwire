@@ -1,8 +1,6 @@
-<% provide(:title, 'Details') %>
-<h1>Dream Details</h1>
+<% provide(:title, 'DreamView') %>
 <p id="notice"><%= notice %></p>
 <h2>
-  <%= image_tag @dream.user.avatar.url(:thumb) %>
   <%= @dream.user.name %>
 </h2>
 <h2>
@@ -13,6 +11,9 @@
 		<strong>Private</strong>
 	</div>
 <% end %>
+<p>
+  <%= @dream.content %>
+</p>
 
-<%= link_to 'Back', @dream %> | 
-<%= link_to 'Edit', edit_dream_path(@dream) %>
+<%= link_to 'Back', dreams_path %> | 
+<%= link_to 'Details', dream_details_path(@dream) %>

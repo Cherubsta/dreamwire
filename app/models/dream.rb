@@ -1,4 +1,4 @@
-class Pin < ActiveRecord::Base
+class Dream < ActiveRecord::Base
   attr_accessible :content, :title, :privacy, :date, :nightmare, :lucid, :recurring, 
                   :fragmented, :hashtag, :user_id
   belongs_to :user
@@ -9,11 +9,11 @@ class Pin < ActiveRecord::Base
   # validates :privacy, presence: true
 
   # for sorting newest posts first
-  default_scope order: 'pins.created_at DESC'
+  default_scope order: 'dreams.created_at DESC'
 
   #has_one :details
 end
 
 # class Detail < ActiveRecord::Base
-# 	belongs_to :pin
+# 	belongs_to :dream
 # end

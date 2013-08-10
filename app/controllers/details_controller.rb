@@ -1,6 +1,6 @@
 class DetailsController < ApplicationController
 
 	def index
-		@pin = Pin.find(params[:pin_id])	
+		@dream = Dream.find(params[:dream_id])	
 	end
 end

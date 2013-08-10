@@ -1,0 +1,29 @@
+<div>
+	<% if current_page?(controller: 'dreams') %>
+		<% if dream.privacy == false %> 
+			<%= image_tag dream.user.avatar.url(:thumb) %>
+			<%#= link_to dream.user.name, dream.user %>
+			<h2><%= dream.title %></h2>
+			<%= dream.content %>
+			<div><%= link_to 'DreamView', dream %></div>
+			<div class="border-line margin-top-bottom"></div>
+		<% end %>	
+	<% else %>	
+		<h2><%= dream.title %></h2>
+		<%= dream.content %>
+		<!-- <small>Posted <%#= time_ago_in_words dream.created_at %> ago.</small> -->
+		<% if current_user == dream.user %>  <!-- in partials, the @ sign for dreams is unneccesary -->
+			<% if dream.privacy == true %> 
+				<div>
+					<strong>Private</strong>
+				</div>
+			<% end %>
+			<!-- <div>
+				<span><%#= link_to 'Edit', edit_dream_path(dream) %></span> |
+				<span><%#= link_to 'Destroy', dream, method: :delete, data: { confirm: 'Are you sure?' } %></span>
+			</div> -->
+		<% end %>
+		<div><%= link_to 'DreamView', dream %></div>
+		<div class="border-line margin-top-bottom"></div>
+	<% end %>
+</div>

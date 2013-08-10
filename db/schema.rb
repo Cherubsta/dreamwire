@@ -11,9 +11,9 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130728232446) do
+ActiveRecord::Schema.define(:version => 20130810185154) do
 
-  create_table "pins", :force => true do |t|
+  create_table "dreams", :force => true do |t|
     t.text     "content"
     t.integer  "user_id"
     t.datetime "created_at",                   :null => false
@@ -28,7 +28,7 @@ ActiveRecord::Schema.define(:version => 20130728232446) do
     t.text     "hashtag"
   end
 
-  add_index "pins", ["user_id", "created_at"], :name => "index_pins_on_user_id_and_created_at"
+  add_index "dreams", ["user_id", "created_at"], :name => "index_pins_on_user_id_and_created_at"
 
   create_table "users", :force => true do |t|
     t.string   "name"

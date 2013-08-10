@@ -1,8 +1,8 @@
 <% provide(:title, @user.name) %>
 <%= link_to 'Dreamwire', root_path %> | 
 <%= link_to 'Settings', edit_user_path(current_user) %> |
-<%= link_to 'New Dream', new_pin_path %> |
-<%= link_to 'LiveWire', pins_path %> |
+<%= link_to 'New Dream', new_dream_path %> |
+<%= link_to 'LiveWire', dreams_path %> |
 <%= link_to "Sign Out", signout_path, method: "delete" %>
 
 <div class="row">
@@ -18,13 +18,13 @@
 		</h3>
 	</aside>
 	<div class="span8">
-		<% if @user.pins.any? %>
-			<h3>My Dreams (<%= @user.pins.count %>)</h3>
+		<% if @user.dreams.any? %>
+			<h3>My Dreams (<%= @user.dreams.count %>)</h3>
 		<% else %>
 			<h3>Welcome to Dreamwire... Record your first dream.</h3>
 		<% end %>
 		<ol class="">
-			<%= render @user.pins %>
+			<%= render @user.dreams %>
 		</ol>	
 	</div>
 </div>

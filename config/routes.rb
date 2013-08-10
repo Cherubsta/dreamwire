@@ -1,7 +1,7 @@
 Dreamwire::Application.routes.draw do
-  resources :pins
+  resources :dreams
 
-  resources :pins do
+  resources :dreams do
     resources :details, shallow: true
   end
 
@@ -11,9 +11,9 @@ Dreamwire::Application.routes.draw do
   root to: 'pages#home'
 
   get "users/new"
-  #get "pins/info/"
+  #get "dreams/info/"
 
-  #match '/info',        to: 'pins#info'
+  #match '/info',        to: 'dreams#info'
   match '/signup',      to: 'users#new'
   match '/signin',      to: 'sessions#new'
   match '/signout',     to: 'sessions#destroy', via: :delete

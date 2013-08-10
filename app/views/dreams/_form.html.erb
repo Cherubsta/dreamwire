@@ -1,10 +1,10 @@
-<%= form_for(@pin) do |f| %>
-	<% if @pin.errors.any? %>
+<%= form_for(@dream) do |f| %>
+	<% if @dream.errors.any? %>
 		<div id="error_explanation">
-			<h2><%= pluralize(@pin.errors.count, "error") %> prohibited this pin from being saved:</h2>
+			<h2><%= pluralize(@dream.errors.count, "error") %> prohibited this dream from being saved:</h2>
 
 			<ul>
-			<% @pin.errors.full_messages.each do |msg| %>
+			<% @dream.errors.full_messages.each do |msg| %>
 				<li><%= msg %></li>
 			<% end %>
 			</ul>
