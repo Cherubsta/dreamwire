@@ -11,4 +11,9 @@ class Pin < ActiveRecord::Base
   # for sorting newest posts first
   default_scope order: 'pins.created_at DESC'
 
+  #has_one :details
 end
+
+# class Detail < ActiveRecord::Base
+# 	belongs_to :pin
+# end

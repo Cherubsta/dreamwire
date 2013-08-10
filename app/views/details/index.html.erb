@@ -1,6 +1,8 @@
-<% provide(:title, 'DreamView') %>
+<% provide(:title, 'Details') %>
+<h1>Dream Details</h1>
 <p id="notice"><%= notice %></p>
 <h2>
+  <%= image_tag @pin.user.avatar.url(:thumb) %>
   <%= @pin.user.name %>
 </h2>
 <h2>
@@ -11,9 +13,6 @@
 		<strong>Private</strong>
 	</div>
 <% end %>
-<p>
-  <%= @pin.content %>
-</p>
 
-<%= link_to 'Details', pin_details_path(@pin) %> |
-<%= link_to 'Back', pins_path %>
+<%= link_to 'Back', @pin %> |
+<%= link_to 'Edit', edit_pin_path(@pin) %>
