@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130810185154) do
+ActiveRecord::Schema.define(:version => 20130811024744) do
 
   create_table "dreams", :force => true do |t|
     t.text     "content"
@@ -26,6 +26,7 @@ ActiveRecord::Schema.define(:version => 20130810185154) do
     t.boolean  "recurring"
     t.boolean  "fragmented"
     t.text     "hashtag"
+    t.string   "emotion"
   end
 
   add_index "dreams", ["user_id", "created_at"], :name => "index_pins_on_user_id_and_created_at"

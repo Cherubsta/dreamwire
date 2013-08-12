@@ -29,9 +29,9 @@
 
 <p>Dreamt: <%= time_ago_in_words @dream.created_at %> ago.</p>
 
-<p>Vividness: <%#= @dream.vividness %></p>
+<!-- <p>Vividness: <%#= @dream.vividness %></p> -->
 
-<p>Emotion upon waking: <%#= @dream.emotion %></p>
+<p>Emotion upon waking: <%= @dream.emotion %></p>
 
 <p>Tags: <%= @dream.hashtag %></p>
 

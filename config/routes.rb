@@ -1,22 +1,17 @@
 Dreamwire::Application.routes.draw do
   resources :dreams
 
-  resources :dreams do
-    resources :details, shallow: true
-  end
-
   resources :users
   resources :sessions, only: [:new, :create, :destroy]
 
   root to: 'pages#home'
 
   get "users/new"
-  #get "dreams/info/"
 
-  #match '/info',        to: 'dreams#info'
-  match '/signup',      to: 'users#new'
-  match '/signin',      to: 'sessions#new'
-  match '/signout',     to: 'sessions#destroy', via: :delete
+  match 'dreams/:id/detail',   to: 'dreams#detail'
+  match '/signup',             to: 'users#new'
+  match '/signin',             to: 'sessions#new'
+  match '/signout',            to: 'sessions#destroy', via: :delete
 
   get 'home' => 'pages#home'
 

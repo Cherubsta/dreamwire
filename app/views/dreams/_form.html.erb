@@ -1,8 +1,7 @@
 <%= form_for(@dream) do |f| %>
 	<% if @dream.errors.any? %>
 		<div id="error_explanation">
-			<h2><%= pluralize(@dream.errors.count, "error") %> prohibited this dream from being saved:</h2>
-
+			<h2><%= pluralize(@dream.errors.count, "error") %> stopped this dream from saving:</h2>
 			<ul>
 			<% @dream.errors.full_messages.each do |msg| %>
 				<li><%= msg %></li>
@@ -10,35 +9,53 @@
 			</ul>
 		</div>
 	<% end %>
-
-	<div class="field">
-		<%= f.text_field :title, :placeholder => "Dream title" %><br />
-		<%= f.text_area :content, :placeholder => "Narrate your dream..." %>
+	
+	<div id="upper-toggle">
+		<div class="field">
+			<%= f.text_field :title, :placeholder => "Dream title" %><br />
+			<%= f.text_area :content, :placeholder => "Narrate your dream..." %>
+		</div>
+		<div class="field">
+			<%= f.radio_button :privacy, "true" %>
+			<%= f.label(:private_true, "Private") %>
+			<%= f.radio_button :privacy, "false" %>
+			<%= f.label(:private_false, "Public") %>
+		</div>
+	<a href="javascript:void(0);" class="toggle">More...</a>
 	</div>
-
-	<div class="field">
-		<%= f.radio_button :privacy, "true" %>
-		<%= f.label(:private_true, "Private") %>
-		<%= f.radio_button :privacy, "false" %>
-		<%= f.label(:private_false, "Public") %>
-	</div>
-
-	<div class="field">
-		<%= f.check_box :nightmare %>
-		<%= label(:nightmare, "Nightmare") %>
-		<%= f.check_box :lucid %>
-		<%= label(:lucid, "Lucid") %>
-		<%= f.check_box :recurring %>
-		<%= label(:recurring, "Recurring") %>
-		<%= f.check_box :fragmented %>
-		<%= label(:fragmented, "Fragmented") %>
-	</div>
-
-	<div class="field">
-		<%= f.text_area :hashtag, :placeholder => "#characters, #activities, #objects" %>
+	
+	<div id="lower-toggle" style="display:none;">
+		<div class="field">
+			<%= f.check_box :nightmare %>
+			<%= label(:nightmare, "Nightmare") %>
+			<%= f.check_box :lucid %>
+			<%= label(:lucid, "Lucid") %>
+			<%= f.check_box :recurring %>
+			<%= label(:recurring, "Recurring") %>
+			<%= f.check_box :fragmented %>
+			<%= label(:fragmented, "Fragmented") %>
+		</div>
+		<div class="field">
+			<%#= f.collection_select :provider_id, Provider.order(:name),:id,:name, include_blank: true %>
+			<%= f.select :emotion, ([["Inspired", "Inspired"], ["Relieved", "Relieved"], ["Afraid", "Afraid"], 
+			                           ["Sad", "Sad"], ["Surprised", "Surprised"]]), :include_blank => @dream.emotion %>
+		</div>
+		<div class="field">
+			<%= f.text_area :hashtag, :placeholder => "#characters, #activities, #objects" %>
+		</div>
+		<a href="javascript:void(0);" class="toggle">Less...</a>
 	</div>
 
 	<div class="actions">
 		<%= f.submit "Save" %>
 	</div>
 <% end %>
+
+<script type="text/javascript">
+$(function(){
+  $('.toggle').click(function(){
+     $('#upper-toggle').toggle();
+     $('#lower-toggle').toggle(); 
+  });
+});
+</script>

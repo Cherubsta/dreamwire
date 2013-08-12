@@ -35,6 +35,10 @@ class DreamsController < ApplicationController
     end
   end
 
+  def detail
+    @dream = Dream.find(params[:id])  
+  end
+
   # GET /dreams/1/edit
   def edit
     @dream = current_user.dreams.find(params[:id])

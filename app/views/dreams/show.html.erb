@@ -16,4 +16,4 @@
 </p>
 
 <%= link_to 'Back', dreams_path %> | 
-<%= link_to 'Details', dream_details_path(@dream) %>
+<%= link_to 'Details', {:controller => "dreams", :action => "detail", :id => @dream } %>

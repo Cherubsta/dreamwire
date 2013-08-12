@@ -1,6 +1,6 @@
 class Dream < ActiveRecord::Base
   attr_accessible :content, :title, :privacy, :date, :nightmare, :lucid, :recurring, 
-                  :fragmented, :hashtag, :user_id
+                  :fragmented, :hashtag, :emotion, :user_id
   belongs_to :user
   
   validates :content, presence: true, length: { maximum: 8000 }
