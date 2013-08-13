@@ -21,7 +21,7 @@
 			<%= f.radio_button :privacy, "false" %>
 			<%= f.label(:private_false, "Public") %>
 		</div>
-	<a href="javascript:void(0);" class="toggle">More...</a>
+		<a href="javascript:void(0);" class="toggle">More...</a>
 	</div>
 	
 	<div id="lower-toggle" style="display:none;">
@@ -37,8 +37,7 @@
 		</div>
 		<div class="field">
 			<%#= f.collection_select :provider_id, Provider.order(:name),:id,:name, include_blank: true %>
-			<%= f.select :emotion, ([["Inspired", "Inspired"], ["Relieved", "Relieved"], ["Afraid", "Afraid"], 
-			                           ["Sad", "Sad"], ["Surprised", "Surprised"]]), :include_blank => @dream.emotion %>
+			<%= f.select :emotion, ([["Inspired", "Inspired"], ["Relieved", "Relieved"], ["Afraid", "Afraid"], ["Sad", "Sad"], ["Surprised", "Surprised"]]), :include_blank => @dream.emotion %>
 		</div>
 		<div class="field">
 			<%= f.text_area :hashtag, :placeholder => "#characters, #activities, #objects" %>

@@ -15,5 +15,13 @@
   <%= @dream.content %>
 </p>
 
-<%= link_to 'Back', dreams_path %> | 
+<!-- URI(request.referer).path -->
+<% if URI(request.referer).path.split('/').last == "detail" %>
+  <%= link_to "Back", session[:last_show_page] %> |
+<% else %>
+  <%= link_to 'Back', :back %> |
+<% end %>
+
+
+<%#= link_to 'Back', :back %>
 <%= link_to 'Details', {:controller => "dreams", :action => "detail", :id => @dream } %>

@@ -29,11 +29,15 @@
 
 <p>Dreamt: <%= time_ago_in_words @dream.created_at %> ago.</p>
 
-<!-- <p>Vividness: <%#= @dream.vividness %></p> -->
+<% if @dream.emotion %>
+	<p>Emotion upon waking: <%= @dream.emotion %></p>
+<% end %>
 
-<p>Emotion upon waking: <%= @dream.emotion %></p>
+<% if @dream.hashtag != '' %>
+	<p>Tags: <%= @dream.hashtag %></p>
+<% end %>
 
-<p>Tags: <%= @dream.hashtag %></p>
-
-<%= link_to 'Back', @dream %> | 
-<%= link_to 'Edit', edit_dream_path(@dream) %>
+<%= link_to 'Back', dream_path(@dream) %>
+<% if current_user == @dream.user %>
+	| <%= link_to 'Edit', edit_dream_path(@dream) %>
+<% end %>
