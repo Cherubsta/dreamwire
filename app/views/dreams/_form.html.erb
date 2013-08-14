@@ -1,15 +1,7 @@
 <%= form_for(@dream) do |f| %>
 	<% if @dream.errors.any? %>
-		<div id="error_explanation">
-			<h2><%= pluralize(@dream.errors.count, "error") %> stopped this dream from saving:</h2>
-			<ul>
-			<% @dream.errors.full_messages.each do |msg| %>
-				<li><%= msg %></li>
-			<% end %>
-			</ul>
-		</div>
+		<%= render 'shared/error_messages', object: @dream %>
 	<% end %>
-	
 	<div id="upper-toggle">
 		<div class="field">
 			<%= f.text_field :title, :placeholder => "Dream title" %><br />
@@ -36,8 +28,12 @@
 			<%= label(:fragmented, "Fragmented") %>
 		</div>
 		<div class="field">
-			<%#= f.collection_select :provider_id, Provider.order(:name),:id,:name, include_blank: true %>
-			<%= f.select :emotion, ([["Inspired", "Inspired"], ["Relieved", "Relieved"], ["Afraid", "Afraid"], ["Sad", "Sad"], ["Surprised", "Surprised"]]), :include_blank => @dream.emotion %>
+			<% if @dream.emotion %>
+				<% @menu_blank = @dream.emotion %>
+			<% else %>
+				<% @menu_blank = "Select Emotion" %>
+			<% end %>
+			<%= f.select :emotion, ([["Inspired", "Inspired"], ["Relieved", "Relieved"], ["Afraid", "Afraid"], ["Sad", "Sad"], ["Surprised", "Surprised"]]), :include_blank => @menu_blank %>
 		</div>
 		<div class="field">
 			<%= f.text_area :hashtag, :placeholder => "#characters, #activities, #objects" %>

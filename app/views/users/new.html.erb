@@ -8,6 +8,7 @@
 	<%=	f.text_field :name %>
 
 	<div>		
+		<%= image_tag @user.avatar.url(:thumb) %>
 		<%= f.file_field :avatar %>
 	</div>
 
@@ -20,9 +21,7 @@
 	<%=	f.label :password %>
 	<%=	f.password_field :password %>
 
-	<%=	f.label :password_confirmation, "Confirm Password" %>
-	<%=	f.password_field :password_confirmation %>
-
-	<%=	f.submit "Join Dreamwire", class: "btn btn-large btn-primary" %>
-
+	<div>
+		<%=	f.submit "Join Dreamwire", class: "btn btn-large btn-primary" %>
+	</div>
 <% end %>
