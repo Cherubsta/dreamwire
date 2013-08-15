@@ -1,8 +1,8 @@
 Dreamwire::Application.routes.draw do
   resources :dreams
-
   resources :users
   resources :sessions, only: [:new, :create, :destroy]
+  resources :password_resets
 
   root to: 'pages#home'
 

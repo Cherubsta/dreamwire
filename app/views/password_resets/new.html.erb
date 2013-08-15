@@ -1,0 +1,9 @@
+<h3>Password Reset</h3>
+<p>Forgot your password?</p> 
+<p>No problemo. You can reset it through your email...</p>
+<%= form_tag password_resets_path, :method => :post do %>
+  <div class="field">
+    <%= text_field_tag :email, params[:email], :placeholder => "Your email address" %>
+  </div>
+  <%= submit_tag "Reset Password", class: "btn btn-warning" %>
+<% end %>
