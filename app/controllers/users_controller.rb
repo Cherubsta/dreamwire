@@ -11,7 +11,6 @@ class UsersController < ApplicationController
 
   def show 
   	@user = User.find(params[:id])
-    session[:last_show_page] = root_path
   end
 
   def new

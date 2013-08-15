@@ -19,7 +19,6 @@ class DreamsController < ApplicationController
       format.html # show.html.erb
       format.json { render json: @dream }
     end
-    session[:last_show_page] = request.env['HTTP_REFERER']
   end
 
   # GET /dreams, GET /dreams.json
@@ -29,7 +28,6 @@ class DreamsController < ApplicationController
       format.html # new.html.erb
       format.json { render json: @dream }
     end
-    session[:last_new_page] = request.env['HTTP_REFERER'] || root_path
   end
 
   def detail

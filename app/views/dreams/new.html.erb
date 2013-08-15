@@ -2,6 +2,8 @@
 
 <%= render 'form' %>
 
-<% if session[:last_new_page] %>
-  <%= link_to "Back", session[:last_new_page] %>
+<% if URI(request.referer).path.split('/').last == "dreams" %>
+  <%= link_to "Back1", dreams_path %>
+<% else %>
+	<%= link_to "Back2", root_path %>
 <% end %>
