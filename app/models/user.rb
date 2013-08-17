@@ -14,7 +14,8 @@ class User < ActiveRecord::Base
   validates :email, presence: true, format: { with: VALID_EMAIL_REGEX },
                     uniqueness: { case_sensitive: false }
   
-  validates :password, length: { minimum: 6 }, on: :create #on create, because was causing erros on pw_reset
+  validates :password, length: { minimum: 6 }, on: :create
+  #on create, because was causing erros on pw_reset
   
   #validates :password_confirmation, presence: true
   validates :username, presence: true, uniqueness: { case_sensitive: false }, on: :create 

@@ -16,11 +16,11 @@
 </p>
 
 <% if URI(request.referer).path.split('/').last == "detail" %>
-  <%= link_to "Back1", root_path %> |
+  <%= link_to "Back", root_path %> |
 <% elsif URI(request.referer).path.split('/').last == "edit" %>
-	<%= link_to "Back2", root_path %> |
+	<%= link_to "Back", root_path %> |
 <% else %>
-  <%= link_to 'Back3', :back %> |
+  <%= link_to 'Back', :back %> |
 <% end %>
 
 <%= link_to 'Details', {:controller => "dreams", :action => "detail", :id => @dream } %>

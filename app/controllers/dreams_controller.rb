@@ -73,7 +73,7 @@ class DreamsController < ApplicationController
     @dream = current_user.dreams.find(params[:id])
     @dream.destroy
     respond_to do |format|
-      format.html { redirect_to dreams_url }
+      format.html { redirect_to @current_user, notice: 'Dream deleted.' }
       format.json { head :no_content }
     end
   end

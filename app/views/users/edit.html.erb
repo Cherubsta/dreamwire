@@ -18,8 +18,12 @@
 	<%=	f.label :email %>
 	<%=	f.text_field :email %>
 
-	<%=	f.label "New Password?" %>
-	<%=	f.password_field :password %>
+	<a class="toggle"><%=	f.label "New Password?" %></a>
+	<div id="upper-toggle" style="display:none;">
+		<p><small>Enter your new password here:</small></p>
+		<%=	f.password_field :password %>
+	</div>
+	
 	<%#=	f.label :password_confirmation, "Confirm Password" %>
 	<%#=	f.password_field :password_confirmation %>
 
@@ -27,3 +31,11 @@
 		<%=	f.submit "Save", class: "btn btn-primary" %>
 	</div>
 <% end %>
+
+<script type="text/javascript">
+$(function(){
+  $('.toggle').click(function(){
+     $('#upper-toggle').toggle();
+  });
+});
+</script>

@@ -3,7 +3,7 @@
 <%= render 'form' %>
 
 <% if URI(request.referer).path.split('/').last == "dreams" %>
-  <%= link_to "Back1", dreams_path %>
+  <%= link_to "Back", dreams_path %>
 <% else %>
-	<%= link_to "Back2", root_path %>
+	<%= link_to "Back", root_path %>
 <% end %>

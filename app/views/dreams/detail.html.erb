@@ -31,5 +31,6 @@
 
 <%= link_to 'Back', dream_path(@dream) %>
 <% if current_user == @dream.user %>
-	| <%= link_to 'Edit', edit_dream_path(@dream) %>
+	| <%= link_to 'Edit', edit_dream_path(@dream) %> |
+	<%= link_to 'Delete', @dream, method: :delete, data: { confirm: 'Delete this dream? Are you sure?' } %>
 <% end %>
