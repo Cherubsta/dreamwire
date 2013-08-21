@@ -18,18 +18,13 @@
 	<%=	f.label :email %>
 	<%=	f.text_field :email %>
 
-	<a class="toggle"><%=	f.label "New Password?" %></a>
+	<a class="toggle"><%=	f.label "Change Password?" %></a>
 	<div id="upper-toggle" style="display:none;">
-		<p><small>Enter your new password here:</small></p>
+		<p><small>Enter your new password:</small></p>
 		<%=	f.password_field :password %>
 	</div>
-	
-	<%#=	f.label :password_confirmation, "Confirm Password" %>
-	<%#=	f.password_field :password_confirmation %>
-
-	<div>
-		<%=	f.submit "Save", class: "btn btn-primary" %>
-	</div>
+	<br />
+	<div><%=	f.submit "Save", class: "btn btn-primary" %></div>
 <% end %>
 
 <script type="text/javascript">
