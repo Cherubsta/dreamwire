@@ -14,6 +14,7 @@ Dreamwire::Application.routes.draw do
   match '/signout',            to: 'sessions#destroy', via: :delete
 
   get 'home' => 'pages#home'
+  get 'callback' => 'pages#callback'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

@@ -46,14 +46,17 @@
 		<%= f.submit "Save" %>
 	</div>
 <% end %>
-<script src="/assets/500px.js?body=1" type="text/javascript"></script>
+
 <script>
-  $(document).ready(function () {
+  $(document).ready(function() {
     _500px.init({
       sdk_key: '29f8908d90c874398a67d534c33d79f6cb652ec5'
     });
   });
-  _500px.api('/photos', {feature: 'popular', page: 1}, function (response) {
+</script>
+
+<script type="text/javascript">
+	_500px.api('/photos', {feature: 'popular', page: 1}, function (response) {
 	  if (response.success) {
 		  alert('There are ' + response.data.photos.length + ' photos.');
 	  } else {
@@ -61,6 +64,7 @@
 	   }
 	});
 </script>
+
 <script type="text/javascript">
 $(function(){
   $('.toggle').click(function(){
