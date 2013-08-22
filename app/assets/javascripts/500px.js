@@ -100,7 +100,7 @@
     //    });
     this.api = function () {
       if (!this.sdk_key) {
-        throw "api: SDK not initialized. Use _500px.init() first.";
+        throw "api: SDK not initialized. Use _500px.init() first a.";
       }
       var args, url, method, data, callback, tag, callback_function_name, tag_src;
       args = Array.prototype.slice.call(arguments); // This converts arguments into an Array
@@ -167,7 +167,7 @@
     //    });
     this.login = function (callback) {
       if (!this.sdk_key) {
-        throw "login: SDK not initialized. Use _500px.init() first.";
+        throw "login: SDK not initialized. Use _500px.init() first b.";
       }
 
       var callback_function_name, left_offset, top_offset;
@@ -190,7 +190,7 @@
     // Alias for `login`.
     this.authorize = function (callback) {
       if (!this.sdk_key) {
-        throw "authorize: SDK not initialized. Use _500px.init() first.";
+        throw "authorize: SDK not initialized. Use _500px.init() first c.";
       }
       this.login(callback);
     };
@@ -204,7 +204,7 @@
     // If the user declines to authorize the app, or closes the authorization popup the callback will not be called.
     this.ensureAuthorization = function (callback) {
       if (!this.sdk_key) {
-        throw "ensureAuthorization: SDK not initialized. Use _500px.init() first.";
+        throw "ensureAuthorization: SDK not initialized. Use _500px.init() first d.";
       }
 
       var bound_callback = function () {
@@ -246,7 +246,7 @@
     //    });
     this.getAuthorizationStatus = function (callback) {
       if (!this.sdk_key) {
-        throw "getAuthorizationStatus: SDK not initialized. Use _500px.init() first.";
+        throw "getAuthorizationStatus: SDK not initialized. Use _500px.init() first e.";
       }
 
       var callback_function_name = random_method_name(),
@@ -322,7 +322,7 @@
     // Logs the user out from 500px
     this.logout = function (callback) {
       if (!this.sdk_key) {
-        throw "logout: SDK not initialized. Use _500px.init() first.";
+        throw "logout: SDK not initialized. Use _500px.init() first f.";
       }
       if (!oauth_token) {
         throw "logout: User is not logged in";

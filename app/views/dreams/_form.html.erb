@@ -1,3 +1,10 @@
+<script>
+  //$(document).ready(function() {
+    _500px.init({
+      sdk_key: '29f8908d90c874398a67d534c33d79f6cb652ec5'
+    });
+  //});
+</script>
 <%= form_for(@dream) do |f| %>
 	<% if @dream.errors.any? %>
 		<%= render 'shared/error_messages', object: @dream %>
@@ -13,9 +20,16 @@
 			<%= f.radio_button :privacy, "false" %>
 			<%= f.label(:private_false, "Public") %>
 		</div>
-		<a href="javascript:void(0);" class="toggle">More...</a>
 	</div>
 	
+	<a href="javascript:void(0);" class="toggle2">Select Image...</a>
+	<div id="middle-toggle" style="display:none;">
+		Search your image: <input></input>
+	</div>
+	
+	<br /><br />
+	
+	<a href="javascript:void(0);" class="toggle1">More...</a>
 	<div id="lower-toggle" style="display:none;">
 		<div class="field">
 			<%= f.check_box :nightmare %>
@@ -39,21 +53,13 @@
 		<div class="field">
 			<%= f.text_area :hashtag, :placeholder => "#characters, #activities, #objects" %>
 		</div>
-		<a href="javascript:void(0);" class="toggle">Less...</a>
+		<a href="javascript:void(0);" class="toggle1">Less...</a>
 	</div>
 
 	<div class="actions">
 		<%= f.submit "Save" %>
 	</div>
 <% end %>
-
-<script>
-  $(document).ready(function() {
-    _500px.init({
-      sdk_key: '29f8908d90c874398a67d534c33d79f6cb652ec5'
-    });
-  });
-</script>
 
 <script type="text/javascript">
 	_500px.api('/photos', {feature: 'popular', page: 1}, function (response) {
@@ -67,9 +73,14 @@
 
 <script type="text/javascript">
 $(function(){
-  $('.toggle').click(function(){
+  $('.toggle1').click(function(){
      $('#upper-toggle').toggle();
      $('#lower-toggle').toggle(); 
+  });
+});
+$(function(){
+  $('.toggle2').click(function(){
+     $('#middle-toggle').toggle();  
   });
 });
 </script>
