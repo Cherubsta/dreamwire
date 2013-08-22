@@ -18,7 +18,7 @@ class User < ActiveRecord::Base
   #on create, because was causing erros on pw_reset
   
   #validates :password_confirmation, presence: true
-  validates :username, presence: true, uniqueness: { case_sensitive: false }, on: :create 
+  validates :username, presence: true, uniqueness: { case_sensitive: false }, on: :create, on: :update 
 
   def send_password_reset
     create_password_token(:password_reset_token)
