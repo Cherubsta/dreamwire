@@ -42,8 +42,10 @@
 						<a class="btn btn-primary btn-small search_button">Go</a>
 					</form>
 					
-					<div id="search_results"></div>
-
+					<ol id="selectable">
+						
+					</ol>
+				
 				</div>
 			</div>
 		</div>
@@ -87,13 +89,13 @@
 <script type="text/javascript">
 	$(function() {	
 		$(".search_button").click(function() {
-			$('#search_results').html('Loading...');
+			$('#selectable').html('Loading...');
 			var search_term = $("#search_input").val();
 			_500px.api('/photos/search', {term: search_term, image_size: '1'}, function (response) {
 			  if (response.success) {  
-			    $("#search_results").html('');
+			    $("#selectable").html('');
 			    $.each(response.data.photos, function(i,photo){
-			      $("<img/>").attr("src", photo.image_url).appendTo("#search_results");
+			      $("<img/>").attr("src", photo.image_url).appendTo("#selectable");
 			      if ( i == 20 ) return false;
 			    });		  
 			  } else {
@@ -101,5 +103,10 @@
 			  }
 			});
 		});
+	});
+</script>
+ <script>
+	$(function() {
+		$( "#selectable" ).selectable();
 	});
 </script>
