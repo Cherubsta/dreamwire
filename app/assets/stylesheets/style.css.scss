@@ -106,20 +106,20 @@ $btnPrimaryBackground: #3890E9;
 /*Adjust input placeholder*/
 
 ::-webkit-input-placeholder { /* WebKit browsers */
-    color:    #133F9E;
-    font-size: 18px;
+  color:    #133F9E;
+  font-size: 18px;
 }
 :-moz-placeholder { /* Mozilla Firefox 4 to 18 */
-    color:    #133F9E;
-    font-size: 18px;
+  color:    #133F9E;
+  font-size: 18px;
 }
 ::-moz-placeholder { /* Mozilla Firefox 19+ */
-    color:    #133F9E;
-    font-size: 18px;
+  color:    #133F9E;
+  font-size: 18px;
 }
 :-ms-input-placeholder { /* Internet Explorer 10+ */
-    color:    #133F9E;
-    font-size: 18px;
+  color:    #133F9E;
+  font-size: 18px;
 }
 
 /*Forms*/
@@ -127,6 +127,10 @@ $btnPrimaryBackground: #3890E9;
 .field_with_errors {
 	@extend .control-group;
 	@extend .error;
+}
+
+.px-box {
+	min-height: 500px;
 }
 
 /*users index*/

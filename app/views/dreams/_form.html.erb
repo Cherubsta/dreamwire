@@ -1,86 +1,105 @@
 <script>
-  //$(document).ready(function() {
-    _500px.init({
-      sdk_key: '29f8908d90c874398a67d534c33d79f6cb652ec5'
-    });
-  //});
+  _500px.init({
+    sdk_key: '29f8908d90c874398a67d534c33d79f6cb652ec5'
+  });
 </script>
+
 <%= form_for(@dream) do |f| %>
 	<% if @dream.errors.any? %>
 		<%= render 'shared/error_messages', object: @dream %>
 	<% end %>
-	<div id="upper-toggle">
-		<div class="field">
-			<%= f.text_field :title, :placeholder => "Dream title" %><br />
-			<%= f.text_area :content, :placeholder => "Narrate your dream..." %>
+	<div class="accordion" id="accordion2">
+		<div class="accordion-group">
+			<div class="accordion-heading">
+				<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">
+					Enter your dream
+				</a>
+			</div>
+			<div id="collapseOne" class="accordion-body collapse in">
+				<div class="accordion-inner">
+					<%= f.text_field :title, :placeholder => "Dream title" %><br />
+					<%= f.text_area :content, :placeholder => "Narrate your dream..." %>
+					<br />
+					<%= f.radio_button :privacy, "true" %>
+					<%= f.label(:private_true, "Private") %>
+					<%= f.radio_button :privacy, "false" %>
+					<%= f.label(:private_false, "Public") %>
+				</div>
+			</div>
 		</div>
-		<div class="field">
-			<%= f.radio_button :privacy, "true" %>
-			<%= f.label(:private_true, "Private") %>
-			<%= f.radio_button :privacy, "false" %>
-			<%= f.label(:private_false, "Public") %>
-		</div>
-	</div>
-	
-	<a href="javascript:void(0);" class="toggle2">Select Image...</a>
-	<div id="middle-toggle" style="display:none;">
-		Search your image: <input></input>
-	</div>
-	
-	<br /><br />
-	
-	<a href="javascript:void(0);" class="toggle1">More...</a>
-	<div id="lower-toggle" style="display:none;">
-		<div class="field">
-			<%= f.check_box :nightmare %>
-			<%= label(:nightmare, "Nightmare") %>
-			<%= f.check_box :lucid %>
-			<%= label(:lucid, "Lucid") %>
-			<%= f.check_box :recurring %>
-			<%= label(:recurring, "Recurring") %>
-			<%= f.check_box :fragmented %>
-			<%= label(:fragmented, "Fragmented") %>
-		</div>
-		<div class="field">
-			<% if @dream.emotion %>
-				<% @menu_blank = @dream.emotion %>
-			<% else %>
-				<% @menu_blank = "Select Emotion" %>
-			<% end %>
-			<%= f.select :emotion, ([["Inspired", "Inspired"], ["Relieved", "Relieved"], ["Afraid", 
-				"Afraid"], ["Sad", "Sad"], ["Surprised", "Surprised"]]), :include_blank => @menu_blank %>
-		</div>
-		<div class="field">
-			<%= f.text_area :hashtag, :placeholder => "#characters, #activities, #objects" %>
-		</div>
-		<a href="javascript:void(0);" class="toggle1">Less...</a>
-	</div>
+		<div class="accordion-group">
+			<div class="accordion-heading">
+				<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseTwo">
+					Select Dream Image
+				</a>
+			</div>
+			<div id="collapseTwo" class="accordion-body collapse">
+				<div class="accordion-inner px-box">
+					<label>Search your image: </label>
+					
+					<form action="#" method="post" id="search_form">
+						<input id="search_input"/> 
+						<a class="btn btn-primary btn-small search_button">Go</a>
+					</form>
+					
+					<div id="search_results"></div>
 
-	<div class="actions">
-		<%= f.submit "Save" %>
-	</div>
+				</div>
+			</div>
+		</div>
+		<div class="accordion-group">
+			<div class="accordion-heading">
+				<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseThree">
+					More Details
+				</a>
+			</div>
+			<div id="collapseThree" class="accordion-body collapse">
+				<div class="accordion-inner">
+					<div class="field">
+						<%= f.check_box :nightmare %>
+						<%= label(:nightmare, "Nightmare") %>
+						<%= f.check_box :lucid %>
+						<%= label(:lucid, "Lucid") %>
+						<%= f.check_box :recurring %>
+						<%= label(:recurring, "Recurring") %>
+						<%= f.check_box :fragmented %>
+						<%= label(:fragmented, "Fragmented") %>
+					</div>
+					<div class="field">
+						<% if @dream.emotion %>
+							<% @menu_blank = @dream.emotion %>
+						<% else %>
+							<% @menu_blank = "Select Emotion" %>
+						<% end %>
+						<%= f.select :emotion, ([["Inspired", "Inspired"], ["Relieved", "Relieved"], ["Afraid", 
+							"Afraid"], ["Sad", "Sad"], ["Surprised", "Surprised"]]), :include_blank => @menu_blank %>
+					</div>
+					<div class="field">
+						<%= f.text_area :hashtag, :placeholder => "#characters, #activities, #objects" %>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>	
+	<%= f.submit "Save", class: "btn btn-primary" %>	
 <% end %>
 
 <script type="text/javascript">
-	_500px.api('/photos', {feature: 'popular', page: 1}, function (response) {
-	  if (response.success) {
-		  alert('There are ' + response.data.photos.length + ' photos.');
-	  } else {
-	  	alert('Unable to complete request: ' + response.status + ' - ' + response.error_message);
-	   }
+	$(function() {	
+		$(".search_button").click(function() {
+			$('#search_results').html('Loading...');
+			var search_term = $("#search_input").val();
+			_500px.api('/photos/search', {term: search_term, image_size: '1'}, function (response) {
+			  if (response.success) {  
+			    $("#search_results").html('');
+			    $.each(response.data.photos, function(i,photo){
+			      $("<img/>").attr("src", photo.image_url).appendTo("#search_results");
+			      if ( i == 20 ) return false;
+			    });		  
+			  } else {
+			  	alert('Unable to complete request: ' + response.status + ' - ' + response.error_message);
+			  }
+			});
+		});
 	});
-</script>
-
-<script type="text/javascript">
-$(function(){
-  $('.toggle1').click(function(){
-     $('#upper-toggle').toggle();
-     $('#lower-toggle').toggle(); 
-  });
-});
-$(function(){
-  $('.toggle2').click(function(){
-     $('#middle-toggle').toggle();  
-  });
-});
 </script>

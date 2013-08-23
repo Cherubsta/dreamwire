@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 
 gem 'rails', '3.2.12'
 gem 'jquery-rails'
+gem 'jquery-ui-rails'
 gem "paperclip", "~> 3.0"
 gem 'aws-sdk'
 gem 'bcrypt-ruby'
