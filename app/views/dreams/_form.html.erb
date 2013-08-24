@@ -8,82 +8,57 @@
 	<% if @dream.errors.any? %>
 		<%= render 'shared/error_messages', object: @dream %>
 	<% end %>
-	<div class="accordion" id="accordion2">
-		<div class="accordion-group">
-			<div class="accordion-heading">
-				<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">
-					Enter your dream
-				</a>
+  <ul id="myTab" class="nav nav-tabs">
+    <li><a href="#tab_dream" data-toggle="pill">Enter Dream</a></li>
+    <li><a href="#tab_image" data-toggle="pill">Dream Image</a></li>
+    <li><a href="#tab_details" data-toggle="pill">More Details</a></li>
+  </ul>
+  <div class="tab-content" id="myTabContent">
+  	<div id="tab_dream" class="tab-pane fade in active">
+  		<%= f.text_field :title, :placeholder => "Dream title" %> <br />
+			<%= f.text_area :content, :placeholder => "Narrate your dream..." %> <br />
+			<%= f.radio_button :privacy, "true" %>
+			<%= f.label(:private_true, "Private") %>
+			<%= f.radio_button :privacy, "false" %>
+			<%= f.label(:private_false, "Public") %>
+		</div>
+		<div id="tab_image" class="tab-pane fade in">
+  		<label>Search your image: </label>
+			<form action="#" method="post" id="search_form">
+				<input id="search_input"/> 
+				<a class="btn btn-primary btn-small search_button">Go</a>
+			</form>
+			<ol id="selectable">
+			</ol>
+			<li id="loadMore"></li>
+		</div>
+  	<div id="tab_details" class="tab-pane fade in">
+  		<div class="field">
+				<%= f.check_box :nightmare %>
+				<%= label(:nightmare, "Nightmare") %>
+				<%= f.check_box :lucid %>
+				<%= label(:lucid, "Lucid") %>
+				<%= f.check_box :recurring %>
+				<%= label(:recurring, "Recurring") %>
+				<%= f.check_box :fragmented %>
+				<%= label(:fragmented, "Fragmented") %>
 			</div>
-			<div id="collapseOne" class="accordion-body collapse in">
-				<div class="accordion-inner">
-					<%= f.text_field :title, :placeholder => "Dream title" %><br />
-					<%= f.text_area :content, :placeholder => "Narrate your dream..." %>
-					<br />
-					<%= f.radio_button :privacy, "true" %>
-					<%= f.label(:private_true, "Private") %>
-					<%= f.radio_button :privacy, "false" %>
-					<%= f.label(:private_false, "Public") %>
-				</div>
+			<div class="field">
+				<% if @dream.emotion %>
+					<% @menu_blank = @dream.emotion %>
+				<% else %>
+					<% @menu_blank = "Select Emotion" %>
+				<% end %>
+				<%= f.select :emotion, ([["Inspired", "Inspired"], ["Relieved", "Relieved"], ["Afraid", 
+					"Afraid"], ["Sad", "Sad"], ["Surprised", "Surprised"]]), :include_blank => @menu_blank %>
+			</div>
+			<div class="field">
+				<%= f.text_area :hashtag, :placeholder => "#characters, #activities, #objects" %>
 			</div>
 		</div>
-		<div class="accordion-group">
-			<div class="accordion-heading">
-				<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseTwo">
-					Select Dream Image
-				</a>
-			</div>
-			<div id="collapseTwo" class="accordion-body collapse">
-				<div class="accordion-inner px-box">
-					<label>Search your image: </label>
-					
-					<form action="#" method="post" id="search_form">
-						<input id="search_input"/> 
-						<a class="btn btn-primary btn-small search_button">Go</a>
-					</form>
-					
-					<ol id="selectable">
-						
-					</ol>
-				
-				</div>
-			</div>
-		</div>
-		<div class="accordion-group">
-			<div class="accordion-heading">
-				<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseThree">
-					More Details
-				</a>
-			</div>
-			<div id="collapseThree" class="accordion-body collapse">
-				<div class="accordion-inner">
-					<div class="field">
-						<%= f.check_box :nightmare %>
-						<%= label(:nightmare, "Nightmare") %>
-						<%= f.check_box :lucid %>
-						<%= label(:lucid, "Lucid") %>
-						<%= f.check_box :recurring %>
-						<%= label(:recurring, "Recurring") %>
-						<%= f.check_box :fragmented %>
-						<%= label(:fragmented, "Fragmented") %>
-					</div>
-					<div class="field">
-						<% if @dream.emotion %>
-							<% @menu_blank = @dream.emotion %>
-						<% else %>
-							<% @menu_blank = "Select Emotion" %>
-						<% end %>
-						<%= f.select :emotion, ([["Inspired", "Inspired"], ["Relieved", "Relieved"], ["Afraid", 
-							"Afraid"], ["Sad", "Sad"], ["Surprised", "Surprised"]]), :include_blank => @menu_blank %>
-					</div>
-					<div class="field">
-						<%= f.text_area :hashtag, :placeholder => "#characters, #activities, #objects" %>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>	
-	<%= f.submit "Save", class: "btn btn-primary" %>	
+	</div>
+	<br /><br />
+	<%= f.submit "Save", class: "btn btn-primary btn-large" %> <br /><br />
 <% end %>
 
 <script type="text/javascript">
@@ -91,13 +66,19 @@
 		$(".search_button").click(function() {
 			$('#selectable').html('Loading...');
 			var search_term = $("#search_input").val();
-			_500px.api('/photos/search', {term: search_term, image_size: '1'}, function (response) {
+			_500px.api('/photos/search', {term: search_term, sort: "rating", image_size: 2}, function (response) {
 			  if (response.success) {  
 			    $("#selectable").html('');
 			    $.each(response.data.photos, function(i,photo){
-			      $("<img/>").attr("src", photo.image_url).appendTo("#selectable");
+			      $("#selectable").append("<li><img src = "+photo.image_url+" /></li>");
 			      if ( i == 20 ) return false;
 			    });		  
+				  $("#selectable li").click(function() {
+		  			$(this).addClass("selected").siblings().removeClass("selected");
+		  		});
+		  		if(response.data.total_pages > 1) {
+		  			$("#loadMore").append("<a>Load More...</a>");
+		  		}
 			  } else {
 			  	alert('Unable to complete request: ' + response.status + ' - ' + response.error_message);
 			  }
@@ -105,8 +86,7 @@
 		});
 	});
 </script>
- <script>
-	$(function() {
-		$( "#selectable" ).selectable();
-	});
+<script type="text/javascript">
+	$('#myTab a:first').tab('show'); 
 </script>
+
