@@ -9,6 +9,22 @@ $btnPrimaryBackground: #3890E9;
 
 @import 'bootstrap-responsive';
 
+/* universal */
+html {
+  overflow-y: scroll;
+}
+/*body {
+  padding-top: 60px;
+}*/
+section {
+  overflow: auto;
+}
+textarea {
+  resize: vertical;
+}
+
+
+
 /*General Pages*/
 
 .center {
@@ -16,6 +32,35 @@ $btnPrimaryBackground: #3890E9;
 	margin-left: auto; 
 	margin-right: auto;
 	text-align: center;
+}
+
+/*.center h1 {
+  margin-bottom: 10px;
+}*/
+
+/* typography */
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1;
+}
+h1 {
+  font-size: 3em;
+  letter-spacing: -2px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+h2 {
+  font-size: 1.7em;
+  letter-spacing: -1px;
+  margin-bottom: 30px;
+  text-align: center;
+  font-weight: normal;
+  color: #999;
+}
+p {
+	font-size: 1.1em; line-height: 1.7em;
+}
+li { 
+	list-style-type: none; 
 }
 
 /*Landing Page*/
@@ -134,12 +179,10 @@ $btnPrimaryBackground: #3890E9;
 }
 
 #selectable { 
-	list-style-type: none; 
 	margin: 0; 
 	padding: 0; 
 }
 #selectable li { 
-	list-style-type: none; 
 	margin: 3px; 
 	padding: 1px; 
 	float: left; 
