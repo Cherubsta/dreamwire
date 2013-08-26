@@ -1,8 +1,4 @@
-<script>
-  _500px.init({
-    sdk_key: '29f8908d90c874398a67d534c33d79f6cb652ec5'
-  });
-</script>
+<script>_500px.init({sdk_key: '29f8908d90c874398a67d534c33d79f6cb652ec5'});</script>
 
 <%= form_for(@dream) do |f| %>
 	<% if @dream.errors.any? %>
@@ -23,15 +19,18 @@
 			<%= f.label(:private_false, "Public") %>
 		</div>
 		<div id="tab_image" class="tab-pane fade in">
-  		<label>Search your image: </label>
-			<form action="#" method="post" id="search-form">
-				<input id="search-input" type="text"/>
-				<a class="btn btn-primary btn-small search-button">Go</a>
-			</form>
-			<ol id="selectable">
-			</ol>
-			<li><a class="loadMore"></a></li>
-			<li><a class="loadLess"></a></li>
+  		<div class="clearfix">
+	  		<label>Search your image: </label>
+				<form action="#" method="post" id="search-form">
+					<input id="search-input" type="text"/>
+					<a class="btn btn-primary btn-small search-button">Go</a>
+				</form>
+				
+				<ol id="selectable"></ol>
+
+			</div>
+			<div><a class="loadMore"></a></div>
+			<div><a class="loadLess"></a></div>
 			<input type="hidden" id="counter">
 		</div>
   	<div id="tab_details" class="tab-pane fade in">
@@ -73,16 +72,19 @@
 			    $("#selectable").html('');
 			    $.each(response.data.photos, function(i,photo){
 			      $("#selectable").append("<li><img src = "+photo.image_url+" /></li>");
-			      if ( i == 20 ) return false;
-			    });		  
+			      if (i == 20) return false;
+			    });
+			    var imgsrc=""; // Selecting the image source
 				  $("#selectable li").click(function() {
 		  			$(this).addClass("selected").siblings().removeClass("selected");
+		  			var imgsrc = $('li.selected img').attr('src');
+				    var imgsave = imgsrc.replace('2.jpg', '4.jpg');
 		  		});
 		  		if(response.data.total_pages > 1) {
 		  			$(".loadMore").append("<a>Load More -> </a>");
-		  		}
+		  		}		  		
 			  } else {
-			  	alert('Unable to complete request: ' + response.status + ' - ' + response.error_message);
+			  	alert('Sorry request lost (1): ' + response.status + ' - ' + response.error_message);
 			  }
 			});
 		});
@@ -94,54 +96,67 @@
 		$(".loadMore").click(function() {
 			var search_term = $("#search-input").val();
 			$('#selectable').html('');
-			$('#selectable').html('Loading more...');
 			$(".loadLess").html('');
-			counter+=1;
+			$(".loadMore").html('');
+			$('#selectable').html('Loading more...');
+			counter += 1;
 			$("#counter").text(counter);
 			_500px.api('/photos/search', {term: search_term, sort: "rating", image_size: 2, page: counter}, function (response) {
 			  if (response.success) {  
 			    $("#selectable").html('');
 			    $.each(response.data.photos, function(i,photo){
 			      $("#selectable").append("<li><img src = "+photo.image_url+" /></li>");
-			      if ( i == 20 ) return false;
+			      if (i == 20) return false;
 			    });		  
+				  var imgsrc = ""; // Selecting the image source
 				  $("#selectable li").click(function() {
 		  			$(this).addClass("selected").siblings().removeClass("selected");
+		  			var imgsrc = $('li.selected img').attr('src');
+				    var imgsave = imgsrc.replace('2.jpg', '4.jpg');
 		  		});
+		  		$(".loadMore").append("<a>Load More -> </a>");
 		  		$(".loadLess").append("<a> <- Previous</a>");
+		  		if(response.data.current_page == response.data.total_pages) {
+						$(".loadMore").html('');
+					}
 			  } else {
-			  	alert('Unable to complete request: ' + response.status + ' - ' + response.error_message);
+			  	alert('Sorry request lost (2): ' + response.status + ' - ' + response.error_message);
 			  }
 			}); 
 		});
 		$(".loadLess").click(function() {
 			var search_term = $("#search-input").val();
 			$('#selectable').html('');
+			$(".loadLess").html('');
+			$(".loadMore").html('');
 			$('#selectable').html('Loading more...');	
-			counter-=1;
+			counter -= 1;
 			$("#counter").text(counter);
 			_500px.api('/photos/search', {term: search_term, sort: "rating", image_size: 2, page: counter}, function (response) {
 			  if (response.success) {  
 			    $("#selectable").html('');
 			    $.each(response.data.photos, function(i,photo){
 			      $("#selectable").append("<li><img src = "+photo.image_url+" /></li>");
-			      if ( i == 20 ) return false;
+			      if (i == 20) return false;
 			    });		  
+				  var imgsrc = ""; // Selecting the image source
 				  $("#selectable li").click(function() {
 		  			$(this).addClass("selected").siblings().removeClass("selected");
-		  		});		  		
+		  			var imgsrc = $('li.selected img').attr('src');
+				    var imgsave = imgsrc.replace('2.jpg', '4.jpg');
+		  		});
+		  		$(".loadMore").append("<a>Load More -> </a>");
+		  		$(".loadLess").append("<a> <- Previous</a>");  		
 					if(response.data.current_page == 1) {
 						$(".loadLess").html('');
 					}
 			  } else {
-			  	alert('Unable to complete request: ' + response.status + ' - ' + response.error_message);
+			  	alert('Sorry request lost (3): ' + response.status + ' - ' + response.error_message);
 			  }
 			}); 
 		});
 	});
 </script>
-<!-- <input type="hidden" id="text" /> -->
 <script type="text/javascript">
 	$('#myTab a:first').tab('show'); 
 </script>
-

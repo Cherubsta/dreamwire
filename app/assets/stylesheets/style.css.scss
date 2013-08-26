@@ -23,10 +23,7 @@ textarea {
   resize: vertical;
 }
 
-
-
 /*General Pages*/
-
 .center {
 	float: none; 
 	margin-left: auto; 
@@ -46,15 +43,14 @@ h1 {
   font-size: 3em;
   letter-spacing: -2px;
   margin-bottom: 30px;
-  text-align: center;
+  /*text-align: center;*/
 }
 h2 {
   font-size: 1.7em;
   letter-spacing: -1px;
   margin-bottom: 30px;
-  text-align: center;
+  /*text-align: center;*/
   font-weight: normal;
-  color: #999;
 }
 p {
 	font-size: 1.1em; line-height: 1.7em;
@@ -64,49 +60,39 @@ li {
 }
 
 /*Landing Page*/
-
 .no-space [class*='span'] {
     margin-left: 4px;
 }
-
 .color-blue {
 	color: #3890E9;
 }
-
 .color-orange {
 	color: #FBA617;
 }
-
 .font-large {
 	font-size: 1.7em;
 	line-height: 1.2em;
 }
-
 .font-hero {
 	font-size: 24px;
   line-height: 1.7em;
   margin-top: 1.7em;
 }
-
 .background-image {
 	background-image: url('http://s3.amazonaws.com/DW-Assets/romancandle.png');
 	background-repeat: no-repeat;
 	background-position: center 20%;
 }
-
 .margin-top-bottom {
 	margin-top: 2.1em;
 	margin-bottom: 2.1em;
 }
-
 .margin-top {
 	margin-top: 1.3em;
 }
-
 .margin-bottom {
 	margin-bottom: 1em;
 }
-
 .border-line {
 	border-top: 1px solid #FBA617;
 	width: 90%;
@@ -114,7 +100,6 @@ li {
 	margin-left: auto;
 	text-align: center;
 }
-
 .landing-input {
 	background: -moz-linear-gradient(center top , #BCBCBE, #FFFFFF) repeat scroll 0 0 transparent;
 	background: -webkit-gradient(linear, left top, left bottom, from(#BCBCBE), to(#FFFFFF));
@@ -132,24 +117,20 @@ li {
 	height: 50px;
   font-size: 18px;
 }
-
 .landing-image {
 	box-shadow: 0 3px 3px #071529;
 	moz-border-radius: 6px;
 	-webkit-border-radius: 6px;
 	border-radius: 6px;
 }
-
 .pics-row {
 	min-height: 180px;
 }
-
 .pic-adjust {
 	width: 180px;
 }
 
 /*Adjust input placeholder*/
-
 ::-webkit-input-placeholder { /* WebKit browsers */
   color:    #133F9E;
   font-size: 18px;
@@ -168,16 +149,13 @@ li {
 }
 
 /*Forms*/
-
 .field_with_errors {
 	@extend .control-group;
 	@extend .error;
 }
-
 .px-box {
 	min-height: 500px;
 }
-
 #selectable { 
 	margin: 0; 
 	padding: 0; 
@@ -193,6 +171,12 @@ li {
 #selectable .selected { 
 	border: 2px solid #FBA617; 
 	color: white; 
+}
+.loadMore {
+	cursor: pointer;
+}
+.loadLess {
+	cursor: pointer;
 }
 
 /*users index*/
