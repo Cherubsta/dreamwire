@@ -20,18 +20,17 @@
 		</div>
 		<div id="tab_image" class="tab-pane fade in">
   		<div class="clearfix">
+	  		
 	  		<label>Search your image: </label>
-				<form action="#" method="post" id="search-form">
-					<input id="search-input" type="text"/>
-					<a class="btn btn-primary btn-small search-button">Go</a>
-				</form>
-				
+				<input id="search-input" type="text"/>
+				<a class="btn btn-primary btn-small search-button">Search</a>
 				<ol id="selectable"></ol>
 
 			</div>
 			<div><a class="loadMore"></a></div>
 			<div><a class="loadLess"></a></div>
 			<input type="hidden" id="counter">
+			<%= f.hidden_field :imagesource %>
 		</div>
   	<div id="tab_details" class="tab-pane fade in">
   		<div class="field">
@@ -65,6 +64,8 @@
 <script type="text/javascript">
 	$(function() {	
 		$(".search-button").click(function() {
+			$(".loadLess").html('');
+			$(".loadMore").html('');
 			$('#selectable').html('Loading...');
 			var search_term = $("#search-input").val();
 			_500px.api('/photos/search', {term: search_term, sort: "rating", image_size: 2}, function (response) {
@@ -79,6 +80,7 @@
 		  			$(this).addClass("selected").siblings().removeClass("selected");
 		  			var imgsrc = $('li.selected img').attr('src');
 				    var imgsave = imgsrc.replace('2.jpg', '4.jpg');
+				    $("#dream_imagesource").val(imgsave);
 		  		});
 		  		if(response.data.total_pages > 1) {
 		  			$(".loadMore").append("<a>Load More -> </a>");
@@ -113,6 +115,7 @@
 		  			$(this).addClass("selected").siblings().removeClass("selected");
 		  			var imgsrc = $('li.selected img').attr('src');
 				    var imgsave = imgsrc.replace('2.jpg', '4.jpg');
+				    $("#dream_imagesource").val(imgsave);
 		  		});
 		  		$(".loadMore").append("<a>Load More -> </a>");
 		  		$(".loadLess").append("<a> <- Previous</a>");
@@ -144,6 +147,7 @@
 		  			$(this).addClass("selected").siblings().removeClass("selected");
 		  			var imgsrc = $('li.selected img').attr('src');
 				    var imgsave = imgsrc.replace('2.jpg', '4.jpg');
+				    $("#dream_imagesource").val(imgsave);
 		  		});
 		  		$(".loadMore").append("<a>Load More -> </a>");
 		  		$(".loadLess").append("<a> <- Previous</a>");  		
