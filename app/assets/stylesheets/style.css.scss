@@ -153,6 +153,8 @@ li {
 	@extend .control-group;
 	@extend .error;
 }
+
+/*Dream Form*/
 .px-box {
 	min-height: 500px;
 }
@@ -177,6 +179,18 @@ li {
 }
 .loadLess {
 	cursor: pointer;
+}
+div.box {
+	border: 1px black solid;
+  height: 64px;
+  width: 64px;
+  background: #444;
+	display: table-cell;
+	vertical-align: middle;
+}
+.box img {
+	display:block;
+	margin: 0px auto;
 }
 
 /*users index*/

@@ -3,7 +3,12 @@
 		<% if dream.privacy == false %> 
 			<%= image_tag dream.user.avatar.url(:thumb) %>
 			<%#= link_to dream.user.name, dream.user %>
-			<img src="http://robohash.org/<%= SecureRandom.base64.delete('/+=')[0, 1] %>?size=500x500">
+			<!-- <img src="http://robohash.org/<%= SecureRandom.base64.delete('/+=')[0, 1] %>?size=500x500"> -->
+			<div style="background-image: url(<%= dream.imagesource %>); 
+									background-repeat:no-repeat;
+									background-position: center center;
+									height:500px; width:500px">
+			</div>
 			<h2><%= dream.title %></h2>
 			<%= dream.content %>
 			<div><%= link_to 'DreamView', dream %></div>
@@ -11,7 +16,12 @@
 		<% end %>	
 	<% else %>	
 		<!-- <img src="http://robohash.org/<%= SecureRandom.base64.delete('/+=')[0, 1] %>?size=500x500"> -->
-		<img src="http://lorempixel.com/500/500/abstract/<%= SecureRandom.base64.delete('/+=')[0, 1] %>/" alt="image">
+		<!-- <img src="http://lorempixel.com/500/500/abstract/<%= SecureRandom.base64.delete('/+=')[0, 1] %>/" alt="image"> -->
+		<div style="background-image: url(<%= dream.imagesource %>); 
+								background-repeat:no-repeat;
+								background-position: center center;
+								height:500px; width:500px">
+		</div>
 		<h2><%= dream.title %></h2>
 		<%= dream.content %>
 		<% if current_user == dream.user %>  <!-- in partials, the @ sign for dreams is unneccesary -->
