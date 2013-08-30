@@ -1,65 +1,74 @@
 <script>_500px.init({sdk_key: '29f8908d90c874398a67d534c33d79f6cb652ec5'});</script>
+<link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.css" />
+<script src="http://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.js"></script>
 
-<%= form_for(@dream) do |f| %>
+<%= form_for(@dream, :html => { "data-ajax" => false }) do |f| %>
 	<% if @dream.errors.any? %>
 		<%= render 'shared/error_messages', object: @dream %>
 	<% end %>
-  <ul id="myTab" class="nav nav-tabs">
-    <li><a href="#tab_dream" data-toggle="pill">Enter Dream</a></li>
-    <li><a href="#tab_image" data-toggle="pill">Dream Image</a></li>
-    <li><a href="#tab_details" data-toggle="pill">More Details</a></li>
-  </ul>
-  <div class="tab-content" id="myTabContent">
-  	<div id="tab_dream" class="tab-pane fade in active">
-  		<%= f.text_field :title, :placeholder => "Dream title" %> <br />
-			<%= f.text_area :content, :placeholder => "Narrate your dream..." %> <br />
-			<%= f.radio_button :privacy, "true" %>
-			<%= f.label(:private_true, "Private") %>
-			<%= f.radio_button :privacy, "false" %>
-			<%= f.label(:private_false, "Public") %>
+	<div data-role="page" id="page1">
+		<div data-role="header">
+			<a href="#" data-rel="back">Back</a>
+			<h4>Record Dream</h4>
+			<a class="ui-btn-right submit">Save</a>
+		</div>	
+		<%= f.text_field :title,   placeholder: "Dream title" %> <br />
+		<%= f.text_area  :content, placeholder: "Narrate your dream..." %> <br />
+		<div id="thumb_show"></div>
+		<div><a href="#page2">Search Image</a></div>
+		<%= f.select :privacy, [['Private', true], ['Public', false]] %>
+		<div><a href="#page3">More...</a></div>
+	</div>
+	<div data-role="page" id="page2">
+		<div data-role="header">
+			<a href="#" data-rel="back">Back</a>
+			<h4>Record Dream</h4>
+			<a class="ui-btn-right submit">Save</a>
+		</div>	
+		<div class="clearfix">
+			<label>Search your image: </label>
+			<input id="search-input" type="text"/>
+			<a class="search-button" data-role="button">Search</a>
+			<ol id="selectable"></ol>
 		</div>
-		<div id="tab_image" class="tab-pane fade in">
-  		<div class="clearfix">
-	  		
-	  		<label>Search your image: </label>
-				<input id="search-input" type="text"/>
-				<a class="btn btn-primary btn-small search-button">Search</a>
-				<ol id="selectable"></ol>
-
-			</div>
-			<div><a class="loadMore"></a></div>
-			<div><a class="loadLess"></a></div>
-			<input type="hidden" id="counter">
-			<%= f.hidden_field :imagesource %>
+		<div><a class="loadMore"></a></div>
+		<div><a class="loadLess"></a></div>
+		<input type="hidden" id="counter">
+		<%= f.hidden_field :imagesource %>
+	</div>
+	<div data-role="page" id="page3">
+		<div data-role="header">
+			<a href="#" data-rel="back">Back</a>
+			<h4>Record Dream</h4>
+		</div>	
+		<div data-role="fieldcontain">
+			<fieldset data-role="controlgroup" data-type="horizontal" data-mini="true">
+				<label><%= f.check_box :nightmare %> Nightmare </label>				
+				<label><%= f.check_box :lucid %> Lucid </label>				
+				<label><%= f.check_box :recurring %> Recurring </label>				
+				<label><%= f.check_box :fragmented %> Fragmented </label>				
+			</fieldset>
 		</div>
-  	<div id="tab_details" class="tab-pane fade in">
-  		<div class="field">
-				<%= f.check_box :nightmare %>
-				<%= label(:nightmare, "Nightmare") %>
-				<%= f.check_box :lucid %>
-				<%= label(:lucid, "Lucid") %>
-				<%= f.check_box :recurring %>
-				<%= label(:recurring, "Recurring") %>
-				<%= f.check_box :fragmented %>
-				<%= label(:fragmented, "Fragmented") %>
-			</div>
-			<div class="field">
-				<% if @dream.emotion %>
-					<% @menu_blank = @dream.emotion %>
-				<% else %>
-					<% @menu_blank = "Select Emotion" %>
-				<% end %>
-				<%= f.select :emotion, ([["Inspired", "Inspired"], ["Relieved", "Relieved"], ["Afraid", 
-					"Afraid"], ["Sad", "Sad"], ["Surprised", "Surprised"]]), :include_blank => @menu_blank %>
-			</div>
-			<div class="field">
-				<%= f.text_area :hashtag, :placeholder => "#characters, #activities, #objects" %>
-			</div>
+		<div class="field">
+			<% if @dream.emotion %>
+				<% @menu_blank = @dream.emotion %>
+			<% else %>
+				<% @menu_blank = "Select Emotion" %>
+			<% end %>
+			<%= f.select :emotion, ([["Inspired", "Inspired"], ["Relieved", "Relieved"], ["Afraid", 
+				"Afraid"], ["Sad", "Sad"], ["Surprised", "Surprised"]]), :include_blank => @menu_blank %>
+		</div>
+		<div class="field">
+			<%= f.text_area :hashtag, :placeholder => "#characters, #activities, #objects" %>
 		</div>
 	</div>
-	<br /><br />
-	<%= f.submit "Save", class: "btn btn-primary btn-large" %> <br /><br />
 <% end %>
+<script type="text/javascript">
+	$('.submit').click(function(){
+    $('form').submit();
+    return false;
+	});
+</script>
 
 <script type="text/javascript">
 	$(function() {	
@@ -81,6 +90,8 @@
 		  			var imgsrc = $('li.selected img').attr('src');
 				    var imgsave = imgsrc.replace('2.jpg', '4.jpg');
 				    $("#dream_imagesource").val(imgsave);
+				    $.mobile.changePage( "#page1", { transition: "slideup"} );
+				    $("#thumb_show").html('').append("<img src = "+imgsrc+" />");
 		  		});
 		  		if(response.data.total_pages > 1) {
 		  			$(".loadMore").append("<a>Load More -> </a>");
@@ -100,7 +111,7 @@
 			$('#selectable').html('');
 			$(".loadLess").html('');
 			$(".loadMore").html('');
-			$('#selectable').html('Loading more...');
+			$('#selectable').html('Loading...');
 			counter += 1;
 			$("#counter").text(counter);
 			_500px.api('/photos/search', {term: search_term, sort: "rating", image_size: 2, page: counter}, function (response) {
@@ -116,6 +127,8 @@
 		  			var imgsrc = $('li.selected img').attr('src');
 				    var imgsave = imgsrc.replace('2.jpg', '4.jpg');
 				    $("#dream_imagesource").val(imgsave);
+				    $.mobile.changePage( "#page1", { transition: "slideup"} );
+				    $("#thumb_show").html('').append("<img src = "+imgsrc+" />");
 		  		});
 		  		$(".loadMore").append("<a>Load More -> </a>");
 		  		$(".loadLess").append("<a> <- Previous</a>");
@@ -132,7 +145,7 @@
 			$('#selectable').html('');
 			$(".loadLess").html('');
 			$(".loadMore").html('');
-			$('#selectable').html('Loading more...');	
+			$('#selectable').html('Loading...');	
 			counter -= 1;
 			$("#counter").text(counter);
 			_500px.api('/photos/search', {term: search_term, sort: "rating", image_size: 2, page: counter}, function (response) {
@@ -148,6 +161,8 @@
 		  			var imgsrc = $('li.selected img').attr('src');
 				    var imgsave = imgsrc.replace('2.jpg', '4.jpg');
 				    $("#dream_imagesource").val(imgsave);
+				    $.mobile.changePage( "#page1", { transition: "slideup"} );
+				    $("#thumb_show").html('').append("<img src = "+imgsrc+" />");
 		  		});
 		  		$(".loadMore").append("<a>Load More -> </a>");
 		  		$(".loadLess").append("<a> <- Previous</a>");  		

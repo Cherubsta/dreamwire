@@ -4,11 +4,14 @@
 
 <%= form_for(:session, url: sessions_path) do |f| %>
 	
-	<%=	f.label :username_or_email %>
-	<%=	f.text_field :username_or_email %>
-
-	<%=	f.label :password %>
-	<%=	f.password_field :password %>
+	<div>
+		<%#=	f.label :username_or_email %>
+		<%=	f.text_field :username_or_email, placeholder: "username or email", autofocus: true %>
+	</div>
+	<div>
+		<%#=	f.label :password %>
+		<%=	f.password_field :password, placeholder: "password" %>
+	</div>
 
 	<div><small><%= link_to "Forgot Password?", new_password_reset_path %></small></div>
 	<br />

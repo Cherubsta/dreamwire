@@ -7,6 +7,8 @@ class User < ActiveRecord::Base
                     :default_url => "http://s3.amazonaws.com/DW-Assets/missing.png"
 
   before_save { |user| user.email = user.email.downcase }
+  before_save { |user| user.username = user.username.downcase }
+
   before_save :create_remember_token
 
   validates :name,  presence: true, length: { maximum: 50 }
@@ -17,7 +19,6 @@ class User < ActiveRecord::Base
   validates :password, length: { minimum: 6 }, on: :create
   #on create, because was causing erros on pw_reset
   
-  #validates :password_confirmation, presence: true
   validates :username, presence: true, uniqueness: { case_sensitive: false }, on: :create, on: :update 
 
   def send_password_reset
