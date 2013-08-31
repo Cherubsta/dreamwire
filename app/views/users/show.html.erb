@@ -1,30 +1,45 @@
 <% provide(:title, @user.name) %>
-<%= link_to 'Dreamwire', root_path %> | 
-<%= link_to 'Settings', edit_user_path(current_user) %> |
-<%= link_to 'New Dream', new_dream_path %> |
-<%= link_to 'LiveWire', dreams_path %> |
-<%= link_to "Sign Out", signout_path, method: "delete" %>
-
-<div class="row">
-	<aside class="span4">
-		<a href="<%= user_path(current_user) %>">
-			<%= image_tag @user.avatar.url(:thumb) %>
-		</a>
-		<h1>	
-			<%= @user.name %>
-		</h1>
-		<h3>	
-			<%= @user.username %>
-		</h3>
-	</aside>
-	<div class="span8">
-		<% if @user.dreams.any? %>
-			<h3>My Dreams (<%= @user.dreams.count %>)</h3>
-		<% else %>
-			<h3>Welcome to Dreamwire... Record your first dream.</h3>
-		<% end %>
-		<ol class="">
-			<%= render @user.dreams %>
-		</ol>	
+<div data-role="page" id="home">
+	<div data-role="header">
+		<a href="#menu">Menu</a>
+		<h4>Home</h4>
+		<%= link_to 'New', new_dream_path, rel: "external" %>
+	</div>
+	<% if !@user.dreams.any? %>
+		<h3>Welcome to Dreamwire... Record your first dream.</h3>
+	<% end %>
+	<%= render @user.dreams %>
+</div>
+<div data-role="page" id="menu">	
+	<div class="ui-grid-a">
+		<div class="ui-block-a" style="width: 20%;">
+			<a href="<%= user_path(current_user) %>">
+				<%= image_tag @user.avatar.url(:thumb), class: "thumbsize" %>
+			</a>	
+		</div>
+		<div class="ui-block-b">
+			<h2><%= @user.name %></h2>
+			<!-- <h3><%= @user.username %></h3> -->
+			<h4><%= @user.dreams.count %> Dreams</h4>
+		</div>
+	</div>
+	<div class="ui-grid-a center">
+		<div class="ui-block-a menublock">
+			<%= link_to 'Home', root_path %>
+		</div>
+		<div class="ui-block-b menublock">
+			<%= link_to 'LiveWire', dreams_path %>
+		</div>
+		<div class="ui-block-a menublock">
+			<%= link_to 'Settings', edit_user_path(current_user) %>
+		</div>
+		<div class="ui-block-b menublock">
+			<%= link_to "Sign Out", signout_path, method: "delete" %>
+		</div>
 	</div>
 </div>
+<script type="text/javascript">
+		$("#menu").click(function() {
+			$.mobile.changePage("#home");
+		});
+	</script>

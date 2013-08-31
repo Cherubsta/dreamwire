@@ -1,26 +1,39 @@
-$bodyBackground: #02060D;
+/*$bodyBackground: #02060D;
 $textColor: white;
 $baseFontFamily: Open+Sans, Helvetica;
 $blue: #3890E9;
-$btnPrimaryBackground: #3890E9;
+$btnPrimaryBackground: #3890E9;*/
 @import url(https://fonts.googleapis.com/css?family=Open+Sans);
 
-@import 'bootstrap';
+/*@import 'bootstrap';
 
-@import 'bootstrap-responsive';
+@import 'bootstrap-responsive';*/
 
 /* universal */
 html {
   overflow-y: scroll;
+  font: url(https://fonts.googleapis.com/css?family=Open+Sans);
+  color: white;
 }
-/*body {
-  padding-top: 60px;
-}*/
+body {
+  background-color: #02060D;
+}
 section {
   overflow: auto;
 }
 textarea {
   resize: vertical;
+}
+
+/*jquery override*/
+.ui-mobile .ui-page {
+	margin: 0 0 0 0px;
+	padding: 0;
+}
+.ui-body-c, .ui-overlay-c {
+	background: #02060D;
+	color: #fff;
+	text-shadow: none;
 }
 
 /*General Pages*/
@@ -31,27 +44,17 @@ textarea {
 	text-align: center;
 }
 
-/*.center h1 {
-  margin-bottom: 10px;
-}*/
-
 /* typography */
-/*h1, h2, h3, h4, h5, h6 {
+h1, h2, h3, h4, h5, h6 {
   line-height: 1;
+  margin: 0.1em 0 0.1em 0;
 }
 h1 {
-  font-size: 3em;
-  letter-spacing: -2px;
-  margin-bottom: 30px;
-  text-align: center;
+  font-size: 2em;
 }
 h2 {
-  font-size: 1.7em;
-  letter-spacing: -1px;
-  margin-bottom: 30px;
-  text-align: center;
-  font-weight: normal;
-}*/
+  font-size: 1.4em;
+}
 p {
 	font-size: 1.1em; line-height: 1.7em;
 }
@@ -93,13 +96,15 @@ li {
 .margin-bottom {
 	margin-bottom: 1em;
 }
-.border-line {
-	border-top: 1px solid #FBA617;
-	width: 90%;
-	margin-right: auto;
-	margin-left: auto;
-	text-align: center;
+
+.float-right {
+	float: right;
 }
+
+.float-left {
+	float: left;
+}
+
 .landing-input {
 	background: -moz-linear-gradient(center top , #BCBCBE, #FFFFFF) repeat scroll 0 0 transparent;
 	background: -webkit-gradient(linear, left top, left bottom, from(#BCBCBE), to(#FFFFFF));
@@ -128,6 +133,11 @@ li {
 }
 .pic-adjust {
 	width: 180px;
+}
+
+/*menu*/
+.menublock {
+	margin: 15% 0 15% 0;
 }
 
 /*Adjust input placeholder*/
@@ -183,21 +193,29 @@ li {
 .loadLess {
 	cursor: pointer;
 }
-div.box {
-	border: 1px black solid;
-  height: 64px;
-  width: 64px;
-  background: #444;
-	display: table-cell;
-	vertical-align: middle;
-}
-.box img {
-	display:block;
-	margin: 0px auto;
+
+
+.imagecrop {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
 }
 
+.avatar-position {
+	position: absolute;
+	margin-left: 6px;
+  margin-top: 6px;
+}
+.thumbsize {
+	width: 60px;
+}
+
+
+
+
+
 /*users index*/
-.users {
+/*.users {
 	list-style: none;
 	margin: 0;
 	li {
@@ -208,4 +226,4 @@ div.box {
 			border-bottom: 1px solid $grayLighter;
 		}
 	}
-}
+}*/

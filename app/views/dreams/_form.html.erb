@@ -1,29 +1,26 @@
 <script>_500px.init({sdk_key: '29f8908d90c874398a67d534c33d79f6cb652ec5'});</script>
-<link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.css" />
-<script src="http://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.js"></script>
 
 <%= form_for(@dream, :html => { "data-ajax" => false }) do |f| %>
-	<% if @dream.errors.any? %>
-		<%= render 'shared/error_messages', object: @dream %>
-	<% end %>
-	<div data-role="page" id="page1">
+	<div data-role="page" id="record" data-direction="reverse">
 		<div data-role="header">
-			<a href="#" data-rel="back">Back</a>
+			<a href="#" data-direction="reverse" data-rel="back">Back</a>
 			<h4>Record Dream</h4>
 			<a class="ui-btn-right submit">Save</a>
-		</div>	
+		</div>
+		<% if @dream.errors.any? %>
+			<%= render 'shared/error_messages', object: @dream %>
+		<% end %>
 		<%= f.text_field :title,   placeholder: "Dream title" %> <br />
 		<%= f.text_area  :content, placeholder: "Narrate your dream..." %> <br />
 		<div id="thumb_show"></div>
-		<div><a href="#page2">Search Image</a></div>
+		<div><a href="#search" data-transition="slide">Search Image</a></div>
 		<%= f.select :privacy, [['Private', true], ['Public', false]] %>
-		<div><a href="#page3">More...</a></div>
+		<div><a href="#details" data-transition="slideup">More...</a></div>
 	</div>
-	<div data-role="page" id="page2">
+	<div data-role="page" id="search">
 		<div data-role="header">
 			<a href="#" data-rel="back">Back</a>
 			<h4>Record Dream</h4>
-			<a class="ui-btn-right submit">Save</a>
 		</div>	
 		<div class="clearfix">
 			<label>Search your image: </label>
@@ -31,22 +28,23 @@
 			<a class="search-button" data-role="button">Search</a>
 			<ol id="selectable"></ol>
 		</div>
-		<div><a class="loadMore"></a></div>
-		<div><a class="loadLess"></a></div>
+		<br /><br /><div><a class="loadMore"></a></div>
+		<div><a class="loadLess"></a></div><br /><br />
 		<input type="hidden" id="counter">
 		<%= f.hidden_field :imagesource %>
 	</div>
-	<div data-role="page" id="page3">
+	<div data-role="page" id="details">
 		<div data-role="header">
 			<a href="#" data-rel="back">Back</a>
 			<h4>Record Dream</h4>
+			<a class="ui-btn-right submit">Save</a>
 		</div>	
 		<div data-role="fieldcontain">
 			<fieldset data-role="controlgroup" data-type="horizontal" data-mini="true">
 				<label><%= f.check_box :nightmare %> Nightmare </label>				
 				<label><%= f.check_box :lucid %> Lucid </label>				
 				<label><%= f.check_box :recurring %> Recurring </label>				
-				<label><%= f.check_box :fragmented %> Fragmented </label>				
+				<label><%= f.check_box :fragmented %> Fragment </label>				
 			</fieldset>
 		</div>
 		<div class="field">
@@ -63,13 +61,6 @@
 		</div>
 	</div>
 <% end %>
-<script type="text/javascript">
-	$('.submit').click(function(){
-    $('form').submit();
-    return false;
-	});
-</script>
-
 <script type="text/javascript">
 	$(function() {	
 		$(".search-button").click(function() {
@@ -88,9 +79,9 @@
 				  $("#selectable li").click(function() {
 		  			$(this).addClass("selected").siblings().removeClass("selected");
 		  			var imgsrc = $('li.selected img').attr('src');
-				    var imgsave = imgsrc.replace('2.jpg', '4.jpg');
+				    var imgsave = imgsrc.replace('2.jpg', '3.jpg');
 				    $("#dream_imagesource").val(imgsave);
-				    $.mobile.changePage( "#page1", { transition: "slideup"} );
+				    $.mobile.changePage( "#record", {transition: "slide", reverse: true});
 				    $("#thumb_show").html('').append("<img src = "+imgsrc+" />");
 		  		});
 		  		if(response.data.total_pages > 1) {
@@ -125,9 +116,9 @@
 				  $("#selectable li").click(function() {
 		  			$(this).addClass("selected").siblings().removeClass("selected");
 		  			var imgsrc = $('li.selected img').attr('src');
-				    var imgsave = imgsrc.replace('2.jpg', '4.jpg');
+				    var imgsave = imgsrc.replace('2.jpg', '3.jpg');
 				    $("#dream_imagesource").val(imgsave);
-				    $.mobile.changePage( "#page1", { transition: "slideup"} );
+				    $.mobile.changePage( "#record", {transition: "slide", reverse: true});
 				    $("#thumb_show").html('').append("<img src = "+imgsrc+" />");
 		  		});
 		  		$(".loadMore").append("<a>Load More -> </a>");
@@ -159,9 +150,9 @@
 				  $("#selectable li").click(function() {
 		  			$(this).addClass("selected").siblings().removeClass("selected");
 		  			var imgsrc = $('li.selected img').attr('src');
-				    var imgsave = imgsrc.replace('2.jpg', '4.jpg');
+				    var imgsave = imgsrc.replace('2.jpg', '3.jpg');
 				    $("#dream_imagesource").val(imgsave);
-				    $.mobile.changePage( "#page1", { transition: "slideup"} );
+				    $.mobile.changePage( "#record", {transition: "slide", reverse: true});
 				    $("#thumb_show").html('').append("<img src = "+imgsrc+" />");
 		  		});
 		  		$(".loadMore").append("<a>Load More -> </a>");
@@ -177,5 +168,8 @@
 	});
 </script>
 <script type="text/javascript">
-	$('#myTab a:first').tab('show'); 
+	$('.submit').click(function(){
+    $('form').submit();
+    return false;
+	});
 </script>

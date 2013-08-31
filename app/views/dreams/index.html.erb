@@ -1,8 +1,30 @@
 <% provide(:title, 'LiveWire') %>
-<%= link_to 'Home', root_path %> |
-<%= link_to 'New Dream', new_dream_path %>
-
-<h1>LiveWire</h1>
-<div>
-  <%= render @dreams %>
+<div data-role="page" id="livewire">
+	<div data-role="header">
+		<a href="#menu">Menu</a>
+		<h4>LiveWire</h4>
+		<%= link_to 'New', new_dream_path, rel: "external" %>
+	</div>
+	<%= render @dreams %>
 </div>
+<div data-role="page" id="menu">
+	<div class="ui-grid-a center">
+		<div class="ui-block-a menublock">
+			<%= link_to 'Home', root_path %>
+		</div>
+		<div class="ui-block-b menublock">
+			<%= link_to 'LiveWire', dreams_path %>
+		</div>
+		<div class="ui-block-a menublock">
+			<%= link_to 'Settings', edit_user_path(current_user) %>
+		</div>
+		<div class="ui-block-b menublock">
+			<%= link_to "Sign Out", signout_path, method: "delete" %>
+		</div>
+	</div>
+</div>
+<script type="text/javascript">
+		$("#Lmenu").click(function() {
+			$.mobile.changePage("#livewire");
+		});
+	</script>
