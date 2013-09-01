@@ -1,17 +1,14 @@
 <% provide(:title, 'DreamView') %>
-
-<h2>
-  <%= @dream.user.name %>
-</h2>
-<img class="imagemax" src="<%= @dream.imagesource %>">
-<h2>
-	<%= @dream.title %>
-</h2>
-<% if @dream.privacy == true %> 
-	<div>
-		<strong>Private</strong>
+<div data-role="page" id="dreamview">
+	<div data-role="header">
+		<a href="#" data-rel="back" data-direction="reverse">Back</a>
+		<h4>DreamView</h4>
 	</div>
-<% end %>
-<p>
-  <%= @dream.content %>
-</p>
+	<img class="imagecrop" src="<%= @dream.imagesource %>">
+	<h2><%= @dream.title %></h2>
+	<% if @dream.privacy == true %> 
+		<div><strong>Private</strong></div>
+	<% end %>
+	<p><%= @dream.content %></p>
+	<%= link_to 'Details', {controller: "dreams", action: "detail", id: @dream } %>
+</div>

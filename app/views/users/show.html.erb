@@ -1,16 +1,16 @@
 <% provide(:title, @user.name) %>
 <div data-role="page" id="home">
 	<div data-role="header">
-		<a href="#menu">Menu</a>
+		<a href="#menu1">Menu</a>
 		<h4>Home</h4>
-		<%= link_to 'New', new_dream_path, rel: "external" %>
+		<%= link_to 'New', new_dream_path(trailing_slash: true), rel: "external" %>
 	</div>
 	<% if !@user.dreams.any? %>
 		<h3>Welcome to Dreamwire... Record your first dream.</h3>
 	<% end %>
 	<%= render @user.dreams %>
 </div>
-<div data-role="page" id="menu">	
+<div data-role="page" id="menu1">	
 	<div class="ui-grid-a">
 		<div class="ui-block-a" style="width: 20%;">
 			<a href="<%= user_path(current_user) %>">
@@ -19,16 +19,15 @@
 		</div>
 		<div class="ui-block-b">
 			<h2><%= @user.name %></h2>
-			<!-- <h3><%= @user.username %></h3> -->
 			<h4><%= @user.dreams.count %> Dreams</h4>
 		</div>
 	</div>
 	<div class="ui-grid-a center">
 		<div class="ui-block-a menublock">
-			<%= link_to 'Home', root_path %>
+			<%= link_to 'Home', home_path(trailing_slash: true) %>
 		</div>
 		<div class="ui-block-b menublock">
-			<%= link_to 'LiveWire', dreams_path %>
+			<%= link_to 'LiveWire', dreams_path(trailing_slash: true) %>
 		</div>
 		<div class="ui-block-a menublock">
 			<%= link_to 'Settings', edit_user_path(current_user) %>
@@ -38,8 +37,3 @@
 		</div>
 	</div>
 </div>
-<script type="text/javascript">
-		$("#menu").click(function() {
-			$.mobile.changePage("#home");
-		});
-	</script>

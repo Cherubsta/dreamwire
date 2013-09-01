@@ -1,9 +1,9 @@
 <script>_500px.init({sdk_key: '29f8908d90c874398a67d534c33d79f6cb652ec5'});</script>
 
-<%= form_for(@dream, :html => { "data-ajax" => false }) do |f| %>
-	<div data-role="page" id="record" data-direction="reverse">
+<%= form_for(@dream) do |f| %>
+	<div data-role="page" id="record">
 		<div data-role="header">
-			<a href="#" data-direction="reverse" data-rel="back">Back</a>
+			<%= link_to 'Cancel', home_path(trailing_slash: true) %>
 			<h4>Record Dream</h4>
 			<a class="ui-btn-right submit">Save</a>
 		</div>
@@ -12,7 +12,14 @@
 		<% end %>
 		<%= f.text_field :title,   placeholder: "Dream title" %> <br />
 		<%= f.text_area  :content, placeholder: "Narrate your dream..." %> <br />
-		<div id="thumb_show"></div>
+		<%= f.text_area  :content, placeholder: "Narrate your dream..." %> <br />
+		<% if @dream.imagesource %>
+			<div id="thumb_show">
+				<img src = "<%= @dream.imagesource.gsub('3.jpg', '2.jpg') %>" />
+			</div>
+		<% else %>
+			<div id="thumb_show">
+		<% end %>
 		<div><a href="#search" data-transition="slide">Search Image</a></div>
 		<%= f.select :privacy, [['Private', true], ['Public', false]] %>
 		<div><a href="#details" data-transition="slideup">More...</a></div>
@@ -35,7 +42,6 @@
 	</div>
 	<div data-role="page" id="details">
 		<div data-role="header">
-			<a href="#" data-rel="back">Back</a>
 			<h4>Record Dream</h4>
 			<a class="ui-btn-right submit">Save</a>
 		</div>	
@@ -59,6 +65,7 @@
 		<div class="field">
 			<%= f.text_area :hashtag, :placeholder => "#characters, #activities, #objects" %>
 		</div>
+		<div><a href="#record" data-transition="slidedown">Less...</a></div>
 	</div>
 <% end %>
 <script type="text/javascript">

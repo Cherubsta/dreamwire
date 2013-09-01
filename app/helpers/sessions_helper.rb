@@ -33,7 +33,7 @@ module SessionsHelper
 
 	def redirect_back_or(default)
 		redirect_to(session[:return_to] || default)
-		session.delete(:return_to)
+		clear_return_to
 	end
 
 	def signed_in_user
@@ -42,4 +42,9 @@ module SessionsHelper
       redirect_to signin_path, notice: "Please Sign In"
     end
   end
+
+  private
+  	def clear_return_to
+  		session.delete(:return_to)
+  	end
 end
