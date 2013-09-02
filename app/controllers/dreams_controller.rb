@@ -43,7 +43,7 @@ class DreamsController < ApplicationController
     @dream = current_user.dreams.new(params[:dream])
     respond_to do |format|
       if @dream.save
-        format.html { redirect_to @current_user, notice: 'Dream Saved!' }
+        format.html { redirect_to @current_user, trailing_slash: true, notice: 'Dream Saved!' }
         format.json { render json: @current_user, status: :created, location: @dream }
       else
         format.html { render action: "new" }
@@ -57,7 +57,7 @@ class DreamsController < ApplicationController
     @dream = current_user.dreams.find(params[:id])
     respond_to do |format|
       if @dream.update_attributes(params[:dream])
-        format.html { redirect_to @current_user, notice: 'Dream updated!' }
+        format.html { redirect_to @current_user, trailing_slash: true, notice: 'Dream updated!' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }

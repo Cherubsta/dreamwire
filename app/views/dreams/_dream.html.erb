@@ -10,7 +10,7 @@
 		<% end %>
 		<h2><%= dream.title %></h2>
 		<div><%= dream.content %></div>
-		<div><%= link_to 'DreamView', dream, trailing_slash: true %></div>
+		<div><%= link_to 'DreamView', dream %></div>
 	<% end %>	
 <% else %>	<!-- Home Feed -->
 	<% if dream.imagesource == nil %> 
@@ -27,5 +27,5 @@
 			</div>
 		<% end %>
 	<% end %>
-	<div><%= link_to 'DreamView', dream, trailing_slash: true %></div>
+	<div><%= link_to 'DreamView', dream %></div>
 <% end %>

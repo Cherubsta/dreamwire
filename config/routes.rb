@@ -13,6 +13,7 @@ Dreamwire::Application.routes.draw do
   match '/signin',             to: 'sessions#new'
   match '/signout',            to: 'sessions#destroy', via: :delete
 
+  get 'menu' => 'users#menu'
   get 'home' => 'pages#home'
   get 'callback' => 'pages#callback'
   get 'signout' => 'pages#home'

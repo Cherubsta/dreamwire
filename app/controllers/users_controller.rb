@@ -9,6 +9,10 @@ class UsersController < ApplicationController
     end
   end
 
+  def menu
+    @user = current_user
+  end
+
   def show 
   	@user = User.find(params[:id])
   end

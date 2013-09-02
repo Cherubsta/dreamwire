@@ -3,7 +3,7 @@
 <%= form_for(@dream) do |f| %>
 	<div data-role="page" id="record">
 		<div data-role="header">
-			<%= link_to 'Cancel', home_path(trailing_slash: true) %>
+			<%= link_to 'Cancel', home_path, rel: "external" %>
 			<h4>Record Dream</h4>
 			<a class="ui-btn-right submit">Save</a>
 		</div>
@@ -12,13 +12,12 @@
 		<% end %>
 		<%= f.text_field :title,   placeholder: "Dream title" %> <br />
 		<%= f.text_area  :content, placeholder: "Narrate your dream..." %> <br />
-		<%= f.text_area  :content, placeholder: "Narrate your dream..." %> <br />
 		<% if @dream.imagesource %>
 			<div id="thumb_show">
 				<img src = "<%= @dream.imagesource.gsub('3.jpg', '2.jpg') %>" />
 			</div>
 		<% else %>
-			<div id="thumb_show">
+			<div id="thumb_show"></div>
 		<% end %>
 		<div><a href="#search" data-transition="slide">Search Image</a></div>
 		<%= f.select :privacy, [['Private', true], ['Public', false]] %>

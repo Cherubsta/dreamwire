@@ -1,39 +1,40 @@
 <% provide(:title, @user.name) %>
-<div data-role="page" id="home">
+<div data-role="page" id="home" data-url="/users/<%= @user.id %>/">
 	<div data-role="header">
-		<a href="#menu1">Menu</a>
+		<%#= link_to 'Menu', menu_path, :"data-rel" => "dialog", :"data-transition" => "pop" %>
+		<a href="#menu" data-rel="popup">Menu</a>
 		<h4>Home</h4>
-		<%= link_to 'New', new_dream_path(trailing_slash: true), rel: "external" %>
+		<%= link_to 'New', new_dream_path, :"data-ajax" => "false" %>
 	</div>
 	<% if !@user.dreams.any? %>
 		<h3>Welcome to Dreamwire... Record your first dream.</h3>
 	<% end %>
 	<%= render @user.dreams %>
-</div>
-<div data-role="page" id="menu1">	
-	<div class="ui-grid-a">
-		<div class="ui-block-a" style="width: 20%;">
-			<a href="<%= user_path(current_user) %>">
-				<%= image_tag @user.avatar.url(:thumb), class: "thumbsize" %>
-			</a>	
+	<div data-role="popup" id="menu" data-position-to="window">	
+		<div class="ui-grid-a">
+			<div class="ui-block-a" style="width: 20%;">
+				<a href="<%= user_path(current_user) %>">
+					<%= image_tag @user.avatar.url(:thumb), class: "thumbsize" %>
+				</a>	
+			</div>
+			<div class="ui-block-b">
+				<h2><%= @user.name %></h2>
+				<h4><%= @user.dreams.count %> Dreams</h4>
+			</div>
 		</div>
-		<div class="ui-block-b">
-			<h2><%= @user.name %></h2>
-			<h4><%= @user.dreams.count %> Dreams</h4>
-		</div>
-	</div>
-	<div class="ui-grid-a center">
-		<div class="ui-block-a menublock">
-			<%= link_to 'Home', home_path(trailing_slash: true) %>
-		</div>
-		<div class="ui-block-b menublock">
-			<%= link_to 'LiveWire', dreams_path(trailing_slash: true) %>
-		</div>
-		<div class="ui-block-a menublock">
-			<%= link_to 'Settings', edit_user_path(current_user) %>
-		</div>
-		<div class="ui-block-b menublock">
-			<%= link_to "Sign Out", signout_path, method: "delete" %>
+		<div class="ui-grid-a center">
+			<div class="ui-block-a menublock">
+				<%= link_to 'Home', home_path %>
+			</div>
+			<div class="ui-block-b menublock">
+				<%= link_to 'LiveWire', dreams_path %>
+			</div>
+			<div class="ui-block-a menublock">
+				<%= link_to 'Settings', edit_user_path(current_user) %>
+			</div>
+			<div class="ui-block-b menublock">
+				<%= link_to "Sign Out", signout_path, method: "delete" %>
+			</div>
 		</div>
 	</div>
 </div>

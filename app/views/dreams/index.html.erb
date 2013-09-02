@@ -1,25 +1,25 @@
 <% provide(:title, 'LiveWire') %>
 <div data-role="page" id="livewire">
 	<div data-role="header">
-		<a href="#menu2">Menu</a>
+		<a href="#menu" data-rel="popup">Menu</a>
 		<h4>LiveWire</h4>
-		<%= link_to 'New', new_dream_path(trailing_slash: true), rel: "external" %>
+		<%= link_to 'New', new_dream_path, rel: "external" %>
 	</div>
 	<%= render @dreams %>
-</div>
-<div data-role="page" id="menu2">
-	<div class="ui-grid-a center">
-		<div class="ui-block-a menublock">
-			<%= link_to 'Home', home_path(trailing_slash: true) %>
-		</div>
-		<div class="ui-block-b menublock">
-			<%= link_to 'LiveWire', dreams_path(trailing_slash: true) %>
-		</div>
-		<div class="ui-block-a menublock">
-			<%= link_to 'Settings', edit_user_path(current_user) %>
-		</div>
-		<div class="ui-block-b menublock">
-			<%= link_to "Sign Out", signout_path, method: "delete" %>
+	<div data-role="popup" id="menu" data-position-to="window">
+		<div class="ui-grid-a center">
+			<div class="ui-block-a menublock">
+				<%= link_to 'Home', home_path %>
+			</div>
+			<div class="ui-block-b menublock">
+				<%= link_to 'LiveWire', dreams_path %>
+			</div>
+			<div class="ui-block-a menublock">
+				<%= link_to 'Settings', edit_user_path(current_user) %>
+			</div>
+			<div class="ui-block-b menublock">
+				<%= link_to "Sign Out", signout_path, method: "delete" %>
+			</div>
 		</div>
 	</div>
 </div>

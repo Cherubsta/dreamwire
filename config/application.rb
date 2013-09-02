@@ -60,6 +60,6 @@ module Dreamwire
     config.assets.version = '1.0'
 
     # adds trailing slash to all routes (for jQuery Mobile)
-    # config.action_controller.default_url_options = { :trailing_slash => true }
+    config.action_controller.default_url_options = { :trailing_slash => true }
   end
 end

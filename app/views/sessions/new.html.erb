@@ -1,9 +1,9 @@
 <% provide(:title, 'Sign In') %>
-<%= link_to 'Dreamwire', root_path %>
-<h1>Sign In</h1>
+<div data-role="page" data-url="/signin/">
+	<%= link_to 'Dreamwire', root_path %>
+	<h1>Sign In</h1>
 
-<%= form_for(:session, url: sessions_path) do |f| %>
-	
+	<%= form_for(:session, url: sessions_path) do |f| %>
 	<div>
 		<%#=	f.label :username_or_email %>
 		<%=	f.text_field :username_or_email, placeholder: "username or email", autofocus: true %>
@@ -15,7 +15,8 @@
 
 	<div><small><%= link_to "Forgot Password?", new_password_reset_path %></small></div>
 	<br />
-	<div><%=	f.submit "Sign In", class: "btn btn-primary" %></div>
+	<div><%=	f.submit "Sign In", rel: "external" %></div>
 
 	<!-- <p> New user? <%= link_to "Sign up now!", signup_path %> </p> -->
 <% end %>
+</div>
