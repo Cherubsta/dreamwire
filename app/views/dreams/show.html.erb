@@ -10,5 +10,5 @@
 		<div><strong>Private</strong></div>
 	<% end %>
 	<p><%= @dream.content %></p>
-	<%= link_to 'Details', {controller: "dreams", action: "detail", id: @dream } %>
+	<%= link_to '(i)', {controller: "dreams", action: "detail", id: @dream }, :"data-transition" => "flip"  %>
 </div>

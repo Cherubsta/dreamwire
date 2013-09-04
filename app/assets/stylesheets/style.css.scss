@@ -17,12 +17,19 @@ html {
 }
 body {
   background-color: #02060D;
+  margin-left: auto; 
+	margin-right: auto;
+	text-align: center;
 }
 section {
   overflow: auto;
 }
 textarea {
   resize: vertical;
+}
+
+a {
+	text-decoration: none;
 }
 
 /*jquery override*/
@@ -36,9 +43,9 @@ textarea {
 	text-shadow: none;
 }
 .ui-popup-container {
-	opacity: 0.85;
+	opacity: 0.9;
 	top: 0;
-	width: 100%;
+	width: 80%;
 	max-width: 400px;
 }
 
@@ -53,7 +60,7 @@ textarea {
 /* typography */
 h1, h2, h3, h4, h5, h6 {
   line-height: 1;
-  margin: 0.1em 0 0.1em 0;
+  margin: 0.1em 0 0.02em 0;
 }
 h1 {
   font-size: 2em;
@@ -62,7 +69,9 @@ h2 {
   font-size: 1.4em;
 }
 p {
-	font-size: 1.1em; line-height: 1.7em;
+	font-size: 1.1em; 
+	line-height: 1.2em;
+	margin: 0.4em 0;
 }
 li { 
 	list-style-type: none; 
@@ -102,15 +111,16 @@ li {
 .margin-bottom {
 	margin-bottom: 1em;
 }
-
 .float-right {
 	float: right;
 }
-
 .float-left {
 	float: left;
 }
-
+.logosize {
+	width: 90%;
+	max-width: 600px;
+}
 .landing-input {
 	background: -moz-linear-gradient(center top , #BCBCBE, #FFFFFF) repeat scroll 0 0 transparent;
 	background: -webkit-gradient(linear, left top, left bottom, from(#BCBCBE), to(#FFFFFF));
@@ -144,6 +154,29 @@ li {
 /*menu*/
 .menublock {
 	margin: 15% 0 15% 0;
+}
+
+/*dream block*/
+.titlebar {
+	background-color: rgba(2, 6, 13, 0.7);
+  height: 112px;
+  margin-bottom: -100px;
+  margin-left: auto;
+  margin-right: auto;
+  overflow: hidden;
+  padding: 4px 8px 4px 13px;
+  position: relative;
+  text-align: left;
+  top: -124px;
+  width: 280px;
+}
+.dots a {
+	bottom: 12px;
+  font-family: Georgia;
+  font-size: 32px;
+  position: relative;
+  right: 4px;
+  text-decoration: none;
 }
 
 /*Adjust input placeholder*/
@@ -199,12 +232,11 @@ li {
 
 /*images*/
 .imagecrop {
-    width: 320px;
-    height: 320px;
+    width: 280px;
+    height: 280px;
     overflow: hidden;
     max-width: 320px;
 }
-
 .avatar-position {
 	position: absolute;
 	margin-left: 6px;

@@ -3,7 +3,7 @@ class DreamsController < ApplicationController
                                  #could also do-> only: [:create, :destroy, etc] 
 
   # GET /dreams, GET /dreams.json
-  def index
+  def index #LiveWire
     @dreams = Dream.all
     respond_to do |format|
       format.html # index.html.erb
