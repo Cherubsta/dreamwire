@@ -10,18 +10,33 @@
 		<% if @dream.errors.any? %>
 			<%= render 'shared/error_messages', object: @dream %>
 		<% end %>
-		<%= f.text_field :title,   placeholder: "Dream title" %> <br />
-		<%= f.text_area  :content, placeholder: "Narrate your dream..." %> <br />
+		<div class="dreamrecord">
+			<%= f.text_field :title,   placeholder: "Dream title", style: "border-bottom: 1px solid #aaa" %>
+			<%= f.text_area  :content, placeholder: "Narrate your dream..." %> <br />
+		</div>
 		<% if @dream.imagesource %>
-			<div id="thumb_show">
-				<img src = "<%= @dream.imagesource.gsub('3.jpg', '2.jpg') %>" />
+			<div id="thumb_show" class="thumbbox">
+				<img src = "<%= @dream.imagesource.gsub('3.jpg', '1.jpg') %>" />
 			</div>
 		<% else %>
 			<div id="thumb_show"></div>
 		<% end %>
-		<div><a href="#search" data-transition="slide">Search Image</a></div>
-		<%= f.select :privacy, [['Private', true], ['Public', false]] %>
-		<div><a href="#details" data-transition="slideup">More...</a></div>
+		<div class="searchbox">
+			<a href="#search" data-transition="slide">Search New Image...</a>
+		</div>
+		<div class="slider">
+			<small class="privtext">This dream is Private, for your eyes only.</small>
+			<small class="privtext" style="display: none">Public dreams may be featured on LiveWire!</small>
+			<div id="privacy-toggle">
+				<select name="dream[privacy]" id="dream_privacy" data-role="slider">
+				  <option value="true">Private</option>
+				  <option value="false">Public</option>
+				</select>
+			</div>
+		</div>
+		<div class="footerpadding">
+			<a href="#details" data-transition="slideup">More...</a>
+		</div>
 	</div>
 	<div data-role="page" id="search">
 		<div data-role="header">
@@ -86,9 +101,10 @@
 		  			$(this).addClass("selected").siblings().removeClass("selected");
 		  			var imgsrc = $('li.selected img').attr('src');
 				    var imgsave = imgsrc.replace('2.jpg', '3.jpg');
+				    var imgthumb = imgsrc.replace('2.jpg', '1.jpg');
 				    $("#dream_imagesource").val(imgsave);
 				    $.mobile.changePage( "#record", {transition: "slide", reverse: true});
-				    $("#thumb_show").html('').append("<img src = "+imgsrc+" />");
+				    $("#thumb_show").html('').append("<img src = "+imgthumb+" />");
 		  		});
 		  		if(response.data.total_pages > 1) {
 		  			$(".loadMore").append("<a>Load More -> </a>");
@@ -123,9 +139,10 @@
 		  			$(this).addClass("selected").siblings().removeClass("selected");
 		  			var imgsrc = $('li.selected img').attr('src');
 				    var imgsave = imgsrc.replace('2.jpg', '3.jpg');
+				    var imgthumb = imgsrc.replace('2.jpg', '1.jpg');
 				    $("#dream_imagesource").val(imgsave);
 				    $.mobile.changePage( "#record", {transition: "slide", reverse: true});
-				    $("#thumb_show").html('').append("<img src = "+imgsrc+" />");
+				    $("#thumb_show").html('').append("<img src = "+imgthumb+" />");
 		  		});
 		  		$(".loadMore").append("<a>Load More -> </a>");
 		  		$(".loadLess").append("<a> <- Previous</a>");
@@ -157,9 +174,10 @@
 		  			$(this).addClass("selected").siblings().removeClass("selected");
 		  			var imgsrc = $('li.selected img').attr('src');
 				    var imgsave = imgsrc.replace('2.jpg', '3.jpg');
+				    var imgthumb = imgsrc.replace('2.jpg', '1.jpg');
 				    $("#dream_imagesource").val(imgsave);
 				    $.mobile.changePage( "#record", {transition: "slide", reverse: true});
-				    $("#thumb_show").html('').append("<img src = "+imgsrc+" />");
+				    $("#thumb_show").html('').append("<img src = "+imgthumb+" />");
 		  		});
 		  		$(".loadMore").append("<a>Load More -> </a>");
 		  		$(".loadLess").append("<a> <- Previous</a>");  		
@@ -177,5 +195,10 @@
 	$('.submit').click(function(){
     $('form').submit();
     return false;
+	});
+</script>
+<script type="text/javascript">
+	$("#privacy-toggle").on('slidestop', function() { 
+		$(".privtext").toggle();
 	});
 </script>

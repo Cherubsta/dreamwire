@@ -1,13 +1,8 @@
 <% provide(:title, 'dreamwire - wake up, and discover your dreams') %>
-
-<div class="center background-image">
+<div class="background-image">
 	<img src='http://s3.amazonaws.com/DW-Assets/landing-logo-blue.png' alt='dreamwire' class="logosize">
-	<p class="color-blue">
-		wake up, and discover your dreams
-	</p>
-	<div>
-		<img src="http://s3.amazonaws.com/DW-Assets/p-group.png" alt="p-group">
-	</div>
+	<p class="color-blue">wake up, and discover your dreams</p>
+	<img src="http://s3.amazonaws.com/DW-Assets/p-group.png" alt="p-group">
 	<p class="margin-top">
 		<i>It's 3 a.m. and you just woke up from <br />this incredible dream...</i>
 	</p>
@@ -22,18 +17,18 @@
 	</div>
 	<%= render 'layouts/mailchimp' %>
 	<div class="margin-top">
-		<!-- <%= link_to 'Start Dreaming', signup_path, class: 'btn btn-primary btn-large' %> -->
-		<%= link_to 'Sign In', signin_path, class: 'btn btn-inverse btn-large' %>
+		<!-- <%#= link_to 'Start Dreaming', signup_path, class: '' %> -->
+		<%= link_to 'Sign In', signin_path, class: '' %>
 	</div>
 	<div class="border-line margin-top"></div>
 	<div class="margin-top-bottom color-orange">
 		<small>
-			Questions/comments? Send a wire to 
+			Questions - comments? <br /> Send a wire to 
 			<%= link_to('@dreamwireco', 'http://twitter.com/dreamwireco', :target => '_blank') %> 
-					or <%= link_to('Email', 'mailto:support@dreamwire.co') %>
-			<p class="landing-font-sub">
+					or <%= link_to('email', 'mailto:support@dreamwire.co') %> <br />
+			<small class="landing-font-sub">
 				Photographs courtesy <a href="http://500px.com" target="_blank">500px</a>
-			</p>	
+			</small>	
 		</small>
 	</div>
 </div>

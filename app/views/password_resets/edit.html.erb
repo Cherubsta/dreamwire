@@ -1,12 +1,8 @@
 <%= form_for @user, :url => password_reset_path(params[:id]) do |f| %>
   <%= render 'shared/error_messages', object: @user %>
+  <p class="color-orange">Enter your new password:</p>
   <div class="field">
-    <%= f.label :password %>
     <%= f.password_field :password %>
-  </div>
-  <div class="field">
-    <%#= f.label :password_confirmation %>
-    <%#= f.password_field :password_confirmation %>
   </div>
   <div class="actions"><%= f.submit "Update Password" %></div>
 <% end %>

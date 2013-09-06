@@ -1,14 +1,17 @@
 <% provide(:title, 'DreamView') %>
 <div data-role="page" id="dreamview">
 	<div data-role="header">
-		<a href="#" data-rel="back" data-direction="reverse">Back</a>
+		<a href="#" data-rel="back" data-direction="reverse" data-transition="slide">Back</a>
 		<h4>DreamView</h4>
 	</div>
 	<img class="imagecrop" src="<%= @dream.imagesource %>">
-	<h2><%= @dream.title %></h2>
-	<% if @dream.privacy == true %> 
-		<div><strong>Private</strong></div>
-	<% end %>
-	<p><%= @dream.content %></p>
-	<%= link_to '(i)', {controller: "dreams", action: "detail", id: @dream }, :"data-transition" => "flip"  %>
+	<div class="dreamview">
+		<h2><%= @dream.title %>
+			<% if @dream.privacy == true %> -P <% end %>
+			<div class="float-right">
+				<%= link_to '(i)', {controller: "dreams", action: "detail", id: @dream }, :"data-transition" => "flip"  %>
+			</div>
+		</h2>
+		<p><%= @dream.content %></p>
+	</div>
 </div>

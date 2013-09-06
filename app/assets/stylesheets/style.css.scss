@@ -1,6 +1,7 @@
 /*$bodyBackground: #02060D;
 $textColor: white;
 $baseFontFamily: Open+Sans, Helvetica;
+$orange: #FBA617;
 $blue: #3890E9;
 $btnPrimaryBackground: #3890E9;*/
 @import url(https://fonts.googleapis.com/css?family=Open+Sans);
@@ -48,7 +49,27 @@ a {
 	width: 80%;
 	max-width: 400px;
 }
-
+.ui-input-search, div.ui-input-text {
+	display: inline-block;
+}
+.ui-btn-left, .ui-btn-right, .ui-btn-inline {
+	float: right;
+}
+.ui-btn-inner {
+	padding: 0.6em 8px;
+}
+textarea.ui-input-text {
+	height: 148px;
+	margin: 0 auto;
+	transition: height 200ms linear 0s;
+	width: 270px;
+}
+.ui-body-c, .ui-overlay-c {
+	border: none;
+}
+div.ui-input-text {
+	padding: 0;
+}
 /*General Pages*/
 .center {
 	float: none; 
@@ -100,6 +121,7 @@ li {
 	background-image: url('http://s3.amazonaws.com/DW-Assets/romancandle.png');
 	background-repeat: no-repeat;
 	background-position: center 20%;
+	min-height: 570px;
 }
 .margin-top-bottom {
 	margin-top: 2.1em;
@@ -120,18 +142,6 @@ li {
 .logosize {
 	width: 90%;
 	max-width: 600px;
-}
-.landing-input {
-	background: -moz-linear-gradient(center top , #BCBCBE, #FFFFFF) repeat scroll 0 0 transparent;
-	background: -webkit-gradient(linear, left top, left bottom, from(#BCBCBE), to(#FFFFFF));
-	border: 1px solid #717171;
-	-moz-border-radius: 6px;
-	-webkit-border-radius: 6px;
-    border-radius: 6px;
-    outline: 0;
-    text-shadow: 0 1px 0 #FFFFFF;
-    font-size: 1.1em;
-    min-width: 30%;
 }
 
 .landing-button {
@@ -156,19 +166,35 @@ li {
 	margin: 15% 0 15% 0;
 }
 
-/*dream block*/
+/*dream feed block*/
+.dreamblock {
+	display: block;
+	border-bottom: 1px dotted #FBA617;
+  height: 280px;
+  margin-bottom: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 280px;
+}
+.avatar-position {
+	position: absolute;
+  right: 20px;
+  padding: 4px;
+}
+.thumbsize {
+	width: 60px;
+	height: 60px;
+	border: 1px solid;
+}
 .titlebar {
 	background-color: rgba(2, 6, 13, 0.7);
   height: 112px;
-  margin-bottom: -100px;
-  margin-left: auto;
-  margin-right: auto;
   overflow: hidden;
-  padding: 4px 8px 4px 13px;
+  padding: 4px 4px 6px;
   position: relative;
   text-align: left;
-  top: -124px;
-  width: 280px;
+  top: -126px;
+  width: 272px;
 }
 .dots a {
 	bottom: 12px;
@@ -177,6 +203,14 @@ li {
   position: relative;
   right: 4px;
   text-decoration: none;
+}
+
+/*dreamview block*/
+.dreamview {
+	text-align: left;
+	width: 272px;
+	margin-right: auto;
+	margin-left: auto;
 }
 
 /*Adjust input placeholder*/
@@ -201,6 +235,12 @@ li {
 .field_with_errors {
 	@extend .control-group;
 	@extend .error;
+}
+.forgotpw {
+	display: block;
+  margin: 0 auto;
+  text-align: left;
+  width: 270px;
 }
 
 /*Dream Form*/
@@ -230,18 +270,52 @@ li {
 	cursor: pointer;
 }
 
+/*dream recorder*/
+.dreamrecord {
+	border: 2px solid #FBA617;
+  border-radius: 0.6em 0.6em 0.6em 0.6em;
+  margin: 10px auto 20px;
+  width: 280px;
+}
+.thumbbox {
+	float: right;
+}
+#thumb_show {
+	float: right;
+  margin: 0 30px 6px;
+}
+.searchbox {
+  border: 2px solid #FBA617;
+  border-radius: 20px 20px 20px 20px;
+  margin: 0 0 16px 20px;
+  padding: 12px 0 12px 12px;
+  text-align: -moz-left;
+  width: 165px;
+}
+.slider {
+	border-bottom: 1px solid #AAAAAA;
+  border-top: 1px solid #AAAAAA;
+  clear: both;
+  margin: 0 auto;
+  padding: 7px 0;
+  text-align: right;
+  width: 280px;
+}
+.privtext {
+	float: left;
+  margin-top: 10px;
+  text-align: left;
+  width: 134px;
+}
+.footerpadding {
+	padding-bottom: 18px;
+	margin-top: 32px;
+}
+
 /*images*/
 .imagecrop {
     width: 280px;
     height: 280px;
     overflow: hidden;
     max-width: 320px;
-}
-.avatar-position {
-	position: absolute;
-	margin-left: 6px;
-  margin-top: 6px;
-}
-.thumbsize {
-	width: 60px;
 }

@@ -1,17 +1,19 @@
 <% if dream.privacy == false %> 
-	<div class="avatar-position">
-		<%= image_tag dream.user.avatar.url(:thumb), class: "thumbsize" %> hicup
-	</div>
-	<% if dream.imagesource == nil %> 
-		<img src="http://lorempixel.com/320/320/abstract/<%= SecureRandom.base64.delete('/+=')[0, 1] %>">
-	<% else %>
-		<img class="imagecrop" src="<%= dream.imagesource %>">
-	<% end %>
-	<div class="titlebar">
-		<h2>
-			<%= dream.title %>
-			<div class="float-right dots"><%= link_to '...', dream, :"data-transition" => "slide" %></div>
-		</h2>
-		<p><%= dream.content %></p>
+	<div class="dreamblock">
+		<div class="avatar-position">
+			<%= image_tag dream.user.avatar.url(:thumb), class: "thumbsize" %>
+		</div>
+		<% if dream.imagesource == nil %> 
+			<img src="http://lorempixel.com/280/280/abstract/<%= SecureRandom.base64.delete('/+=')[0, 1] %>">
+		<% else %>
+			<img class="imagecrop" src="<%= dream.imagesource %>">
+		<% end %>
+		<div class="titlebar">
+			<h2>
+				<%= dream.title %>
+				<div class="float-right dots"><%= link_to '...', dream, :"data-transition" => "slide" %></div>
+			</h2>
+			<p><%= dream.content %></p>
+		</div>
 	</div>
 <% end %>

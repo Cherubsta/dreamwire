@@ -9,21 +9,23 @@
 		<h3>Welcome to Dreamwire... Record your first dream.</h3>
 	<% end %>
 	<% @dreams.each do |dream| %>
-		<% if dream.imagesource == nil %> 
-			<img src="http://lorempixel.com/320/320/abstract/<%= SecureRandom.base64.delete('/+=')[0, 1] %>">
-		<% else %>
-			<img class="imagecrop" src="<%= dream.imagesource %>">
-		<% end %>
-		<div class="titlebar">
-			<h2>
-				<%= dream.title %>
-				<% if current_user == dream.user %>
-					<% if dream.privacy == true %> - P <% end %>
-				<% end %>
-				<div class="float-right dots"><%= link_to '...', dream, :"data-transition" => "slide" %></div>
-			</h2>
-			<p><%= dream.content %></p>
-		</div>
+		<div class="dreamblock">
+			<% if dream.imagesource == nil %> 
+				<img src="http://lorempixel.com/320/320/abstract/<%= SecureRandom.base64.delete('/+=')[0, 1] %>">
+			<% else %>
+				<img class="imagecrop" src="<%= dream.imagesource %>">
+			<% end %>
+			<div class="titlebar">
+				<h2>
+					<%= dream.title %>
+					<% if current_user == dream.user %>
+						<% if dream.privacy == true %> - P <% end %>
+					<% end %>
+					<div class="float-right dots"><%= link_to '...', dream, :"data-transition" => "slide" %></div>
+				</h2>
+				<p><%= dream.content %></p>
+			</div>
+		</div>	
 	<% end %>
 	<div data-role="popup" id="menu" data-position-to="window">	
 		<div class="ui-grid-a">
