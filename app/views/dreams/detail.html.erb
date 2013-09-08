@@ -1,34 +1,39 @@
 <% provide(:title, 'Details') %>
 <div data-role="page" id="details">
 	<div data-role="header">
-		<a href="#" data-rel="back" class="ui-btn-right">x</a>
+		<a href="#" data-rel="back" data-transition="flip" class="ui-btn-right">x</a>
 	</div>
 	<p id="notice"><%= notice %></p>
 	<div class="ui-grid-a">
-		<div class="ui-block-a" style="width: 20%;">
+		<div class="ui-block-a" style="margin: 12px 20px; text-align:left; width: 40px;">
 			<a href="<%= user_path(current_user) %>">
 				<%= image_tag @dream.user.avatar.url(:thumb), class: "thumbsize" %>
 			</a>	
 		</div>
-		<div class="ui-block-b">
+		<div class="ui-block-b" style="margin: 12px; text-align: left;">
 			<h2><%= @dream.user.name %></h2>
 		</div>
 	</div>
-	<h2><%= @dream.title %></h2>
-	<% if @dream.privacy == true %> 
-		<div><strong>Private</strong></div>
-	<% end %>
-	<% if @dream.nightmare  == true %> Nightmare  <% end %>
-	<% if @dream.lucid      == true %> Lucid      <% end %>
-	<% if @dream.recurring  == true %> Recurring  <% end %>
-	<% if @dream.fragmented == true %> Fragmented <% end %>
-	<p>Dreamt: <%= time_ago_in_words @dream.created_at %> ago.</p>
-	<% if @dream.emotion %>
-		<p>Emotion upon waking: <%= @dream.emotion %></p>
-	<% end %>
-	<% if @dream.hashtag != '' %>
-		<p>Tags: <%= @dream.hashtag %></p>
-	<% end %>
+	<div class="aligndetails margin-top">
+		<h3><%= @dream.title.split.map(&:capitalize).join(' ') %>
+			<% if @dream.privacy == true %> 
+				<strong> - P </strong>
+			<% end %>
+		</h3>
+		<p><span class="color-gray">Dreamt: </span><%= time_ago_in_words @dream.created_at %> ago.</p>
+		<h4 class="margin-top">
+			<% if @dream.nightmare  == true %> Nightmare  <% end %>
+			<% if @dream.lucid      == true %> Lucid      <% end %>
+			<% if @dream.recurring  == true %> Recurring  <% end %>
+			<% if @dream.fragmented == true %> Fragmented <% end %>
+		</h4>
+		<% if @dream.emotion != '' %>
+			<p class="margin-top borderbottom"><span class="color-gray">Emotion upon waking: </span><%= @dream.emotion %></p>
+		<% end %>
+		<% if @dream.hashtag != '' %>
+			<p>Tags: <%= @dream.hashtag %></p>
+		<% end %>
+	</div>
 	<% if current_user == @dream.user %>
 		<%= link_to 'Edit', edit_dream_path(@dream), rel: "external" %> |
 		<%= link_to 'Delete', @dream, method: :delete, data: { confirm: 'Delete this dream? Are you sure?' } %>

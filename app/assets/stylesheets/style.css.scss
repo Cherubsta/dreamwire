@@ -3,6 +3,7 @@ $textColor: white;
 $baseFontFamily: Open+Sans, Helvetica;
 $orange: #FBA617;
 $blue: #3890E9;
+$gray: #D4D4D4;
 $btnPrimaryBackground: #3890E9;*/
 @import url(https://fonts.googleapis.com/css?family=Open+Sans);
 
@@ -31,6 +32,24 @@ textarea {
 
 a {
 	text-decoration: none;
+}
+
+/*Adjust input placeholder*/
+::-webkit-input-placeholder { /* WebKit browsers */
+  color:    #aaa;
+  /*font-size: 18px;*/
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+  color:    #aaa;
+  /*font-size: 18px;*/
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+  color:    #aaa;
+  /*font-size: 18px;*/
+}
+:-ms-input-placeholder { /* Internet Explorer 10+ */
+  color:    #aaa;
+  /*font-size: 18px;*/
 }
 
 /*jquery override*/
@@ -70,6 +89,7 @@ textarea.ui-input-text {
 div.ui-input-text {
 	padding: 0;
 }
+
 /*General Pages*/
 .center {
 	float: none; 
@@ -107,6 +127,9 @@ li {
 }
 .color-orange {
 	color: #FBA617;
+}
+.color-gray { 
+	color: #aaa;
 }
 .font-large {
 	font-size: 1.7em;
@@ -165,6 +188,18 @@ li {
 .menublock {
 	margin: 15% 0 15% 0;
 }
+.menuprofile {
+	margin: 12px; 
+	text-align: left;
+}
+.menupic {
+	margin: 12px; 
+	text-align: left; 
+	width: 42px;
+}
+.borderbottom {
+	border-bottom: 1px solid #FBA617;
+}
 
 /*dream feed block*/
 .dreamblock {
@@ -212,23 +247,43 @@ li {
 	margin-right: auto;
 	margin-left: auto;
 }
+.aligndetails {
+	text-align: left;
+	margin-left: 20px;
+}
 
-/*Adjust input placeholder*/
-::-webkit-input-placeholder { /* WebKit browsers */
-  color:    #133F9E;
-  font-size: 18px;
+/*sign up*/
+.labelright {
+	float: right;
+  margin-right: 20px;
+  margin-top: 20px;
+  position: relative;	
+  color: #FBA617;
 }
-:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
-  color:    #133F9E;
-  font-size: 18px;
+.selectavatar {
+	background-color: #02060D;
+  border: 2px dashed #3890E9;
+  bottom: 50px;
+  cursor: pointer;
+  display: block;
+  height: 86px;
+  margin-top: 18px;
+  position: relative;
+  text-align: center;
+  width: 86px;
 }
-::-moz-placeholder { /* Mozilla Firefox 19+ */
-  color:    #133F9E;
-  font-size: 18px;
+.selectavatarvert {
+	color: #AAAAAA;
+  padding: 23px;
+  width: 40px;
 }
-:-ms-input-placeholder { /* Internet Explorer 10+ */
-  color:    #133F9E;
-  font-size: 18px;
+.alignsignup {
+	text-align: left;
+	margin-left: 20px;
+	height: 550px;
+}
+.privacytext {
+	width: 150px;
 }
 
 /*Forms*/
@@ -245,16 +300,17 @@ li {
 
 /*Dream Form*/
 #selectable { 
-	margin: 0; 
-	padding: 0; 
+	margin: 0 auto 0 10px;
+  padding: 0; 
 }
 #selectable li { 
-	margin: 3px; 
-	padding: 1px; 
-	float: left; 
 	border: 2px solid #3890E9;
-	font-size: 4em; 
-	text-align: center;
+  float: left;
+  font-size: 4em;
+  height: 140px;
+  margin: 2px;
+  padding: 1px;
+  width: 140px;
 }
 #selectable li:hover {
 	border: 2px solid #FBA617;
@@ -265,9 +321,13 @@ li {
 }
 .loadMore {
 	cursor: pointer;
+  float: right;
+  margin: 20px;
 }
 .loadLess {
 	cursor: pointer;
+  float: left;
+  margin: 20px;
 }
 
 /*dream recorder*/
@@ -311,11 +371,18 @@ li {
 	padding-bottom: 18px;
 	margin-top: 32px;
 }
+.searchtext {
+	color: #FBA617;
+  font-size: 15px;
+  margin: 10px auto 2px;
+  text-align: left;
+  width: 280px;
+}
 
 /*images*/
 .imagecrop {
-    width: 280px;
-    height: 280px;
-    overflow: hidden;
-    max-width: 320px;
+  width: 280px;
+  height: 280px;
+  overflow: hidden;
+  max-width: 320px;
 }

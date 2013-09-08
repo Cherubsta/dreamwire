@@ -1,27 +1,44 @@
 <% provide(:title, 'Sign Up') %>
-<%= link_to 'Dreamwire', root_path %>
-<h1>Sign Up</h1>
-
+<div data-role="header">
+	<a href="#" data-rel="back" data-direction="reverse" data-transition="slide">Back</a>
+	<h4>Sign Up</h4>
+</div>
 <%= form_for(@user, :html => {"data-ajax" => false}) do |f| %>
 	<%= render 'shared/error_messages', object: @user %>
-	<%=	f.label :name %>
-	<%=	f.text_field :name %>
-
-	<div>		
-		<%= image_tag @user.avatar.url(:thumb) %>
-		<%= f.file_field :avatar %>
-	</div>
-
-	<%=	f.label :username %>
-	<%=	f.text_field :username %>
-
-	<%=	f.label :email %>
-	<%=	f.text_field :email %>
-
-	<%=	f.label :password %>
-	<%=	f.password_field :password %>
-
-	<div>
-		<%=	f.submit "Join Dreamwire", class: "btn btn-large btn-primary" %>
+	<div class="alignsignup">
+		<div class="borderbottom margin-top">
+			<%=	f.text_field :username, placeholder: "username", style: "padding-left: 4px; width: 172px;"  %>
+			<div class="labelright">Be unique.</div>
+		</div>	
+		<div class="borderbottom margin-top">
+			<%=	f.password_field :password, placeholder: "password", style: "padding-left: 4px; width: 172px;" %>
+			<div class="labelright">Be secure.</div>
+		</div>
+		<div class="borderbottom margin-top">
+			<%=	f.text_field :email, placeholder: "email", style: "padding-left: 4px; width: 172px;" %>
+			<div class="labelright">Be notified.</div>
+		</div>
+		<div class="margin-top">
+			<%=	f.text_field :name, placeholder: "name", style: "padding-left: 4px; width: 172px;" %>
+				<div class="labelright">Be you.</div>
+		</div>
+		<div style="height: 44px;">		
+			<%= f.file_field :avatar, style: "color: #02060D;" %>
+			<div class="labelright">Residual self image.</div>
+		</div>
+		<div class="selectavatar" onclick="chooseFile();">
+			<div class="selectavatarvert">add photo</div>
+		</div>
+		<div class="ui-grid-a">
+			<small class="ui-block-a color-gray" style="width: 170px;">
+				Your dreams are personal, and stay private by default.
+			</small>
+			<div class="ui-block-b" style="width: 110px; margin-top: -8px">
+				<%=	f.submit "Join" %>
+			</div>
+		</div>
 	</div>
 <% end %>
+<script> // for hiding file upload box
+	function chooseFile() { $("#user_avatar").click(); }
+</script>

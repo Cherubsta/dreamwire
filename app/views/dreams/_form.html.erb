@@ -11,8 +11,8 @@
 			<%= render 'shared/error_messages', object: @dream %>
 		<% end %>
 		<div class="dreamrecord">
-			<%= f.text_field :title,   placeholder: "Dream title", style: "border-bottom: 1px solid #aaa" %>
-			<%= f.text_area  :content, placeholder: "Narrate your dream..." %> <br />
+			<%= f.text_field :title,   placeholder: "Dream title", style: "padding-bottom: 0px;" %>
+			<%= f.text_area  :content, placeholder: "Narrate your dream..." %>
 		</div>
 		<% if @dream.imagesource %>
 			<div id="thumb_show" class="thumbbox">
@@ -22,7 +22,7 @@
 			<div id="thumb_show"></div>
 		<% end %>
 		<div class="searchbox">
-			<a href="#search" data-transition="slide">Search New Image...</a>
+			<a href="#search" data-transition="slide">Search an image</a>
 		</div>
 		<div class="slider">
 			<small class="privtext">This dream is Private, for your eyes only.</small>
@@ -41,16 +41,20 @@
 	<div data-role="page" id="search">
 		<div data-role="header">
 			<a href="#" data-rel="back">Back</a>
-			<h4>Record Dream</h4>
+			<h4>Select Image</h4>
 		</div>	
 		<div class="clearfix">
-			<label>Search your image: </label>
-			<input id="search-input" type="text"/>
-			<a class="search-button" data-role="button">Search</a>
+			<p class="searchtext">
+				Search for an image that best symbolizes (viusally and emotionally) your dream:
+			</p>
+			<div class="margin-bottom">
+			<input id="search-input" type="text" style="border: 1px solid #aaa; border-radius: 0.6em; padding-left: 4px; width: 200px;" />
+			<a class="search-button" data-role="button" data-inline="true">Search</a>
+			</div>
 			<ol id="selectable"></ol>
 		</div>
-		<br /><br /><div><a class="loadMore"></a></div>
-		<div><a class="loadLess"></a></div><br /><br />
+		<div><a class="loadMore"></a></div>
+		<div><a class="loadLess"></a></div>
 		<input type="hidden" id="counter">
 		<%= f.hidden_field :imagesource %>
 	</div>
@@ -59,7 +63,7 @@
 			<h4>Record Dream</h4>
 			<a class="ui-btn-right submit">Save</a>
 		</div>	
-		<div data-role="fieldcontain">
+		<div data-role="fieldcontain" class="margin-top">
 			<fieldset data-role="controlgroup" data-type="horizontal" data-mini="true">
 				<label><%= f.check_box :nightmare %> Nightmare </label>				
 				<label><%= f.check_box :lucid %> Lucid </label>				
@@ -67,8 +71,8 @@
 				<label><%= f.check_box :fragmented %> Fragment </label>				
 			</fieldset>
 		</div>
-		<div class="field">
-			<% if @dream.emotion %>
+		<div class="field margin-top">
+			<% if @dream.emotion && @dream.emotion != "" %>
 				<% @menu_blank = @dream.emotion %>
 			<% else %>
 				<% @menu_blank = "Select Emotion" %>
@@ -76,10 +80,12 @@
 			<%= f.select :emotion, ([["Inspired", "Inspired"], ["Relieved", "Relieved"], ["Afraid", 
 				"Afraid"], ["Sad", "Sad"], ["Surprised", "Surprised"]]), :include_blank => @menu_blank %>
 		</div>
-		<div class="field">
-			<%= f.text_area :hashtag, :placeholder => "#characters, #activities, #objects" %>
+		<div class="field margin-top">
+			<%= f.text_area :hashtag, :placeholder => "#characters, #activities, #objects", style: "border: 1px solid #aaa; border-radius: 0.6em; padding-left: 4px;" %>
 		</div>
-		<div><a href="#record" data-transition="slidedown">Less...</a></div>
+		<div class="footerpadding">
+			<a href="#record" data-transition="slidedown">Less...</a>
+		</div>
 	</div>
 <% end %>
 <script type="text/javascript">
@@ -107,7 +113,7 @@
 				    $("#thumb_show").html('').append("<img src = "+imgthumb+" />");
 		  		});
 		  		if(response.data.total_pages > 1) {
-		  			$(".loadMore").append("<a>Load More -> </a>");
+		  			$(".loadMore").append("<a>Load More > </a>");
 		  		}		  		
 			  } else {
 			  	alert('Sorry request lost (1): ' + response.status + ' - ' + response.error_message);
@@ -144,8 +150,8 @@
 				    $.mobile.changePage( "#record", {transition: "slide", reverse: true});
 				    $("#thumb_show").html('').append("<img src = "+imgthumb+" />");
 		  		});
-		  		$(".loadMore").append("<a>Load More -> </a>");
-		  		$(".loadLess").append("<a> <- Previous</a>");
+		  		$(".loadMore").append("<a>Load More > </a>");
+		  		$(".loadLess").append("<a> < Previous</a>");
 		  		if(response.data.current_page == response.data.total_pages) {
 						$(".loadMore").html('');
 					}
@@ -179,8 +185,8 @@
 				    $.mobile.changePage( "#record", {transition: "slide", reverse: true});
 				    $("#thumb_show").html('').append("<img src = "+imgthumb+" />");
 		  		});
-		  		$(".loadMore").append("<a>Load More -> </a>");
-		  		$(".loadLess").append("<a> <- Previous</a>");  		
+		  		$(".loadMore").append("<a>Load More > </a>");
+		  		$(".loadLess").append("<a> < Previous</a>");  		
 					if(response.data.current_page == 1) {
 						$(".loadLess").html('');
 					}

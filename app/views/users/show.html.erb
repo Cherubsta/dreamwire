@@ -28,13 +28,13 @@
 		</div>	
 	<% end %>
 	<div data-role="popup" id="menu" data-position-to="window">	
-		<div class="ui-grid-a">
-			<div class="ui-block-a" style="width: 20%;">
+		<div class="ui-grid-a borderbottom">
+			<div class="ui-block-a" style="margin: 12px; text-align: left; width: 42px;">
 				<a href="<%= user_path(current_user) %>">
 					<%= image_tag @user.avatar.url(:thumb), class: "thumbsize" %>
 				</a>	
 			</div>
-			<div class="ui-block-b">
+			<div class="ui-block-b" style="margin: 12px; text-align: left;">
 				<h2><%= @user.name %></h2>
 				<h4><%= @user.dreams.count %> Dreams</h4>
 			</div>
