@@ -203,6 +203,12 @@
     return false;
 	});
 </script>
+<% if @dream.privacy == false %>
+	<script type="text/javascript">
+		$(".privtext").toggle();
+		$('#dream_privacy').val('false').slider('refresh');
+	</script>
+<% end %>
 <script type="text/javascript">
 	$("#privacy-toggle").on('slidestop', function() { 
 		$(".privtext").toggle();

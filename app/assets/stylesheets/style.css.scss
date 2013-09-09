@@ -14,8 +14,8 @@ $btnPrimaryBackground: #3890E9;*/
 /* universal */
 html {
   overflow-y: scroll;
-  font: url(https://fonts.googleapis.com/css?family=Open+Sans);
-  color: white;
+  font-family: 'Open Sans', sans-serif;
+  color: #ccc;
 }
 body {
   background-color: #02060D;
@@ -59,8 +59,9 @@ a {
 }
 .ui-body-c, .ui-overlay-c {
 	background: #02060D;
-	color: #fff;
+	color: #ccc;
 	text-shadow: none;
+	font-family: 'Open Sans', sans-serif;
 }
 .ui-popup-container {
 	opacity: 0.9;
@@ -223,12 +224,12 @@ li {
 }
 .titlebar {
 	background-color: rgba(2, 6, 13, 0.7);
+  bottom: 126px;
   height: 112px;
   overflow: hidden;
   padding: 4px 4px 6px;
   position: relative;
   text-align: left;
-  top: -126px;
   width: 272px;
 }
 .dots a {
@@ -377,6 +378,17 @@ li {
   margin: 10px auto 2px;
   text-align: left;
   width: 280px;
+}
+
+/*first timers*/
+.introcopy {
+	@extend .color-gray;
+	margin: 20px auto;
+  width: 302px;
+}
+.Zposition {
+	margin-top: 5%;
+  width: 200px;
 }
 
 /*images*/

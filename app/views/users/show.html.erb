@@ -6,7 +6,13 @@
 		<%= link_to 'New', new_dream_path, :"data-ajax" => "false" %>
 	</div>
 	<% if !@user.dreams.any? %>
-		<h3>Welcome to Dreamwire... Record your first dream.</h3>
+		<div class="introcopy">
+			<p>welcome to dreamwire</p>
+			<p>every so often, a symbolic dream sticks with you like a great memory</p>
+			<%= link_to '...capture it', new_dream_path %>
+		</div>
+		<img src='http://s3.amazonaws.com/DW-Assets/Zs.png' alt='z Z z zZ' class="Zposition">
+		<p class="color-gray"> 0 dreams</p>
 	<% end %>
 	<% @dreams.each do |dream| %>
 		<div class="dreamblock">
