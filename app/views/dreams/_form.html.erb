@@ -99,7 +99,7 @@
 			  if (response.success) {  
 			    $("#selectable").html('');
 			    $.each(response.data.photos, function(i,photo){
-			      $("#selectable").append("<li><img src = "+photo.image_url+" /></li>");
+			      $("#selectable").append("<li><img src ="+photo.image_url+" /> <p style='display:none'>"+photo.user.fullname+"</p></li>");
 			      if (i == 20) return false;
 			    });
 			    var imgsrc=""; // Selecting the image source
@@ -137,7 +137,7 @@
 			  if (response.success) {  
 			    $("#selectable").html('');
 			    $.each(response.data.photos, function(i,photo){
-			      $("#selectable").append("<li><img src = "+photo.image_url+" /></li>");
+			      $("#selectable").append("<li><img src ="+photo.image_url+" /> <p style='display:none'>"+photo.user.fullname+"</p></li>");
 			      if (i == 20) return false;
 			    });		  
 				  var imgsrc = ""; // Selecting the image source
@@ -172,7 +172,7 @@
 			  if (response.success) {  
 			    $("#selectable").html('');
 			    $.each(response.data.photos, function(i,photo){
-			      $("#selectable").append("<li><img src = "+photo.image_url+" /></li>");
+			      $("#selectable").append("<li><img src ="+photo.image_url+" /> <p style='display:none'>"+photo.user.fullname+"</p></li>");
 			      if (i == 20) return false;
 			    });		  
 				  var imgsrc = ""; // Selecting the image source
@@ -203,13 +203,13 @@
     return false;
 	});
 </script>
-<% if @dream.privacy == false %>
-	<script type="text/javascript">
+<% if @dream.privacy == false %> 
+	<script type="text/javascript"> // for edit, updates if the dream was public
 		$(".privtext").toggle();
 		$('#dream_privacy').val('false').slider('refresh');
 	</script>
 <% end %>
-<script type="text/javascript">
+<script type="text/javascript"> // changes text next to privacy slider
 	$("#privacy-toggle").on('slidestop', function() { 
 		$(".privtext").toggle();
 	});
