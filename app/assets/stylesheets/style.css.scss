@@ -90,6 +90,9 @@ textarea.ui-input-text {
 div.ui-input-text {
 	padding: 0 0.4em;
 }
+.ui-corner-all {
+	border-radius: 0;
+}
 
 /*General Pages*/
 .center {
@@ -135,6 +138,9 @@ li {
 .font-large {
 	font-size: 1.7em;
 	line-height: 1.2em;
+}
+.fontmid {
+	font-size: 1.09em;
 }
 .font-hero {
 	font-size: 24px;
