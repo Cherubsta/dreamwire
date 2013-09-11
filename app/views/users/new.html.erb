@@ -6,20 +6,20 @@
 <%= form_for(@user, :html => {"data-ajax" => false}) do |f| %>
 	<%= render 'shared/error_messages', object: @user %>
 	<div class="alignsignup">
-		<div class="borderbottom margin-top">
-			<%=	f.text_field :username, placeholder: "username", style: "padding-left: 4px; width: 172px;"  %>
+		<div class="margin-top">
+			<%=	f.text_field :username, placeholder: "username", style: "border-bottom: 1px dotted #FBA617; width: 172px;"  %>
 			<div class="labelright">Be unique.</div>
 		</div>	
-		<div class="borderbottom margin-top">
-			<%=	f.password_field :password, placeholder: "password", style: "padding-left: 4px; width: 172px;" %>
+		<div class="margin-top">
+			<%=	f.password_field :password, placeholder: "password", style: "border-bottom: 1px dotted #FBA617; width: 172px;" %>
 			<div class="labelright">Be secure.</div>
 		</div>
-		<div class="borderbottom margin-top">
-			<%=	f.text_field :email, placeholder: "email", style: "padding-left: 4px; width: 172px;" %>
+		<div class="margin-top">
+			<%=	f.text_field :email, placeholder: "email", style: "border-bottom: 1px dotted #FBA617; width: 172px;" %>
 			<div class="labelright">Be notified.</div>
 		</div>
 		<div class="margin-top">
-			<%=	f.text_field :name, placeholder: "name", style: "padding-left: 4px; width: 172px;" %>
+			<%=	f.text_field :name, placeholder: "name", style: "border-bottom: 1px dotted #FBA617; width: 172px;" %>
 				<div class="labelright">Be you.</div>
 		</div>
 		<div style="height: 44px;">		

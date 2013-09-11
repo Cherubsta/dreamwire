@@ -88,7 +88,7 @@ textarea.ui-input-text {
 	border: none;
 }
 div.ui-input-text {
-	padding: 0;
+	padding: 0 0.4em;
 }
 
 /*General Pages*/
@@ -199,7 +199,7 @@ li {
 	width: 42px;
 }
 .borderbottom {
-	border-bottom: 1px solid #FBA617;
+	border-bottom: 1px dotted #FBA617;
 }
 
 /*dream feed block*/
@@ -263,11 +263,12 @@ li {
 }
 .selectavatar {
 	background-color: #02060D;
-  border: 2px dashed #3890E9;
+  border: 1px dotted #3890E9;
   bottom: 50px;
   cursor: pointer;
   display: block;
   height: 86px;
+  margin-left: 0.4em;
   margin-top: 18px;
   position: relative;
   text-align: center;
@@ -275,7 +276,7 @@ li {
 }
 .selectavatarvert {
 	color: #AAAAAA;
-  padding: 23px;
+  padding: 20px;
   width: 40px;
 }
 .alignsignup {
@@ -333,7 +334,7 @@ li {
 
 /*dream recorder*/
 .dreamrecord {
-	border: 2px solid #FBA617;
+	border: 1px solid #FBA617;
   border-radius: 0.6em 0.6em 0.6em 0.6em;
   margin: 10px auto 20px;
   width: 280px;
@@ -346,12 +347,13 @@ li {
   margin: 0 30px 6px;
 }
 .searchbox {
-  border: 2px solid #FBA617;
+  border: 1px solid #FBA617;
   border-radius: 20px 20px 20px 20px;
   margin: 0 0 16px 20px;
   padding: 12px 0 12px 12px;
   text-align: -moz-left;
   width: 165px;
+  font-size: 13px;
 }
 .slider {
 	border-bottom: 1px solid #AAAAAA;

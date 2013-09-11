@@ -11,8 +11,8 @@
 			<%= render 'shared/error_messages', object: @dream %>
 		<% end %>
 		<div class="dreamrecord">
-			<%= f.text_field :title,   placeholder: "Dream title", style: "padding-bottom: 0px;" %>
-			<%= f.text_area  :content, placeholder: "Narrate your dream..." %>
+			<%= f.text_field :title,   placeholder: "Dream title", style: "border-bottom: 1px dotted #FBA617; padding-bottom: 0px;" %>
+			<%= f.text_area  :content, placeholder: "Narrate your dream...", style: "padding-top: 0px;" %>
 		</div>
 		<% if @dream.imagesource %>
 			<div id="thumb_show" class="thumbbox">
@@ -22,7 +22,7 @@
 			<div id="thumb_show"></div>
 		<% end %>
 		<div class="searchbox">
-			<a href="#search" data-transition="slide">Search an image</a>
+			<a href="#search" data-transition="slide">Search for an image</a>
 		</div>
 		<div class="slider">
 			<small class="privtext">This dream is Private, for your eyes only.</small>
@@ -48,7 +48,7 @@
 				Search for an image that best symbolizes (viusally and emotionally) your dream:
 			</p>
 			<div class="margin-bottom">
-			<input id="search-input" type="text" style="border: 1px solid #aaa; border-radius: 0.6em; padding-left: 4px; width: 200px;" />
+			<input id="search-input" type="text" placeholder="Search eg. red sky" style="border-bottom: 1px dotted #FBA617; width: 200px;" />
 			<a class="search-button" data-role="button" data-inline="true">Search</a>
 			</div>
 			<ol id="selectable"></ol>
