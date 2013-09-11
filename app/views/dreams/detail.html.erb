@@ -40,8 +40,10 @@
 		</div>
 		<div class="margin-top borderbottom"></div>
 		<% if current_user == @dream.user %>
-			<%= link_to 'Edit', edit_dream_path(@dream), rel: "external" %> |
-			<%= link_to 'Delete', @dream, method: :delete, data: {confirm: 'Delete this dream? Are you sure?'} %>
+			<div class="margin-top">
+				<%= link_to 'Edit', edit_dream_path(@dream), rel: "external" %> |
+				<%= link_to 'Delete', @dream, method: :delete, data: {confirm: 'Delete this dream? Are you sure?'} %>
+			</div>
 		<% end %>
 	</div>
 </div>
