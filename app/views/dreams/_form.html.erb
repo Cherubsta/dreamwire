@@ -11,7 +11,7 @@
 			<%= render 'shared/error_messages', object: @dream %>
 		<% end %>
 		<div class="dreamrecord">
-			<%= f.text_field :title,   placeholder: "Dream title", style: "border-bottom: 1px dotted #FBA617; padding-bottom: 0px;" %>
+			<%= f.text_field :title,   placeholder: "Dream title", style: "border-bottom: 1px dotted #FBA617; padding-bottom: 0px; border-radius: 0;" %>
 			<%= f.text_area  :content, placeholder: "Narrate your dream...", style: "padding-top: 0px;" %>
 		</div>
 		<% if @dream.imagesource %>
@@ -48,7 +48,7 @@
 				Search for an image that best symbolizes (viusally and emotionally) your dream:
 			</p>
 			<div class="margin-bottom">
-			<input id="search-input" type="text" placeholder="Search eg. red sky" style="border-bottom: 1px dotted #FBA617; width: 200px;" />
+			<input id="search-input" type="text" placeholder="Search eg. red sky" style="border-bottom: 1px dotted #FBA617; width: 200px; border-radius: 0;" />
 			<a class="search-button" data-role="button" data-inline="true">Search</a>
 			</div>
 			<ol id="selectable"></ol>

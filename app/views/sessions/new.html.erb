@@ -10,11 +10,11 @@
 		<%= form_for(:session, url: sessions_path) do |f| %>
 			<div class="alignsignup">
 			<div class="margin-top">
-				<%=	f.text_field :username_or_email, placeholder: "username or email", autofocus: true, style: "border-bottom: 1px dotted #FBA617;" %>
+				<%=	f.text_field :username_or_email, placeholder: "username or email", autofocus: true, style: "border-bottom: 1px dotted #FBA617; border-radius: 0;" %>
 			</div>
 			<div class="ui-grid-a" style="width: 275px;">
 				<div class="ui-block-a" style="width: 184px;">
-					<%=	f.password_field :password, placeholder: "password", style: "border-bottom: 1px dotted #FBA617;" %>
+					<%=	f.password_field :password, placeholder: "password", style: "border-bottom: 1px dotted #FBA617; border-radius: 0;" %>
 				</div>
 				<div class="ui-block-b" style="width: 83px; margin-left: 8px;">
 					<%=	f.submit "Sign In", rel: "external"%>
