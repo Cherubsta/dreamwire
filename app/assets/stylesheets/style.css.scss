@@ -90,6 +90,9 @@ textarea.ui-input-text {
 div.ui-input-text {
 	padding: 0 0.4em;
 }
+.ui-shadow-inset {
+	box-shadow: 0 0px 1px rgba(0, 0, 0, 0.2) inset;
+}
 
 /*General Pages*/
 .center {
@@ -289,6 +292,24 @@ li {
 }
 .privacytext {
 	width: 150px;
+}
+
+/*Settings*/
+.changeavatarvert {
+	padding: 12px;
+}
+.changeavatar {
+	background-color: #02060D;
+  border: 1px dotted #3890E9;
+  cursor: pointer;
+  display: block;
+  height: 86px;
+  margin-left: 0.4em;
+  margin-top: 18px;
+  position: absolute;
+  text-align: center;
+  top: 33px;
+  width: 86px;
 }
 
 /*Forms*/

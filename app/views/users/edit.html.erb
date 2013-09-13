@@ -2,25 +2,36 @@
 <div data-role="page" id="settings">
 	<%= form_for(@user, :html => {"data-ajax" => false}) do |f| %>
 		<div data-role="header">
-			<a href="#" data-rel="back" data-direction="reverse">Back</a>
+			<a href="#" data-rel="back" data-direction="reverse">Cancel</a>
 			<h4>Settings</h4>
 			<a class="ui-btn-right submit">Save</a>
 		</div>
 		<%= render 'shared/error_messages', object: @user %>
-		<%=	f.label :name %>
-		<%=	f.text_field :name, style: "border: 1px solid #aaa; border-radius: 0.6em; padding-left: 4px;" %>
-		<div>
-			<%= image_tag @user.avatar.url(:thumb) %>
-			<%= f.file_field :avatar, style: "border: 1px solid #aaa; border-radius: 0.6em; padding-left: 4px;" %>
-		</div>
-		<%=	f.label :username %>
-		<%=	f.text_field :username, style: "border: 1px solid #aaa; border-radius: 0.6em; padding-left: 4px;" %>
-		<%=	f.label :email %>
-		<%=	f.text_field :email, style: "border: 1px solid #aaa; border-radius: 0.6em; padding-left: 4px;" %>
-		<a class="toggle"><%=	f.label "Change Password?" %></a>
-		<div id="upper-toggle" style="display:none;">
-			<p><small>Enter your new password:</small></p>
-			<%=	f.password_field :password, style: "border: 1px solid #aaa; border-radius: 0.6em; padding-left: 4px;" %>
+		<div class="alignsignup">
+			<div style="height: 108px;">		
+				<%= f.file_field :avatar, style: "color: #02060D;" %>
+				<div class="labelright">Avatar</div>
+			</div>
+			<div class="changeavatar" onclick="chooseFile();">
+				<div class="changeavatarvert"><%= image_tag @user.avatar.url(:thumb) %></div>
+			</div>			
+			<%=	f.text_field :name, style: "border-bottom: 1px dotted #FBA617; width: 172px; border-radius: 0;" %>
+			<div class="labelright"><%=	f.label :name %></div>
+			<%=	f.text_field :username, style: "border-bottom: 1px dotted #FBA617; width: 172px; border-radius: 0;" %>
+			<div class="labelright"><%=	f.label :username %></div>
+			<%=	f.text_field :email, style: "border-bottom: 1px dotted #FBA617; width: 200px; border-radius: 0;" %>
+			<div class="labelright"><%=	f.label :email %></div>
+			<div class="margin-top">	
+				<a class="toggle">Change Password?</a>
+				<div id="upper-toggle" style="display:none;">
+					<%=	f.password_field :password, style: "border-bottom: 1px dotted #FBA617; width: 172px; border-radius: 0;", placeholder: "Enter new password"%>
+					<div class="labelright"><%=	f.label :password %></div>
+				</div>
+			</div>
+			<div class="margin-top">. . .</div>
+			<div class="margin-top">
+				<small><%= link_to('Questions or comments?', 'mailto:support@dreamwire.co') %></small>
+			</div>
 		</div>
 	<% end %>
 	<script type="text/javascript">
@@ -35,5 +46,8 @@
 	    $('form').submit();
 	    return false;
 		});
+	</script>
+	<script> // for hiding file upload box
+		function chooseFile() { $("#user_avatar").click(); }
 	</script>
 </div>
