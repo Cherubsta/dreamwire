@@ -17,7 +17,7 @@
 	<div class="aligndetails margin-top">
 		<h3><%= @dream.title.split.map(&:capitalize).join(' ') %>
 			<% if @dream.privacy == true %> 
-				<strong> - P </strong>
+				<img src='http://s3.amazonaws.com/DW-Assets/icon_lock.png' alt='Private'> 
 			<% end %>
 		</h3>
 		<p><span class="color-gray">Dreamt: </span><%= time_ago_in_words @dream.created_at %> ago.</p>

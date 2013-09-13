@@ -7,9 +7,13 @@
 	<img class="imagecrop" src="<%= @dream.imagesource %>">
 	<div class="dreamview">
 		<h2><%= @dream.title %>
-			<% if @dream.privacy == true %> -P <% end %>
+			<% if @dream.privacy == true %>
+				<img src='http://s3.amazonaws.com/DW-Assets/icon_lock.png' alt='Private'>  
+			<% end %>
 			<div class="float-right">
-				<%= link_to '(i)', {controller: "dreams", action: "detail", id: @dream }, :"data-transition" => "flip"  %>
+				<a href="/dreams/<%= @dream.id %>/detail/" data-transition="flip" >
+					<img src='http://s3.amazonaws.com/DW-Assets/icon_details.png' alt='(i)'>
+				</a>
 			</div>
 		</h2>
 		<p><%= @dream.content %></p>

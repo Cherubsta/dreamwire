@@ -25,7 +25,9 @@
 				<h2>
 					<%= dream.title %>
 					<% if current_user == dream.user %>
-						<% if dream.privacy == true %> - P <% end %>
+						<% if dream.privacy == true %> 
+							<img src='http://s3.amazonaws.com/DW-Assets/icon_lock.png' alt='Private'> 
+						<% end %>
 					<% end %>
 					<div class="float-right dots"><%= link_to '...', dream, :"data-transition" => "slide" %></div>
 				</h2>
@@ -48,25 +50,25 @@
 		<div class="ui-grid-a center">
 			<div class="ui-block-a menublock">
 				<a href="#" data-rel="back">
-					<img src='http://s3.amazonaws.com/DW-Assets/icon_home.png' class="">
+					<img src='http://s3.amazonaws.com/DW-Assets/icon_home.png'>
 					<div class="iconselected">Home</div>
 				</a>
 			</div>
 			<div class="ui-block-b menublock">
 				<a href="/dreams/">
-					<img src='http://s3.amazonaws.com/DW-Assets/icon_livewire.png' class="">
+					<img src='http://s3.amazonaws.com/DW-Assets/icon_livewire.png'>
 					<div>LiveWire</div>
 				</a>
 			</div>
 			<div class="ui-block-a menublock">
 				<a href="/users/<%= current_user.id %>/edit/">
-					<img src='http://s3.amazonaws.com/DW-Assets/icon_settings.png' class="">
+					<img src='http://s3.amazonaws.com/DW-Assets/icon_settings.png'>
 					<div>Settings</div>
 				</a>
 			</div>
 			<div class="ui-block-b menublock">
 				<a rel="nofollow" data-method="delete" href="/signout/">
-					<img src='http://s3.amazonaws.com/DW-Assets/icon_signout.png' class="">
+					<img src='http://s3.amazonaws.com/DW-Assets/icon_signout.png'>
 					<div>SignOut</div>
 				</a>
 			</div>
