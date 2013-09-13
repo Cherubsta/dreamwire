@@ -47,16 +47,28 @@
 		</div>
 		<div class="ui-grid-a center">
 			<div class="ui-block-a menublock">
-				<a href="#" data-rel="back">Home</a>
+				<a href="#" data-rel="back">
+					<img src='http://s3.amazonaws.com/DW-Assets/icon_home.png' class="">
+					<div class="iconselected">Home</div>
+				</a>
 			</div>
 			<div class="ui-block-b menublock">
-				<%= link_to 'LiveWire', dreams_path %>
+				<a href="/dreams/">
+					<img src='http://s3.amazonaws.com/DW-Assets/icon_livewire.png' class="">
+					<div>LiveWire</div>
+				</a>
 			</div>
 			<div class="ui-block-a menublock">
-				<%= link_to 'Settings', edit_user_path(current_user) %>
+				<a href="/users/<%= current_user.id %>/edit/">
+					<img src='http://s3.amazonaws.com/DW-Assets/icon_settings.png' class="">
+					<div>Settings</div>
+				</a>
 			</div>
 			<div class="ui-block-b menublock">
-				<%= link_to "Sign Out", signout_path, method: "delete" %>
+				<a rel="nofollow" data-method="delete" href="/signout/">
+					<img src='http://s3.amazonaws.com/DW-Assets/icon_signout.png' class="">
+					<div>SignOut</div>
+				</a>
 			</div>
 		</div>
 	</div>

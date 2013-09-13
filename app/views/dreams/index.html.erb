@@ -9,17 +9,31 @@
 	<div data-role="popup" id="menu" data-position-to="window">
 		<div class="ui-grid-a center">
 			<div class="ui-block-a menublock">
-				<%= link_to 'Home', home_path %>
+				<a href="/home/">
+					<img src='http://s3.amazonaws.com/DW-Assets/icon_home.png' class="">
+					<div>Home</div>
+				</a>
 			</div>
 			<div class="ui-block-b menublock">
-				<a href="#" data-rel="back">LiveWire</a>
+				<a href="#" data-rel="back">
+					<img src='http://s3.amazonaws.com/DW-Assets/icon_livewire.png' class="">
+					<div class="iconselected">LiveWire</div>
+				</a>
 			</div>
 			<div class="ui-block-a menublock">
-				<%= link_to 'Settings', edit_user_path(current_user) %>
+				<a href="/users/<%= current_user.id %>/edit/">
+					<img src='http://s3.amazonaws.com/DW-Assets/icon_settings.png' class="">
+					<div>Settings</div>
+				</a>
 			</div>
 			<div class="ui-block-b menublock">
-				<%= link_to "Sign Out", signout_path, method: "delete" %>
+				<a rel="nofollow" data-method="delete" href="/signout/">
+					<img src='http://s3.amazonaws.com/DW-Assets/icon_signout.png' class="">
+					<div>SignOut</div>
+				</a>
 			</div>
+
+
 		</div>
 	</div>
 </div>
