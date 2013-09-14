@@ -93,6 +93,31 @@ div.ui-input-text {
 .ui-shadow-inset {
 	box-shadow: 0 0px 1px rgba(0, 0, 0, 0.2) inset;
 }
+.ui-btn-up-c {
+	background: none;
+	border: 1px dotted #3890E9;
+  color: #3890E9;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: bold;
+  text-shadow: none;
+}
+.ui-btn-corner-all {
+	border-radius: 4px;
+}
+.ui-corner-all {
+	border-radius: 4px;
+}
+.ui-btn-inner {
+	padding: 4px;
+}
+.ui-btn-hover-c {
+	background: none;
+	border: 1px dotted #3890E9;
+  color: #CCC;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: bold;
+  text-shadow: none;
+}
 
 /*General Pages*/
 .center {
@@ -142,10 +167,18 @@ li {
 .fontmid {
 	font-size: 1.09em;
 }
+.buttonborder {
+	border: 1px dotted;
+	padding: 4px;
+	border-radius: 4px;
+}
 .font-hero {
 	font-size: 24px;
   line-height: 1.7em;
   margin-top: 1.7em;
+}
+.fontsmall {
+	font-size: 8px;
 }
 .background-image {
 	background-image: url('http://s3.amazonaws.com/DW-Assets/romancandle.png');
@@ -173,6 +206,7 @@ li {
 	width: 90%;
 	max-width: 600px;
 }
+
 
 .landing-button {
 	height: 50px;
@@ -207,10 +241,8 @@ li {
 .borderbottom {
 	border-bottom: 1px dotted #FBA617;
 }
-.iconselected {
-	border: 1px dotted #FBA617;
-  margin: 0 auto;
-  width: 60%;
+.iconsize {
+	width: 50px;
 }
 
 /*dream feed block*/
