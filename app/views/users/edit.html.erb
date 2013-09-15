@@ -15,12 +15,18 @@
 			<div class="changeavatar" onclick="chooseFile();">
 				<div class="changeavatarvert"><%= image_tag @user.avatar.url(:thumb) %></div>
 			</div>			
-			<%=	f.text_field :name, style: "border-bottom: 1px dotted #FBA617; width: 172px; border-radius: 0;" %>
-			<div class="labelright"><%=	f.label :name %></div>
-			<%=	f.text_field :username, style: "border-bottom: 1px dotted #FBA617; width: 172px; border-radius: 0;" %>
-			<div class="labelright"><%=	f.label :username %></div>
-			<%=	f.text_field :email, style: "border-bottom: 1px dotted #FBA617; width: 200px; border-radius: 0;" %>
-			<div class="labelright"><%=	f.label :email %></div>
+			<div>
+				<%=	f.text_field :name, style: "border-bottom: 1px dotted #FBA617; width: 172px; border-radius: 0;" %>
+				<div class="labelright"><%=	f.label :name %></div>
+			</div>
+			<div>
+				<%=	f.text_field :username, style: "border-bottom: 1px dotted #FBA617; width: 172px; border-radius: 0;" %>
+				<div class="labelright"><%=	f.label :username %></div>
+			</div>
+			<div>
+				<%=	f.text_field :email, style: "border-bottom: 1px dotted #FBA617; width: 200px; border-radius: 0;" %>
+				<div class="labelright"><%=	f.label :email %></div>
+			</div>
 			<div class="margin-top">	
 				<a class="toggle">Change Password?</a>
 				<div id="upper-toggle" style="display:none;">

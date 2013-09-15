@@ -77,6 +77,10 @@ a {
 }
 .ui-btn-inner {
 	padding: 0.6em 8px;
+	border-top: none;
+}
+.ui-controlgroup-horizontal.ui-mini .ui-btn-inner {
+	height: 80px;
 }
 textarea.ui-input-text {
 	height: 148px;
@@ -94,7 +98,7 @@ div.ui-input-text {
 	box-shadow: 0 0px 1px rgba(0, 0, 0, 0.2) inset;
 }
 .ui-btn-up-c {
-	background: none;
+	background: rgba(2, 6, 13, 0.1);
 	border: 1px dotted #3890E9;
   color: #3890E9;
   font-family: 'Open Sans', sans-serif;
@@ -117,6 +121,12 @@ div.ui-input-text {
   font-family: 'Open Sans', sans-serif;
   font-weight: bold;
   text-shadow: none;
+}
+.ui-btn-active {
+	background: #3890E9;
+}
+.ui-field-contain .ui-controlgroup-controls {
+	display: table-row-group;
 }
 
 /*General Pages*/
@@ -147,7 +157,7 @@ li {
 	list-style-type: none; 
 }
 
-/*Landing Page*/
+/*fixes*/
 .no-space [class*='span'] {
     margin-left: 4px;
 }
@@ -180,12 +190,6 @@ li {
 .fontsmall {
 	font-size: 8px;
 }
-.background-image {
-	background-image: url('http://s3.amazonaws.com/DW-Assets/romancandle.png');
-	background-repeat: no-repeat;
-	background-position: center 20%;
-	min-height: 570px;
-}
 .margin-top-bottom {
 	margin-top: 2.1em;
 	margin-bottom: 2.1em;
@@ -202,12 +206,20 @@ li {
 .float-left {
 	float: left;
 }
+.clearfix {
+	clear: both;
+}
+/*Landing Page*/
+.background-image {
+	background-image: url('http://s3.amazonaws.com/DW-Assets/romancandle.png');
+	background-repeat: no-repeat;
+	background-position: center 20%;
+	min-height: 570px;
+}
 .logosize {
 	width: 90%;
 	max-width: 600px;
 }
-
-
 .landing-button {
 	height: 50px;
   font-size: 18px;
@@ -295,6 +307,16 @@ li {
 	text-align: left;
 	margin-left: 20px;
 }
+
+/*dream details*/
+ .detailblock {
+ 	float: left;
+ 	height: 90px;
+ 	font-size: 11px;
+ 	text-align: center;
+ 	margin-right: 10px;
+ }
+
 
 /*sign up*/
 .labelright {
@@ -392,38 +414,49 @@ li {
   float: left;
   margin: 20px;
 }
+.recordmargin {
+	max-width: 270px; 
+	margin: 0 auto;
+}
 
 /*dream recorder*/
 .dreamrecord {
 	border: 1px solid #FBA617;
   border-radius: 0.6em 0.6em 0.6em 0.6em;
-  margin: 10px auto 20px;
+  margin: 10px auto 4px;
   width: 280px;
 }
 .thumbbox {
 	float: right;
 }
 #thumb_show {
-	float: right;
-  margin: 0 30px 6px;
+  margin-left: 20px;
+}
+.searchblock {
+	margin: 0 auto;
+  padding: 7px 0;
+  text-align: right;
+  width: 280px;
 }
 .searchbox {
   border: 1px solid #FBA617;
-  border-radius: 20px 20px 20px 20px;
-  margin: 0 0 16px 20px;
-  padding: 12px 0 12px 12px;
-  text-align: -moz-left;
-  width: 165px;
+  border-radius: 0.6em 0.6em 0.6em 0.6em;
+  float: left;
   font-size: 13px;
+  margin-bottom: 20px;
+  margin-top: 10px;
+  padding: 8px;
+  text-align: left;
+  width: 130px;
 }
 .slider {
 	border-bottom: 1px solid #AAAAAA;
   border-top: 1px solid #AAAAAA;
-  clear: both;
   margin: 0 auto;
   padding: 7px 0;
   text-align: right;
   width: 280px;
+  clear: both;
 }
 .privtext {
 	float: left;
@@ -437,7 +470,7 @@ li {
 }
 .searchtext {
 	color: #FBA617;
-  font-size: 15px;
+  font-size: 14px;
   margin: 10px auto 2px;
   text-align: left;
   width: 280px;

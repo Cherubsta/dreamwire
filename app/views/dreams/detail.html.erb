@@ -22,13 +22,33 @@
 		</h3>
 		<p><span class="color-gray">Dreamt: </span><%= time_ago_in_words @dream.created_at %> ago.</p>
 		<h4 class="margin-top">
-			<% if @dream.nightmare  == true %> Nightmare  <% end %>
-			<% if @dream.lucid      == true %> Lucid      <% end %>
-			<% if @dream.recurring  == true %> Recurring  <% end %>
-			<% if @dream.fragmented == true %> Fragmented <% end %>
+			<% if @dream.nightmare == true %>
+				<div class="detailblock">
+				<img src='http://s3.amazonaws.com/DW-Assets/icon_nightmare.png' width="64px">
+				<div>Nightmare</div>
+				</div>
+			<% end %>
+			<% if @dream.lucid == true %>
+				<div class="detailblock">
+				<img src='http://s3.amazonaws.com/DW-Assets/icon_lucid.png' width="64px">
+				<div>Lucid</div>
+				</div>
+			<% end %>
+			<% if @dream.recurring == true %>
+				<div class="detailblock">
+				<img src='http://s3.amazonaws.com/DW-Assets/icon_recurring.png' width="64px">
+				<div>Recurring</div>
+				</div>
+			<% end %>
+			<% if @dream.fragmented == true %>
+				<div class="detailblock">
+				<img src='http://s3.amazonaws.com/DW-Assets/icon_fragmented.png' width="64px">
+				<div>Fragmented</div>
+				</div>
+			<% end %>
 		</h4>
 		<% if @dream.emotion != '' %>
-			<p class="margin-top"><span class="color-gray">Emotion upon waking: </span><%= @dream.emotion %></p>
+			<p class="margin-top clearfix"><span class="color-gray">Emotion upon waking: </span><%= @dream.emotion %></p>
 		<% end %>
 		<% if @dream.hashtag != '' %>
 			<p><span class="color-gray">Tags:</span> <%= @dream.hashtag %></p>

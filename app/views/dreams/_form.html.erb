@@ -13,15 +13,17 @@
 			<%= f.text_field :title,   placeholder: "Dream title", style: "border-bottom: 1px dotted #FBA617; padding-bottom: 0px; border-radius: 0;" %>
 			<%= f.text_area  :content, placeholder: "Narrate your dream...", style: "padding-top: 0px;" %>
 		</div>
-		<% if @dream.imagesource %>
-			<div id="thumb_show" class="thumbbox">
-				<img src = "<%= @dream.imagesource.gsub('3.jpg', '1.jpg') %>" />
+		<div class="searchblock">
+			<div class="searchbox">
+				<a href="#search" data-transition="slide">Search for an image</a>
 			</div>
-		<% else %>
-			<div id="thumb_show"></div>
-		<% end %>
-		<div class="searchbox">
-			<a href="#search" data-transition="slide">Search for an image</a>
+			<% if @dream.imagesource %>
+				<span id="thumb_show">
+					<img src = "<%= @dream.imagesource.gsub('3.jpg', '1.jpg') %>" />
+				</span>
+			<% else %>
+				<span id="thumb_show"></span>
+			<% end %>
 		</div>
 		<div class="slider">
 			<small class="privtext">This dream is Private, for your eyes only.</small>
@@ -34,7 +36,7 @@
 			</div>
 		</div>
 		<div class="footerpadding">
-			<a href="#details" data-transition="slideup">More...</a>
+			<a href="#details" data-transition="slideup">More v</a>
 		</div>
 	</div>
 	<div data-role="page" id="search">
@@ -47,7 +49,7 @@
 				Search for an image that best symbolizes (viusally and emotionally) your dream:
 			</p>
 			<div class="margin-bottom">
-			<input id="search-input" type="text" placeholder="Search eg. red sky" style="border-bottom: 1px dotted #FBA617; width: 200px; border-radius: 0;" />
+			<input id="search-input" type="text" placeholder="Search eg red sky or biking" style="border-bottom: 1px dotted #FBA617; width: 200px; border-radius: 0;" />
 			<a class="search-button" data-role="button" data-inline="true">Search</a>
 			</div>
 			<ol id="selectable"></ol>
@@ -63,27 +65,49 @@
 			<a class="ui-btn-right submit">Save</a>
 		</div>	
 		<div data-role="fieldcontain" class="margin-top">
-			<fieldset data-role="controlgroup" data-type="horizontal" data-mini="true">
-				<label><%= f.check_box :nightmare %> Nightmare </label>				
-				<label><%= f.check_box :lucid %> Lucid </label>				
-				<label><%= f.check_box :recurring %> Recurring </label>				
-				<label><%= f.check_box :fragmented %> Fragment </label>				
+			<% if @dream.nightmare  %> <% @checked_nm = "checked" %> <% end %>
+			<% if @dream.lucid      %> <% @checked_ld = "checked" %> <% end %>
+			<% if @dream.recurring  %> <% @checked_rc = "checked" %> <% end %>
+			<% if @dream.fragmented %> <% @checked_fg = "checked" %> <% end %>
+			<fieldset data-role="controlgroup" data-type="horizontal" data-mini="true" style="width: 220px; margin: 0 auto;">
+				<label style="border: none;">
+					<input id="dream_nightmare" type="checkbox" value="1" name="dream[nightmare]" style="display: none" <%= @checked_nm %> >
+					<img src='http://s3.amazonaws.com/DW-Assets/icon_nightmare.png'>
+					<div class="color-gray">Nightmare</div>
+				</label>				
+				<label style="border: none;">
+					<input id="dream_lucid" type="checkbox" value="1" name="dream[lucid]" style="display: none" <%= @checked_ld %> >
+					<img src='http://s3.amazonaws.com/DW-Assets/icon_lucid.png'>
+					<div class="color-gray">Lucid</div>
+				</label>				
+				<label style="border: none;">
+					<input id="dream_recurring" type="checkbox" value="1" name="dream[recurring]" style="display: none" <%= @checked_rc %> >
+					<img src='http://s3.amazonaws.com/DW-Assets/icon_recurring.png'>
+					<div class="color-gray">Recurring</div>
+				</label>	
+				<label style="border: none;">
+					<input id="dream_fragmented" type="checkbox" value="1" name="dream[fragmented]" style="display: none" <%= @checked_fg %> >
+					<img src='http://s3.amazonaws.com/DW-Assets/icon_fragmented.png'>
+					<div class="color-gray">Fragmented</div>
+				</label>
 			</fieldset>
 		</div>
-		<div class="field margin-top">
+		<div class="field">
 			<% if @dream.emotion && @dream.emotion != "" %>
 				<% @menu_blank = @dream.emotion %>
 			<% else %>
 				<% @menu_blank = "Select Emotion" %>
 			<% end %>
-			<%= f.select :emotion, ([["Inspired", "Inspired"], ["Relieved", "Relieved"], ["Afraid", 
+			<div class="recordmargin">
+				<%= f.select :emotion, ([["Inspired", "Inspired"], ["Relieved", "Relieved"], ["Afraid", 
 				"Afraid"], ["Sad", "Sad"], ["Surprised", "Surprised"]]), :include_blank => @menu_blank %>
+			</div>
 		</div>
 		<div class="field margin-top">
-			<%= f.text_area :hashtag, :placeholder => "#characters, #activities, #objects", style: "border: 1px solid #aaa; border-radius: 0.6em; padding-left: 4px;" %>
+			<%= f.text_area :hashtag, :placeholder => "#characters, #activities, #objects", style: "border: 1px dotted #FBA617; border-radius: 0.6em; padding-left: 4px;" %>
 		</div>
 		<div class="footerpadding">
-			<a href="#record" data-transition="slidedown">Less...</a>
+			<a href="#record" data-transition="slidedown" style="width: 40px;">Less ^ </a>
 		</div>
 	</div>
 <% end %>
