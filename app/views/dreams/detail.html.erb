@@ -15,7 +15,7 @@
 		</div>
 	</div>
 	<div class="aligndetails margin-top">
-		<h3><%= @dream.title.split.map(&:capitalize).join(' ') %>
+		<h3><%= @dream.title %>
 			<% if @dream.privacy == true %> 
 				<img src='http://s3.amazonaws.com/DW-Assets/icon_lock.png' alt='Private'> 
 			<% end %>

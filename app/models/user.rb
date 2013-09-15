@@ -10,6 +10,7 @@ class User < ActiveRecord::Base
   before_save { |user| user.username = user.username.downcase }
 
   before_save :create_remember_token
+  before_save :capitalize_name
 
   validates :name,  presence: true, length: { maximum: 50 }
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
@@ -21,6 +22,10 @@ class User < ActiveRecord::Base
   
   validates :username, presence: true, uniqueness: { case_sensitive: false }, on: :create, on: :update 
 
+  protected
+    def capitalize_name
+      self.name = name.split.map(&:capitalize).join(' ')
+    end
   def send_password_reset
     create_password_token(:password_reset_token)
     self.password_reset_sent_at = Time.zone.now

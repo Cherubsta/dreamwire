@@ -14,12 +14,14 @@
 			<div class="ui-grid-a" style="width: 275px; margin: 0 auto;">
 				<div class="ui-block-a" style="width: 184px;">
 					<%=	f.password_field :password, placeholder: "password", style: "border-bottom: 1px dotted #FBA617; border-radius: 0;" %>
+					<div class="alignleft">
+						<small><%= link_to "Reset Password?", new_password_reset_path %></small>
+					</div>
 				</div>
 				<div class="ui-block-b" style="width: 83px; margin-left: 8px;">
 					<%=	f.submit "Sign In", rel: "external"%>
 				</div>
 			</div>
-			<small><%= link_to "Reset Password?", new_password_reset_path %></small>
 			<!-- <p> New user? <%#= link_to "Sign up now!", signup_path %> </p> -->
 		<% end %>
 	</div>

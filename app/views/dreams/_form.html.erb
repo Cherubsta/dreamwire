@@ -99,12 +99,11 @@
 				<% @menu_blank = "Select Emotion" %>
 			<% end %>
 			<div class="recordmargin">
-				<%= f.select :emotion, ([["Inspired", "Inspired"], ["Relieved", "Relieved"], ["Afraid", 
-				"Afraid"], ["Sad", "Sad"], ["Surprised", "Surprised"]]), :include_blank => @menu_blank %>
+				<%= f.select :emotion, ([["Happy", "Happy"], ["Inspired", "Inspired"], ["Relieved", "Relieved"], ["Afraid", "Afraid"], ["Sad", "Sad"], ["Surprised", "Surprised"], ["Confused", "Confused"],]), :include_blank => @menu_blank %>
 			</div>
 		</div>
 		<div class="field margin-top">
-			<%= f.text_area :hashtag, :placeholder => "#characters, #activities, #objects", style: "border: 1px dotted #FBA617; border-radius: 0.6em; padding-left: 4px;" %>
+			<%= f.text_area :hashtag, :placeholder => "#characters, #activities, #objects", style: "border: 1px dotted #FBA617; border-radius: 0.6em; padding-left: 4px; height: 80px;" %>
 		</div>
 		<div class="footerpadding">
 			<a href="#record" data-transition="slidedown" style="width: 40px;">Less ^ </a>

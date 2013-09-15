@@ -161,6 +161,9 @@ li {
 .no-space [class*='span'] {
     margin-left: 4px;
 }
+.alignleft {
+	text-align: left;
+}
 .color-blue {
 	color: #3890E9;
 }
@@ -447,7 +450,7 @@ li {
   margin-top: 10px;
   padding: 8px;
   text-align: left;
-  width: 130px;
+  width: 136px;
 }
 .slider {
 	border-bottom: 1px solid #AAAAAA;
