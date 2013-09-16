@@ -84,6 +84,7 @@ li {
 	top: 0;
 	width: 80%;
 	max-width: 400px;
+	border: 1px dotted #3890E9;
 }
 .ui-input-search, div.ui-input-text {
 	display: inline-block;
@@ -448,7 +449,7 @@ div.ui-input-text {
   margin-top: 10px;
   padding: 8px;
   text-align: left;
-  width: 136px;
+  width: 140px;
 }
 .slider {
 	border-bottom: 1px solid #AAAAAA;
@@ -482,6 +483,7 @@ div.ui-input-text {
 	@extend .color-gray;
 	margin: 20px auto;
   width: 302px;
+  font-size: 14px;
 }
 .Zposition {
 	margin-top: 5%;
