@@ -5,11 +5,10 @@ $orange: #FBA617;
 $blue: #3890E9;
 $gray: #D4D4D4;
 $btnPrimaryBackground: #3890E9;*/
-@import url(https://fonts.googleapis.com/css?family=Open+Sans);
-
 /*@import 'bootstrap';
-
 @import 'bootstrap-responsive';*/
+
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
 
 /* universal */
 html {
@@ -29,9 +28,26 @@ section {
 textarea {
   resize: vertical;
 }
-
 a {
 	text-decoration: none;
+}
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1;
+  margin: 0.1em 0 0.02em 0;
+}
+h1 {
+  font-size: 2em;
+}
+h2 {
+  font-size: 1.4em;
+}
+p {
+	font-size: 1.1em; 
+	line-height: 1.2em;
+	margin: 0.4em 0;
+}
+li { 
+	list-style-type: none; 
 }
 
 /*Adjust input placeholder*/
@@ -129,35 +145,10 @@ div.ui-input-text {
 	display: table-row-group;
 }
 
-/*General Pages*/
-.center {
-	float: none; 
-	margin-left: auto; 
-	margin-right: auto;
-	text-align: center;
-}
-
-/* typography */
-h1, h2, h3, h4, h5, h6 {
-  line-height: 1;
-  margin: 0.1em 0 0.02em 0;
-}
-h1 {
-  font-size: 2em;
-}
-h2 {
-  font-size: 1.4em;
-}
-p {
-	font-size: 1.1em; 
-	line-height: 1.2em;
-	margin: 0.4em 0;
-}
-li { 
-	list-style-type: none; 
-}
-
 /*fixes*/
+:focus{
+	outline:0; /*removes the dotted border*/
+}
 .no-space [class*='span'] {
     margin-left: 4px;
 }
@@ -212,6 +203,13 @@ li {
 .clearfix {
 	clear: both;
 }
+.center {
+	float: none; 
+	margin-left: auto; 
+	margin-right: auto;
+	text-align: center;
+}
+
 /*Landing Page*/
 .background-image {
 	background-image: url('http://s3.amazonaws.com/DW-Assets/romancandle.png');

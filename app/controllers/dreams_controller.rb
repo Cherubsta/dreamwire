@@ -1,5 +1,5 @@
 class DreamsController < ApplicationController
-  before_filter :signed_in_user, except: [:index]
+  before_filter :signed_in_user, except: [:show]
                                  #could also do-> only: [:create, :destroy, etc] 
 
   # GET /dreams, GET /dreams.json
