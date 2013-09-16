@@ -1,6 +1,6 @@
 class Dream < ActiveRecord::Base
   attr_accessible :content, :title, :privacy, :date, :nightmare, :lucid, :recurring, 
-                  :fragmented, :hashtag, :emotion, :user_id, :imagesource
+                  :fragmented, :hashtag, :emotion, :user_id, :imagesource, :imageowner
   belongs_to :user
   
   before_save :capitalize_title

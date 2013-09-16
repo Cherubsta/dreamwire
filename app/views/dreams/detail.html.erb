@@ -54,13 +54,14 @@
 			<p><span class="color-gray">Tags:</span> <%= @dream.hashtag %></p>
 		<% end %>
 		<div class="margin-top borderbottom"></div>
-		<div class="margin-top">Photo by Jason Whitten</div>
+		<div class="margin-top">Photo by: <%= @dream.imageowner %></div>
+
 		<div>
-			500px: <a href="http://500px.com/photo/267548" target="_blank"><small>http://500px.com/photo/267548</small></a>
+			500px: <a href="http://500px.com/photo/<%= @image_id %>" target="_blank"><small>http://500px.com/photo/<%= @image_id %></small></a>
 		</div>
 		<div class="margin-top borderbottom"></div>
 		<% if current_user == @dream.user %>
-			<div class="margin-top">
+			<div class="margin-top margin-bottom">
 				<%= link_to 'Edit', edit_dream_path(@dream), rel: "external" %> |
 				<%= link_to 'Delete', @dream, method: :delete, data: {confirm: 'Delete this dream? Are you sure?'} %>
 			</div>

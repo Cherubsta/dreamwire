@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130826181045) do
+ActiveRecord::Schema.define(:version => 20130916152935) do
 
   create_table "dreams", :force => true do |t|
     t.text     "content"
@@ -28,6 +28,7 @@ ActiveRecord::Schema.define(:version => 20130826181045) do
     t.text     "hashtag"
     t.string   "emotion"
     t.string   "imagesource"
+    t.string   "imageowner"
   end
 
   add_index "dreams", ["user_id", "created_at"], :name => "index_pins_on_user_id_and_created_at"

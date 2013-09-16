@@ -58,6 +58,7 @@
 		<div><a class="loadLess"></a></div>
 		<input type="hidden" id="counter">
 		<%= f.hidden_field :imagesource %>
+		<%= f.hidden_field :imageowner %>
 	</div>
 	<div data-role="page" id="details">
 		<div data-role="header">
@@ -118,19 +119,21 @@
 			$('#selectable').html('Loading...');
 			var search_term = $("#search-input").val();
 			_500px.api('/photos/search', {term: search_term, sort: "rating", image_size: 2}, function (response) {
-			  if (response.success) {  
+			  if (response.success) {
 			    $("#selectable").html('');
 			    $.each(response.data.photos, function(i,photo){
-			      $("#selectable").append("<li><img src ="+photo.image_url+" /> <p style='display:none'>"+photo.user.fullname+"</p></li>");
+			      $("#selectable").append("<li><img src="+photo.image_url+" alt='"+photo.user.fullname+"'></img> </li>");
 			      if (i == 20) return false;
 			    });
 			    var imgsrc=""; // Selecting the image source
 				  $("#selectable li").click(function() {
 		  			$(this).addClass("selected").siblings().removeClass("selected");
-		  			var imgsrc = $('li.selected img').attr('src');
-				    var imgsave = imgsrc.replace('2.jpg', '3.jpg');
+		  			var imgowner = $('li.selected img').attr('alt');
+		  			var imgsrc   = $('li.selected img').attr('src');
+				    var imgsave  = imgsrc.replace('2.jpg', '3.jpg');
 				    var imgthumb = imgsrc.replace('2.jpg', '1.jpg');
 				    $("#dream_imagesource").val(imgsave);
+				    $("#dream_imageowner").val(imgowner);
 				    $.mobile.changePage( "#record", {transition: "slide", reverse: true});
 				    $("#thumb_show").html('').append("<img src = "+imgthumb+" />");
 		  		});

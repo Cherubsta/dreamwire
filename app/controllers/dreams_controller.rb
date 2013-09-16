@@ -31,6 +31,10 @@ class DreamsController < ApplicationController
 
   def detail
     @dream = Dream.find(params[:id])
+    
+    require 'uri'
+    @image_id = URI(@dream.imagesource).path.split('/').second
+
   end
 
   # GET /dreams/1/edit
