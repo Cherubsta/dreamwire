@@ -12,11 +12,26 @@ class DreamsController < ApplicationController
   end
 
   # GET /dreams, GET /dreams.json
-  def show #DreamView
+  def show #DreamView - check for private dreams
     @dream = Dream.find(params[:id])
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @dream }
+    if @dream.privacy == true
+      if signed_in?
+        if @dream.user_id == current_user.id
+          respond_to do |format|
+            format.html # show.html.erb
+            format.json { render json: @dream }
+          end
+        else
+          redirect_to home_path, notice: "Prohibited 1"
+        end
+      else      
+        redirect_to home_path, notice: "Prohibited 2"
+      end
+    else
+      respond_to do |format|
+        format.html # show.html.erb
+        format.json { render json: @dream }
+      end
     end
   end
 
@@ -32,9 +47,8 @@ class DreamsController < ApplicationController
   def detail
     @dream = Dream.find(params[:id])
     
-    require 'uri'
+    require 'uri' #this gets the photo's id from the stored uri
     @image_id = URI(@dream.imagesource).path.split('/').second
-
   end
 
   # GET /dreams/1/edit
@@ -79,4 +93,5 @@ class DreamsController < ApplicationController
       format.json { head :no_content }
     end
   end
+
 end
