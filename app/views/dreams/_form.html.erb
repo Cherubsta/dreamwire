@@ -227,7 +227,7 @@
 	});
 </script>
 <script type="text/javascript">
-	$('.submit').click(function(){
+	$('.submit').unbind('click').click(function(){
     $('form').submit();
     return false;
 	});
