@@ -122,13 +122,13 @@
 			  if (response.success) {
 			    $("#selectable").html('');
 			    $.each(response.data.photos, function(i,photo){
-			      $("#selectable").append("<li><img src="+photo.image_url+" alt='"+photo.user.fullname+"'></li>");
+			      $("#selectable").append("<li><img src="+photo.image_url+" alt1='"+photo.user.fullname+"'></li>");
 			      if (i == 20) return false;
 			    });
 			    var imgsrc=""; // Selecting the image source
 				  $("#selectable li").click(function() {
 		  			$(this).addClass("selected").siblings().removeClass("selected");
-		  			var imgowner = $('li.selected img').attr('alt');
+		  			var imgowner = $('li.selected img').attr('alt1');
 		  			var imgsrc   = $('li.selected img').attr('src');
 				    var imgsave  = imgsrc.replace('2.jpg', '3.jpg');
 				    var imgthumb = imgsrc.replace('2.jpg', '1.jpg');
@@ -162,13 +162,13 @@
 			  if (response.success) {  
 			    $("#selectable").html('');
 			    $.each(response.data.photos, function(i,photo){
-			      $("#selectable").append("<li><img src ="+photo.image_url+" alt='"+photo.user.fullname+"'></li>");
+			      $("#selectable").append("<li><img src ="+photo.image_url+" alt1='"+photo.user.fullname+"'></li>");
 			      if (i == 20) return false;
 			    });		  
 				  var imgsrc = ""; // Selecting the image source
 				  $("#selectable li").click(function() {
 		  			$(this).addClass("selected").siblings().removeClass("selected");
-		  			var imgowner = $('li.selected img').attr('alt');
+		  			var imgowner = $('li.selected img').attr('alt1');
 		  			var imgsrc = $('li.selected img').attr('src');
 				    var imgsave = imgsrc.replace('2.jpg', '3.jpg');
 				    var imgthumb = imgsrc.replace('2.jpg', '1.jpg');
@@ -199,13 +199,13 @@
 			  if (response.success) {  
 			    $("#selectable").html('');
 			    $.each(response.data.photos, function(i,photo){
-			      $("#selectable").append("<li><img src ="+photo.image_url+" alt='"+photo.user.fullname+"'></li>");
+			      $("#selectable").append("<li><img src ="+photo.image_url+" alt1='"+photo.user.fullname+"'></li>");
 			      if (i == 20) return false;
 			    });		  
 				  var imgsrc = ""; // Selecting the image source
 				  $("#selectable li").click(function() {
 		  			$(this).addClass("selected").siblings().removeClass("selected");
-		  			var imgowner = $('li.selected img').attr('alt');
+		  			var imgowner = $('li.selected img').attr('alt1');
 		  			var imgsrc = $('li.selected img').attr('src');
 				    var imgsave = imgsrc.replace('2.jpg', '3.jpg');
 				    var imgthumb = imgsrc.replace('2.jpg', '1.jpg');
