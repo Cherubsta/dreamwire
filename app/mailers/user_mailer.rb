@@ -3,7 +3,11 @@ class UserMailer < ActionMailer::Base
   
   def registration_confirmation(user)
   	@user = user #needed in order to have access to user variables
-  	mail(:to => "#{user.name} <#{user.email}>", :subject => "Welcome to dreamwire!")
+  	mail(:to => "#{user.name} <#{user.email}>", :subject => "Welcome to dreamwire!").deliver!
+  	mail(:to => '"dreamwire" <support@dreamwire.co>', 
+  		   :subject => "New dreamwire Member",
+  		   :body => "New member #{user.name} with email #{user.email} has just signed up!",
+  		   :content_type => "text/html")
   end
 
   def password_reset(user)
