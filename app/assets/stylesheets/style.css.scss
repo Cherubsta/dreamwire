@@ -173,9 +173,14 @@ div.ui-input-text {
 	font-size: 1.09em;
 }
 .buttonborder {
-	border: 1px dotted;
+	border: 1px dotted #3890E9;
 	padding: 4px;
 	border-radius: 4px;
+}
+.navbuttonborder {
+	border: 2px solid #3890E9;
+	border-radius: 4px;
+	color: #3890E9;
 }
 .font-hero {
 	font-size: 24px;

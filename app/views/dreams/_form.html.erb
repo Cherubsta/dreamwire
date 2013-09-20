@@ -2,9 +2,9 @@
 <%= form_for(@dream) do |f| %>
 	<div data-role="page" id="record">
 		<div data-role="header">
-			<%= link_to 'Cancel', home_path, rel: "external" %>
+			<%= link_to 'Cancel', home_path, rel: "external", class: "navbuttonborder", style: "color: #3890E9" %>
 			<h4>Record Dream</h4>
-			<a class="ui-btn-right submit">Save</a>
+			<a class="ui-btn-right submit navbuttonborder">Save</a>
 		</div>
 		<% if @dream.errors.any? %>
 			<%= render 'shared/error_messages', object: @dream %>

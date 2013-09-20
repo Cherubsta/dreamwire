@@ -1,9 +1,9 @@
 <% provide(:title, @user.name) %>
 <div data-role="page" id="home" data-url="/users/<%= @user.id %>/">
 	<div data-role="header">
-		<a href="#menu" data-rel="popup">Menu</a>
-		<h4>Home</h4>
-		<%= link_to 'New', new_dream_path, :"data-ajax" => "false" %>
+		<a href="#menu" data-rel="popup" class="navbuttonborder">Menu</a>
+		<h4>My Dreams</h4>
+		<%= link_to 'New', new_dream_path, :"data-ajax" => "false", class: "navbuttonborder", style: "color: #3890E9" %>
 	</div>
 	<% if !@user.dreams.any? %>
 		<div class="introcopy">
