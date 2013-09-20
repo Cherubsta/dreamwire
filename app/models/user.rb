@@ -22,10 +22,11 @@ class User < ActiveRecord::Base
   
   validates :username, presence: true, uniqueness: { case_sensitive: false }, on: :create, on: :update 
 
-  protected
-    def capitalize_name
-      self.name = name.split.map(&:capitalize).join(' ')
-    end
+  
+  def capitalize_name
+    self.name = name.split.map(&:capitalize).join(' ')
+  end
+  
   def send_password_reset
     create_password_token(:password_reset_token)
     self.password_reset_sent_at = Time.zone.now
