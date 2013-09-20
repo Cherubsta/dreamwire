@@ -1,7 +1,7 @@
 <% if dream.privacy == false %> 
 	<div class="dreamblock">
 		<div class="avatar-position">
-			<%= image_tag dream.user.avatar.url(:thumb), class: "thumbsize" %>
+			<%= image_tag dream.user.avatar.url(:thumb), class: "thumbsize" unless dream.user.nil? %>
 		</div>
 		<% if dream.imagesource == nil %> 
 			<img src="http://lorempixel.com/280/280/abstract/<%= SecureRandom.base64.delete('/+=')[0, 1] %>">

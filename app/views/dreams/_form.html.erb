@@ -15,7 +15,9 @@
 		</div>
 		<div class="searchblock">
 			<div class="searchbox">
-				<a href="#search" data-transition="slide">Search for an image</a>
+				<a href="#search" data-transition="slide">
+					<img src="http://s3.amazonaws.com/DW-Assets/magnify.png" class="magnify"> Search for an image
+				</a>
 			</div>
 			<% if @dream.imagesource %>
 				<span id="thumb_show">
@@ -49,7 +51,7 @@
 				Search for an image that best symbolizes (viusally and emotionally) your dream:
 			</p>
 			<div class="margin-bottom">
-			<input id="search-input" type="text" placeholder="Search eg red sky or biking" style="border-bottom: 1px dotted #FBA617; width: 200px; border-radius: 0;" />
+			<input id="search-input" type="text" placeholder="Search eg red sky or biking" style="border: 1px dotted #FBA617; width: 200px; border-radius: 0;" />
 			<a class="search-button" data-role="button" data-inline="true">Search</a>
 			</div>
 			<ol id="selectable"></ol>

@@ -441,7 +441,7 @@ div.ui-input-text {
   width: 280px;
 }
 .searchbox {
-  border: 1px solid #FBA617;
+  border: 1px solid #3890E9;
   border-radius: 0.6em 0.6em 0.6em 0.6em;
   float: left;
   font-size: 13px;
@@ -449,7 +449,11 @@ div.ui-input-text {
   margin-top: 10px;
   padding: 8px;
   text-align: left;
-  width: 146px;
+  width: 160px;
+}
+.magnify {
+	vertical-align: middle;
+  width: 18px;
 }
 .slider {
 	border-bottom: 1px solid #AAAAAA;
