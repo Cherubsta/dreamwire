@@ -8,7 +8,7 @@
 	<div class="dreamview">
 		<h2><%= @dream.title %>
 			<% if @dream.privacy == true %>
-				<img src='http://s3.amazonaws.com/DW-Assets/icon_lock.png' alt='Private'>  
+				<img src='http://s3.amazonaws.com/DW-Assets/icon_lock.png' alt='Private' width="10px">  
 			<% end %>
 			<div class="float-right">
 				<a href="/dreams/<%= @dream.id %>/detail/" data-transition="flip" >

@@ -30,7 +30,7 @@
 					<%= dream.title %>
 					<% if current_user == dream.user %>
 						<% if dream.privacy == true %> 
-							<img src='http://s3.amazonaws.com/DW-Assets/icon_lock.png' alt='Private'>
+							<img src='http://s3.amazonaws.com/DW-Assets/icon_lock.png' alt='Private' width="10px">
 						<% end %>
 					<% end %>
 					<div class="float-right dots"><%= link_to '...', dream, :"data-transition" => "slide" %></div>
