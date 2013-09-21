@@ -74,22 +74,22 @@
 			<% if @dream.recurring  %> <% @checked_rc = "checked" %> <% end %>
 			<% if @dream.fragmented %> <% @checked_fg = "checked" %> <% end %>
 			<fieldset data-role="controlgroup" data-type="horizontal" data-mini="true" style="width: 220px; margin: 0 auto;">
-				<label style="border: none;">
+				<label style="border: none; height: 84px;">
 					<input id="dream_nightmare" type="checkbox" value="1" name="dream[nightmare]" style="display: none" <%= @checked_nm %> >
 					<img src='http://s3.amazonaws.com/DW-Assets/icon_nightmare.png'>
 					<div class="color-gray">Nightmare</div>
 				</label>				
-				<label style="border: none;">
+				<label style="border: none; height: 84px;">
 					<input id="dream_lucid" type="checkbox" value="1" name="dream[lucid]" style="display: none" <%= @checked_ld %> >
 					<img src='http://s3.amazonaws.com/DW-Assets/icon_lucid.png'>
 					<div class="color-gray">Lucid</div>
 				</label>				
-				<label style="border: none;">
+				<label style="border: none; height: 84px;">
 					<input id="dream_recurring" type="checkbox" value="1" name="dream[recurring]" style="display: none" <%= @checked_rc %> >
 					<img src='http://s3.amazonaws.com/DW-Assets/icon_recurring.png'>
 					<div class="color-gray">Recurring</div>
 				</label>	
-				<label style="border: none;">
+				<label style="border: none; height: 84px;">
 					<input id="dream_fragmented" type="checkbox" value="1" name="dream[fragmented]" style="display: none" <%= @checked_fg %> >
 					<img src='http://s3.amazonaws.com/DW-Assets/icon_fragmented.png'>
 					<div class="color-gray">Fragmented</div>
