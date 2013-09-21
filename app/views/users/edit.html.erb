@@ -1,7 +1,7 @@
 <% provide(:title, 'Account Settings') %>
 <div data-role="page" id="settings">
 	<%= form_for(@user, :html => {"data-ajax" => false}) do |f| %>
-		<div data-role="header">
+		<div data-role="header" class="headerbar">
 			<a href="#" data-rel="back" data-direction="reverse" class="navbuttonborder">Cancel</a>
 			<h4>Settings</h4>
 			<a class="ui-btn-right submit navbuttonborder">Save</a>
