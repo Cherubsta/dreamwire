@@ -1,7 +1,7 @@
 <script>_500px.init({sdk_key: '29f8908d90c874398a67d534c33d79f6cb652ec5'});</script>
 <%= form_for(@dream) do |f| %>
 	<div data-role="page" id="record">
-		<div data-role="header">
+		<div data-role="header" class="headerbar">
 			<%= link_to 'Cancel', home_path, rel: "external", class: "navbuttonborder", style: "color: #3890E9" %>
 			<h4>Record Dream</h4>
 			<a class="ui-btn-right submit navbuttonborder">Save</a>
@@ -42,8 +42,8 @@
 		</div>
 	</div>
 	<div data-role="page" id="search">
-		<div data-role="header">
-			<a href="#" data-rel="back">Back</a>
+		<div data-role="header" class="headerbar">
+			<a href="#" data-rel="back" class="navbuttonborder">Back</a>
 			<h4>Select Image</h4>
 		</div>	
 		<div class="clearfix">
@@ -51,8 +51,8 @@
 				Search for an image that best symbolizes (viusally and emotionally) your dream:
 			</p>
 			<div class="margin-bottom">
-			<input id="search-input" type="text" placeholder="Search eg red sky or biking" style="border: 1px dotted #FBA617; width: 200px; border-radius: 0; padding-left: 4px;" />
-			<a class="search-button" data-role="button" data-inline="true">Search</a>
+				<input id="search-input" type="text" data-inline="true" placeholder="Search eg. red sky or biking" style="border: 1px dotted #FBA617; width: 204px; border-radius: 0; padding-left: 4px;" />
+				<a class="search-button" data-role="button" data-inline="true">Search</a>
 			</div>
 			<ol id="selectable"></ol>
 		</div>
@@ -63,9 +63,10 @@
 		<%= f.hidden_field :imageowner %>
 	</div>
 	<div data-role="page" id="details">
-		<div data-role="header">
+		<div data-role="header" class="headerbar">
+			<%= link_to 'Cancel', home_path, rel: "external", class: "navbuttonborder", style: "color: #3890E9" %>
 			<h4>Record Dream</h4>
-			<a class="ui-btn-right submit">Save</a>
+			<a class="ui-btn-right submit navbuttonborder">Save</a>
 		</div>	
 		<div data-role="fieldcontain" class="margin-top">
 			<% if @dream.nightmare  %> <% @checked_nm = "checked" %> <% end %>
@@ -99,7 +100,7 @@
 			<% if @dream.emotion && @dream.emotion != "" %>
 				<% @menu_blank = @dream.emotion %>
 			<% else %>
-				<% @menu_blank = "Select Emotion" %>
+				<% @menu_blank = "Emotion upon waking" %>
 			<% end %>
 			<div class="recordmargin">
 				<%= f.select :emotion, ([["Happy", "Happy"], ["Inspired", "Inspired"], ["Relieved", "Relieved"], ["Afraid", "Afraid"], ["Sad", "Sad"], ["Surprised", "Surprised"], ["Confused", "Confused"],]), :include_blank => @menu_blank %>

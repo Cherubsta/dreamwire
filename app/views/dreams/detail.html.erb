@@ -1,7 +1,7 @@
 <% provide(:title, 'Details') %>
 <div data-role="page" id="details">
 	<div data-role="header">
-		<a href="#" data-rel="back" data-transition="flip" class="ui-btn-right">x</a>
+		<a href="#" data-rel="back" data-transition="flip" class="ui-btn-right closebuttonborder">X</a>
 	</div>
 	<p id="notice"><%= notice %></p>
 	<div class="ui-grid-a">
@@ -14,8 +14,8 @@
 			<h2><%= @dream.user.name %></h2>
 		</div>
 	</div>
-	<div class="aligndetails margin-top">
-		<h3><%= @dream.title %>
+	<div class="aligndetails">
+		<h3>"<%= @dream.title %>"
 			<% if @dream.privacy == true %> 
 				<img src='http://s3.amazonaws.com/DW-Assets/icon_lock.png' alt='Private'> 
 			<% end %>
@@ -24,26 +24,26 @@
 		<h4 class="margin-top">
 			<% if @dream.nightmare == true %>
 				<div class="detailblock">
-				<img src='http://s3.amazonaws.com/DW-Assets/icon_nightmare.png' width="64px">
-				<div>Nightmare</div>
+					<img src='http://s3.amazonaws.com/DW-Assets/icon_nightmare_off.png' width="64px">
+					<div>Nightmare</div>
 				</div>
 			<% end %>
 			<% if @dream.lucid == true %>
 				<div class="detailblock">
-				<img src='http://s3.amazonaws.com/DW-Assets/icon_lucid.png' width="64px">
-				<div>Lucid</div>
+					<img src='http://s3.amazonaws.com/DW-Assets/icon_lucid_off.png' width="64px">
+					<div>Lucid</div>
 				</div>
 			<% end %>
 			<% if @dream.recurring == true %>
 				<div class="detailblock">
-				<img src='http://s3.amazonaws.com/DW-Assets/icon_recurring.png' width="64px">
-				<div>Recurring</div>
+					<img src='http://s3.amazonaws.com/DW-Assets/icon_recurring_off.png' width="64px">
+					<div>Recurring</div>
 				</div>
 			<% end %>
 			<% if @dream.fragmented == true %>
 				<div class="detailblock">
-				<img src='http://s3.amazonaws.com/DW-Assets/icon_fragmented.png' width="64px">
-				<div>Fragmented</div>
+					<img src='http://s3.amazonaws.com/DW-Assets/icon_fragmented_off.png' width="64px">
+					<div>Fragmented</div>
 				</div>
 			<% end %>
 		</h4>

@@ -4,6 +4,7 @@ $baseFontFamily: Open+Sans, Helvetica;
 $orange: #FBA617;
 $blue: #3890E9;
 $gray: #D4D4D4;
+$silver: #323E48;
 $btnPrimaryBackground: #3890E9;*/
 /*@import 'bootstrap';
 @import 'bootstrap-responsive';*/
@@ -88,6 +89,12 @@ li {
 }
 .ui-input-search, div.ui-input-text {
 	display: inline-block;
+}
+.ui-bar-a {
+  background: none;
+  /*border: none;*/
+  color: #FFFFFF;
+  margin: 0 14px;
 }
 .ui-btn-left, .ui-btn-right, .ui-btn-inline {
 	float: right;
@@ -182,6 +189,11 @@ div.ui-input-text {
 	border-radius: 4px;
 	color: #3890E9;
 }
+.closebuttonborder {
+	border: 2px solid #3890E9;
+	border-radius: 18px;
+	color: #3890E9;
+}
 .font-hero {
 	font-size: 24px;
   line-height: 1.7em;
@@ -216,6 +228,16 @@ div.ui-input-text {
 	text-align: center;
 }
 
+/*navbar*/
+.logonav {
+	width: 140px;
+}
+.headerbar {
+	border: medium none; 
+	border-bottom: 1px solid #323E48;
+	margin: 0 14px 4px; 
+	padding-top: 8px;
+}
 /*Landing Page*/
 .background-image {
 	background-image: url('http://s3.amazonaws.com/DW-Assets/romancandle.png');
@@ -318,7 +340,7 @@ div.ui-input-text {
 /*dream details*/
  .detailblock {
  	float: left;
- 	height: 90px;
+ 	height: 80px;
  	font-size: 11px;
  	text-align: center;
  	margin-right: 10px;

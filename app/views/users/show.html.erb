@@ -1,8 +1,8 @@
 <% provide(:title, @user.name) %>
 <div data-role="page" id="home" data-url="/users/<%= @user.id %>/">
-	<div data-role="header">
+	<div data-role="header" class="headerbar">
 		<a href="#menu" data-rel="popup" class="navbuttonborder">Menu</a>
-		<h4>My Dreams</h4>
+		<img src='http://s3.amazonaws.com/DW-Assets/logo-small.png' alt='My Dreams' width="120px">
 		<%= link_to 'New', new_dream_path, :"data-ajax" => "false", class: "navbuttonborder", style: "color: #3890E9" %>
 	</div>
 	<% if !@user.dreams.any? %>
