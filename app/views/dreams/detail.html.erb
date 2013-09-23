@@ -17,7 +17,8 @@
 	<div class="aligndetails">
 		<h3><%= @dream.title %>
 			<% if @dream.privacy == true %> 
-				( <img src='http://s3.amazonaws.com/DW-Assets/icon_lock.png' alt='Private' width="10px"> <small>Private</small>)
+				(<img src='http://s3.amazonaws.com/DW-Assets/icon_lock.png' alt='Private' width="10px"> 
+				<small>Private</small>)
 			<% end %>
 		</h3>
 		<p><span class="color-gray">Dreamt: </span><%= time_ago_in_words @dream.created_at %> ago.</p>

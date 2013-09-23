@@ -27,7 +27,7 @@ class UsersController < ApplicationController
   	if @user.save
       UserMailer.registration_confirmation(@user).deliver
       sign_in @user
-      flash[:success] = "Successful Login"
+      flash[:success] = "Welcome to Dreamwire"
   		redirect_to @user
   	else
   		render 'new' 

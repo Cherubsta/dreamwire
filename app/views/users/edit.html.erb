@@ -6,12 +6,12 @@
 			<h4>Settings</h4>
 			<a class="ui-btn-right submit navbuttonborder">Save</a>
 		</div>
-		<%= render 'shared/error_messages', object: @user %>
 		<div class="alignsignup">
 			<div style="height: 108px;">		
 				<%= f.file_field :avatar, style: "color: #02060D;" %>
 				<div class="labelright">Edit Avatar</div>
 			</div>
+			<div class="center"><%= render 'shared/error_messages', object: @user %></div>
 			<div class="changeavatar" onclick="chooseFile();">
 				<div class="changeavatarvert"><%= image_tag @user.avatar.url(:thumb) %></div>
 			</div>			

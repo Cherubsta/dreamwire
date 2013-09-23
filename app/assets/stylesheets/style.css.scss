@@ -367,7 +367,6 @@ div.ui-input-text {
   display: block;
   height: 86px;
   margin-left: 0.4em;
-  margin-top: 18px;
   position: relative;
   text-align: center;
   width: 86px;
@@ -530,4 +529,14 @@ div.ui-input-text {
   height: 280px;
   overflow: hidden;
   max-width: 320px;
+}
+
+/*alerts*/
+.alert {
+	background-color: #FBA617;
+  color: #02060D;
+  font-size: 11px;
+  margin: 4px auto;
+  padding: 2px 0;
+  width: 280px;
 }

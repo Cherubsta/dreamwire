@@ -61,5 +61,10 @@ module Dreamwire
 
     # adds trailing slash to all routes (for jQuery Mobile)
     config.action_controller.default_url_options = { :trailing_slash => true }
+
+    # removes the ActionView::Base.field_error_proc, that wraps divs around error
+    config.action_view.field_error_proc = Proc.new { |html_tag, instance| 
+      "#{html_tag}".html_safe 
+    }
   end
 end

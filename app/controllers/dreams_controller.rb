@@ -75,8 +75,9 @@ class DreamsController < ApplicationController
     @dream = current_user.dreams.find(params[:id])
     respond_to do |format|
       if @dream.update_attributes(params[:dream])
-        format.html { redirect_to @current_user, trailing_slash: true, notice: 'Dream updated!' }
+        format.html { redirect_to @current_user, trailing_slash: true }
         format.json { head :no_content }
+        flash[:success] = "Dream Updated"
       else
         format.html { render action: "edit" }
         format.json { render json: @dream.errors, status: :unprocessable_entity }
@@ -89,8 +90,9 @@ class DreamsController < ApplicationController
     @dream = current_user.dreams.find(params[:id])
     @dream.destroy
     respond_to do |format|
-      format.html { redirect_to @current_user, notice: 'Dream deleted.' }
+      format.html { redirect_to @current_user }
       format.json { head :no_content }
+      flash[:success] = "Dream Deleted"
     end
   end
 

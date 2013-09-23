@@ -1,12 +1,21 @@
-<h3 class="color-blue">Password Reset</h3>
+<div data-role="header">
+	<a href="#" data-rel="back" data-direction="reverse" data-transition="slide">Back</a>
+	<h4>Passwrd Reset</h4>
+</div>
 <div class="color-orange">
-	<p>Forgot your password?</p> 
-	<p>No problemo.</p>
-	<p>You can reset it via your email...</p>
+	<p>Forget your password?</p> 
+	<small>No problemo... You can reset it through your email.</small>
 </div>
+<% if flash[:error] %>
+  <div class="alert"><%= flash[:error] %></div>
+<% end %>
 <%= form_tag password_resets_path, :method => :post do %>
-<div class="field">
-  <%= text_field_tag :email, params[:email], :placeholder => "Your email address", style: "width: 260px; border: 1px solid #aaa; border-radius: 0.6em; padding-left: 4px;" %>
-</div>
-<%= submit_tag "Reset Password", class: "" %>
+	<div class="ui-grid-a">
+	  <div class="ui-block-a">
+	  	<%= text_field_tag :email, params[:email], :placeholder => "Your email address", style: "border: 1px dotted #FBA617; width: 182px; border-radius: 0; padding-left: 4px;" %>
+		</div>
+		<div class="ui-block-b" style="width: 72px; margin-left: 45px;">
+			<%= submit_tag "Reset"%>
+		</div>
+	</div>
 <% end %>
