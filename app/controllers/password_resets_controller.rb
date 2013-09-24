@@ -20,7 +20,7 @@ class PasswordResetsController < ApplicationController
 	    flash[:error] = "Password reset has expired, please try again."
 	  elsif @user.update_attributes(params[:user])
 	    redirect_to new_session_path
-	    flash[:error] = "Password reset successful! You may now sign in."
+	    flash[:error] = "Your password was changed! You may now sign in."
 	  else
 	    render :edit
 	  end
