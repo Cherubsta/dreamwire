@@ -1,6 +1,6 @@
 <% provide(:title, ' All Users') %>
-<%= link_to 'Dreamwire', home_path %>
-<h1>All users</h1>
+<%= link_to 'Dreamwire', home_path, class: "margin-bottom" %>
+<h2><%= User.count %> Users | <%= Dream.count %> Dreams</h2>
 
 <ul class="users">
 	<% User.all.each do |user| %>
@@ -9,9 +9,9 @@
 			<div>
 				<%= link_to user.name, user %> (<%= user.email %>)
 			</div>
-			(<%= user.dreams.count %> Dreams)
+			<%= user.dreams.count %> Dreams | 
 			<% if current_user.admin? && !current_user?(user) %>
-				<%= link_to "delete", user, method: :delete, confirm: "You sure?" %>
+				<%= link_to "delete?", user, method: :delete, confirm: "You sure?" %>
 			<% end %>
 		</li>
 	<% end %>
