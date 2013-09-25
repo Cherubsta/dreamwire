@@ -10,6 +10,7 @@
 				<%= link_to user.name, user %> (<%= user.email %>)
 			</div>
 			<%= user.dreams.count %> Dreams | 
+			Log in <%= time_ago_in_words user.updated_at %> ago |
 			<% if current_user.admin? && !current_user?(user) %>
 				<%= link_to "delete?", user, method: :delete, confirm: "You sure?" %>
 			<% end %>

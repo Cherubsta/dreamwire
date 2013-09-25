@@ -13,9 +13,10 @@ class UsersController < ApplicationController
     @user = current_user
   end
 
-  def show 
+  def show
   	@user = User.find(params[:id])
     @dreams = @user.dreams
+    current_user.touch(:last_log_in) #sets the last log in time
   end
 
   def new
