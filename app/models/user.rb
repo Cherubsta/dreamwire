@@ -3,7 +3,7 @@ class User < ActiveRecord::Base
                   :password_reset_token, :password_reset_sent_at
   has_secure_password
   has_many :dreams, dependent: :destroy #destroys user posts when user is destroyed
-  has_attached_file :avatar, :styles => { :medium => "300x300#", :thumb => "60x60#" }, 
+  has_attached_file :avatar, :styles => { :medium => "300x300#", :thumb => "120x120#" }, 
                     :default_url => "http://robohash.org/<% SecureRandom.base64.delete('/+=')[0, 1] %>?size=60x60"
                     # http://s3.amazonaws.com/DW-Assets/missing.png
   before_save { |user| user.email = user.email.downcase }

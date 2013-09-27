@@ -13,7 +13,7 @@
 			</div>
 			<div class="center"><%= render 'shared/error_messages', object: @user %></div>
 			<div class="changeavatar" onclick="chooseFile();">
-				<div class="changeavatarvert"><%= image_tag @user.avatar.url(:thumb) %></div>
+				<div class="changeavatarvert"><%= image_tag @user.avatar.url(:thumb), style: "width: 72px;" %></div>
 			</div>			
 			<div>
 				<%=	f.text_field :name, style: "border: 1px dotted #FBA617; width: 172px; border-radius: 0; padding-left: 4px;" %>
