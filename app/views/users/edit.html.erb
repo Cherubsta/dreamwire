@@ -12,9 +12,12 @@
 				<div class="labelright">Edit Avatar</div>
 			</div>
 			<div class="center"><%= render 'shared/error_messages', object: @user %></div>
-			<div class="changeavatar" onclick="chooseFile();">
-				<div class="changeavatarvert"><%= image_tag @user.avatar.url(:thumb), style: "width: 72px;" %></div>
-			</div>			
+			<div id="file-input" class="changeavatar" onclick="chooseFile();">
+				<div class="changeavatarvert">
+					<div id="currentavatar"><%= image_tag @user.avatar.url(:thumb), style: "width: 72px;" %></div>
+					<div id="newavatar"></div>		
+				</div>
+			</div>
 			<div>
 				<%=	f.text_field :name, style: "border: 1px dotted #FBA617; width: 172px; border-radius: 0; padding-left: 4px;" %>
 				<div class="labelright"><%=	f.label :name %></div>
@@ -55,5 +58,18 @@
 	</script>
 	<script> // for hiding file upload box
 		function chooseFile() { $("#user_avatar").click(); }
+	</script>
+	<script> // for showing new thumbnail
+		document.getElementById('user_avatar').onchange = function (e) {
+			document.getElementById('newavatar').innerHTML = ""; // clear initially
+		  loadImage(
+	      e.target.files[0],
+	      function (img) {
+	      	document.getElementById('currentavatar').innerHTML = "";
+	      	document.getElementById('newavatar').appendChild(img);
+	      },
+	      {maxWidth: 72, maxHeight: 72} // Options
+		  );
+		};
 	</script>
 </div>
