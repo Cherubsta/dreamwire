@@ -18,16 +18,17 @@
 			<%=	f.text_field :email, placeholder: "email", style: "border: 1px dotted #FBA617; width: 172px; border-radius: 0; padding-left: 4px;" %>
 			<div class="labelright">Be notified.</div>
 		</div>
-		<div class="margin-bottom">
+		<div>
 			<%=	f.text_field :name, placeholder: "full name", style: "border: 1px dotted #FBA617; width: 172px; border-radius: 0; padding-left: 4px;" %>
 				<div class="labelright">Be you.</div>
 		</div>
-		<div style="height: 44px;">		
+		<div style="height: 60px;">		
 			<%= f.file_field :avatar, style: "color: #02060D;" %>
 			<div class="labelright">Residual self image.</div>
 		</div>
 		<div class="selectavatar" onclick="chooseFile();">
-			<div class="selectavatarvert">add photo</div>
+			<div id="currentavatar"><p class="selectavatarvert">add photo</p></div>
+			<div id="newavatar"></div>	
 		</div>
 		<div class="ui-grid-a">
 			<small class="ui-block-a color-gray" style="width: 170px;">
@@ -41,4 +42,17 @@
 <% end %>
 <script> // for hiding file upload box
 	function chooseFile() { $("#user_avatar").click(); }
+</script>
+<script> // for showing new thumbnail
+	document.getElementById('user_avatar').onchange = function (e) {
+		document.getElementById('newavatar').innerHTML = ""; // clear initially
+	  loadImage(
+      e.target.files[0],
+      function (img) {
+      	document.getElementById('currentavatar').innerHTML = "";
+      	document.getElementById('newavatar').appendChild(img);
+      },
+      {maxWidth: 100, maxHeight: 100} // Options
+	  );
+	};
 </script>

@@ -350,7 +350,6 @@ div.ui-input-text {
  	margin-right: 10px;
  }
 
-
 /*sign up*/
 .labelright {
 	float: right;
@@ -365,16 +364,17 @@ div.ui-input-text {
   bottom: 50px;
   cursor: pointer;
   display: block;
-  height: 86px;
+  height: 112px;
   margin-left: 0.4em;
   position: relative;
   text-align: center;
-  width: 86px;
+  width: 112px;
 }
 .selectavatarvert {
 	color: #AAAAAA;
-  padding: 20px;
+  padding: 26px;
   width: 40px;
+  margin: 2px auto 0 auto;
 }
 .alignsignup {
 	text-align: left;
@@ -394,13 +394,13 @@ div.ui-input-text {
   border: 1px dotted #3890E9;
   cursor: pointer;
   display: block;
-  height: 86px;
+  height: 112px;
   margin-left: 0.4em;
   margin-top: 24px;
   position: absolute;
   text-align: center;
   top: 33px;
-  width: 86px;
+  width: 112px;
 }
 
 /*Forms*/
