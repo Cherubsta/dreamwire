@@ -14,9 +14,9 @@
 			<div class="margin-top">
 				<%=	f.text_field :username_or_email, placeholder: "username or email", autofocus: true, style: "border-bottom: 1px dotted #FBA617; border-radius: 0;" %>
 			</div>
-			<div class="ui-grid-a" style="width: 275px; margin: 0 auto;">
-				<div class="ui-block-a" style="width: 184px;">
-					<%=	f.password_field :password, placeholder: "password", style: "border-bottom: 1px dotted #FBA617; border-radius: 0;" %>
+			<div class="ui-grid-a" style="width: 285px; margin: 0 auto;">
+				<div class="ui-block-a" style="width: 192px; overflow: hidden;">
+					<%=	f.password_field :password, placeholder: "password", style: "border-bottom: 1px dotted #FBA617; border-radius: 0; width: 180px;" %>
 					<div class="alignleft">
 						<small><%= link_to "Reset Password?", new_password_reset_path %></small>
 					</div>
