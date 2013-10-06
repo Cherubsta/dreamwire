@@ -5,7 +5,7 @@
 <ul class="users">
 	<% User.all.each do |user| %>
 		<li class="borderbottom margin-top">
-			<%= image_tag user.avatar.url(:thumb) %>
+			<%= image_tag user.avatar.url(:thumb), class: "thumbsize" %>
 			<div>
 				<%= link_to user.name, user %> (<%= user.email %>)
 			</div>
