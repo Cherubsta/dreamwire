@@ -117,7 +117,7 @@ textarea.ui-input-text {
 }
 div.ui-input-text {
 	padding: 0 0.4em;
-	width: 280px;
+	width: 180px;
 }
 .ui-shadow-inset {
 	box-shadow: 0 0px 1px rgba(0, 0, 0, 0.2) inset;
@@ -546,4 +546,15 @@ div.ui-input-text {
   margin: 4px auto;
   padding: 2px 0;
   width: 300px;
+}
+
+.magic	{
+	background-color: #000000;
+  border-radius: 6px 6px 6px 6px;
+  border-bottom: 1px dotted #FBA617;
+  height: 36px;
+  left: 17px;
+  position: relative;
+  text-align: left;
+  width: 280px;
 }
