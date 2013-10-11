@@ -119,6 +119,9 @@ div.ui-input-text {
 	padding: 0 0.4em;
 	width: 180px;
 }
+div.ui-input-text.ui-focus, .ui-input-search.ui-focus {
+	box-shadow: none;
+}
 .ui-shadow-inset {
 	box-shadow: 0 0px 1px rgba(0, 0, 0, 0.2) inset;
 }
