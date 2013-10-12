@@ -14,6 +14,10 @@ class DreamsController < ApplicationController
   # GET /dreams, GET /dreams.json
   def show #DreamView - check for private dreams
     @dream = Dream.find(params[:id])
+    
+    require 'uri' #this gets the photo's id from the stored uri
+    @image_id = URI(@dream.imagesource).path.split('/').second
+    
     if @dream.privacy == true
       if signed_in?
         if @dream.user_id == current_user.id
@@ -46,9 +50,6 @@ class DreamsController < ApplicationController
 
   def detail
     @dream = Dream.find(params[:id])
-    
-    require 'uri' #this gets the photo's id from the stored uri
-    @image_id = URI(@dream.imagesource).path.split('/').second
   end
 
   # GET /dreams/1/edit

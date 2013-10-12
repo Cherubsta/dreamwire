@@ -361,18 +361,23 @@ div.ui-input-text.ui-focus, .ui-input-search.ui-focus {
 }
 
 /*dream details*/
- .detailblock {
+.detailblock {
  	float: left;
- 	height: 80px;
+ 	height: 60px;
  	font-size: 11px;
  	text-align: center;
  	margin-right: 10px;
- }
- .closedetails {
+}
+.closedetails {
  	left: 90%;
   position: relative;
   top: 10px;
 }
+.borderdetails {
+	border-bottom: 1px dotted #FBA617;
+	margin: 14px 0; 
+}
+
 /*sign up*/
 .labelright {
 	float: right;
