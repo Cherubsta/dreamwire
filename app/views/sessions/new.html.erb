@@ -12,9 +12,9 @@
 	  <% end %>
 		<%= form_for(:session, url: sessions_path) do |f| %>
 			<div class="margin-top">
-			<div class="magic">
-				<%=	f.text_field :username_or_email, placeholder: "username or email", autofocus: true, style: "padding: 0;"%>
-			</div>
+				<div class="magic center">
+					<%=	f.text_field :username_or_email, placeholder: "username or email", autofocus: true, style: "padding: 0;"%>
+				</div>
 			</div>
 			<div class="ui-grid-a" style="width: 285px; margin: 0 auto;">
 				<div class="ui-block-a" style="width: 192px; overflow: hidden;">
