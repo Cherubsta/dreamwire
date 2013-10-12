@@ -69,9 +69,8 @@
 		<% end %>
 		<div class="borderdetails"></div>
 		<div>Photo by: <%= @dream.imageowner %></div>
-		<div>
-			500px: <a href="http://500px.com/photo/<%= @image_id %>" target="_blank"><small>http://500px.com/photo/<%= @image_id %></small></a>
-		</div>
+		<a href="http://500px.com/photo/<%= @image_id %>" target="_blank">
+			<small>http://500px.com/photo/<%= @image_id %></small></a>
 		<div class="borderdetails"></div>
 		<% if current_user == @dream.user %>
 			<div class="margin-bottom">
