@@ -80,6 +80,7 @@ li {
 	text-shadow: none;
 	font-family: 'Open Sans', sans-serif;
 }
+
 .ui-popup-container {
 	background-color: rgba(2, 6, 13, 0.85);
 	top: 0;
@@ -241,10 +242,11 @@ div.ui-input-text.ui-focus, .ui-input-search.ui-focus {
 	width: 140px;
 }
 .headerbar {
-	border: medium none; 
-	border-bottom: 1px solid #323E48;
-	margin: 4px 10px;
+	border: none; 
+	/*border-bottom: 1px solid #323E48;*/
+	margin: 8px auto;
   padding-top: 6px;
+  max-width: 600px;
 }
 /*Landing Page*/
 .background-image {
