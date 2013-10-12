@@ -389,9 +389,10 @@ div.ui-input-text.ui-focus, .ui-input-search.ui-focus {
   margin: 2px auto 0 auto;
 }
 .alignsignup {
-	text-align: left;
-	margin-left: 20px;
 	height: 550px;
+  margin: 0 auto;
+  max-width: 600px;
+  text-align: left;
 }
 .privacytext {
 	width: 150px;
