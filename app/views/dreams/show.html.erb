@@ -11,11 +11,72 @@
 				<img src='http://s3.amazonaws.com/DW-Assets/icon_lock.png' alt='Private' width="10px">  
 			<% end %>
 			<div class="float-right">
-				<a href="/dreams/<%= @dream.id %>/detail/" data-transition="flip" >
+				<!-- <a href="/dreams/<%= @dream.id %>/detail/" data-transition="flip" > -->
+				<a href="#details" data-rel="popup" data-transition="flip" >
 					<img src='http://s3.amazonaws.com/DW-Assets/icon_details.png' alt='(i)' width="20px">
 				</a>
 			</div>
 		</h2>
 		<p><%= @dream.content %></p>
+	</div>
+	<div data-role="popup" id="details" data-position-to="window" style="background: none; text-align:left;">	
+		<a href="#" data-rel="back" class="closedetails">
+			<img src='http://s3.amazonaws.com/DW-Assets/icon_close.png' width="20px">
+		</a>
+		<div class="margin-bottom margin-top borderbottom">
+			<%= image_tag @dream.user.avatar.url(:thumb), class: "thumbsize" %>
+			<%= @dream.user.username %>
+		</div>
+		<h3><%= @dream.title %>
+			<% if @dream.privacy == true %> 
+				(<img src='http://s3.amazonaws.com/DW-Assets/icon_lock.png' alt='Private' width="10px"> 
+				<small>Private</small>)
+			<% end %>
+		</h3>
+		<p><span class="color-gray">Dreamt: </span><%= time_ago_in_words @dream.created_at %> ago.</p>
+		<h4 class="margin-top">
+			<% if @dream.nightmare == true %>
+				<div class="detailblock">
+					<img src='http://s3.amazonaws.com/DW-Assets/icon_nightmare_off.png' width="54px">
+					<div>Nightmare</div>
+				</div>
+			<% end %>
+			<% if @dream.lucid == true %>
+				<div class="detailblock">
+					<img src='http://s3.amazonaws.com/DW-Assets/icon_lucid_off.png' width="54px">
+					<div>Lucid</div>
+				</div>
+			<% end %>
+			<% if @dream.recurring == true %>
+				<div class="detailblock">
+					<img src='http://s3.amazonaws.com/DW-Assets/icon_recurring_off.png' width="54px">
+					<div>Recurring</div>
+				</div>
+			<% end %>
+			<% if @dream.fragmented == true %>
+				<div class="detailblock">
+					<img src='http://s3.amazonaws.com/DW-Assets/icon_fragmented_off.png' width="54px">
+					<div>Fragmented</div>
+				</div>
+			<% end %>
+		</h4>
+		<% if @dream.emotion != '' %>
+			<p class="margin-top clearfix"><span class="color-gray">Emotion upon waking: </span><%= @dream.emotion %></p>
+		<% end %>
+		<% if @dream.hashtag != '' %>
+			<p class="margin-top clearfix"><span class="color-gray">Tags:</span> <%= @dream.hashtag %></p>
+		<% end %>
+		<div class="margin-top borderbottom"></div>
+		<div class="margin-top">Photo by: <%= @dream.imageowner %></div>
+		<div>
+			500px: <a href="http://500px.com/photo/<%= @image_id %>" target="_blank"><small>http://500px.com/photo/<%= @image_id %></small></a>
+		</div>
+		<div class="margin-top borderbottom"></div>
+		<% if current_user == @dream.user %>
+			<div class="margin-top margin-bottom">
+				<%= link_to 'Edit', edit_dream_path(@dream), rel: "external" %> |
+				<%= link_to 'Delete', @dream, method: :delete, data: {confirm: 'Delete this dream? Are you sure?'} %>
+			</div>
+		<% end %>
 	</div>
 </div>

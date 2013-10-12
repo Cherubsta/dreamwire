@@ -85,10 +85,14 @@ li {
 }
 .ui-popup-container {
 	background-color: rgba(2, 6, 13, 0.85);
-	top: 0;
-	width: 80%;
-	max-width: 400px;
-	border: 1px dotted #3890E9;
+  border: 1px dotted #3890E9;
+  left: 0;
+  max-width: 600px;
+  top: 0;
+  width: 320px;
+  max-width: 600px;
+  padding-left: 4px;
+  min-height: 400px;
 }
 .ui-input-search, div.ui-input-text {
 	display: inline-block;
@@ -298,6 +302,11 @@ div.ui-input-text.ui-focus, .ui-input-search.ui-focus {
 .iconsize {
 	width: 50px;
 }
+.closeicon {
+	left: 42%;
+  position: relative;
+  top: 15px;
+}
 
 /*dream feed block*/
 .dreamblock {
@@ -311,7 +320,6 @@ div.ui-input-text.ui-focus, .ui-input-search.ui-focus {
 }
 .avatar-position {
 	position: absolute;
-  right: 10px;
   padding: 4px;
 }
 .thumbsize {
@@ -360,7 +368,11 @@ div.ui-input-text.ui-focus, .ui-input-search.ui-focus {
  	text-align: center;
  	margin-right: 10px;
  }
-
+ .closedetails {
+ 	left: 90%;
+  position: relative;
+  top: 10px;
+}
 /*sign up*/
 .labelright {
 	float: right;

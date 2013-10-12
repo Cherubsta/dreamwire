@@ -42,7 +42,10 @@
 			</div>
 		</div>	
 	<% end %>
-	<div data-role="popup" id="menu" data-position-to="window" style="background: none;">	
+	<div data-role="popup" id="menu" data-position-to="window" style="background: none;">
+		<a href="#" data-rel="back" class="closeicon">
+			<img src='http://s3.amazonaws.com/DW-Assets/icon_close.png' width="20px">
+		</a>
 		<div class="ui-grid-a borderbottom">
 			<div class="ui-block-a" style="margin: 12px; text-align: left; width: 42px;">
 				<a href="<%= user_path(current_user) %>">
