@@ -244,11 +244,12 @@ div.ui-input-text.ui-focus, .ui-input-search.ui-focus {
 	width: 140px;
 }
 .headerbar {
-	border: none; 
-	/*border-bottom: 1px solid #323E48;*/
-	margin: 8px auto;
-  padding-top: 6px;
+	border: none;
+  height: 34px;
+  margin: 8px auto;
   max-width: 600px;
+  padding-top: 2px;
+  vertical-align: middle;
 }
 /*Landing Page*/
 .background-image {
@@ -350,10 +351,6 @@ div.ui-input-text.ui-focus, .ui-input-search.ui-focus {
 	margin-right: auto;
 	margin-left: auto;
 }
-.aligndetails {
-	text-align: left;
-	margin-left: 20px;
-}
 
 /*dream details*/
  .detailblock {
@@ -390,7 +387,7 @@ div.ui-input-text.ui-focus, .ui-input-search.ui-focus {
   width: 40px;
   margin: 2px auto 0 auto;
 }
-.alignsignup {
+.aligncenter {
 	height: 550px;
   margin: 0 auto;
   max-width: 600px;

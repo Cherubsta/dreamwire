@@ -5,7 +5,7 @@
 </div>
 <%= form_for(@user, :html => {"data-ajax" => false}) do |f| %>
 	<%= render 'shared/error_messages', object: @user %>
-	<div class="alignsignup">
+	<div class="aligncenter">
 		<div class="margin-bottom">
 			<%=	f.text_field :username, placeholder: "username", style: "border: 1px dotted #FBA617; width: 172px; border-radius: 0; padding-left: 4px;" %>
 			<div class="labelright">Be unique.</div>
