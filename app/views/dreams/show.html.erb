@@ -67,11 +67,11 @@
 		<% if @dream.hashtag != '' %>
 			<div class="clearfix"><span class="color-gray">Tags:</span> <%= @dream.hashtag %></div>
 		<% end %>
-		<div class="borderdetails"></div>
+		<div class="borderdetails clearfix"></div>
 		<div>Photo by: <%= @dream.imageowner %></div>
 		<a href="http://500px.com/photo/<%= @image_id %>" target="_blank">
 			<small>http://500px.com/photo/<%= @image_id %></small></a>
-		<div class="borderdetails"></div>
+		<div class="borderdetails clearfix"></div>
 		<% if current_user == @dream.user %>
 			<div class="margin-bottom">
 				<%= link_to 'Edit', edit_dream_path(@dream), rel: "external" %> |
