@@ -28,13 +28,13 @@
 			<%= @dream.user.username %>
 		</div>
 		<div class="borderdetails"></div>
-		<div>"<%= @dream.title %>"
+		<div><strong>"<%= @dream.title %>"</strong>
 			<% if @dream.privacy == true %> 
-				(<img src='http://s3.amazonaws.com/DW-Assets/icon_lock.png' alt='Private' width="10px"> 
-				<small>Private</small>)
+				 - <img src='http://s3.amazonaws.com/DW-Assets/icon_lock.png' alt='Private' width="10px"> 
+				<small>Private</small>
 			<% end %>
 		</div>
-		<div class="color-gray">Dreamt: <%= time_ago_in_words @dream.created_at %> ago.</div>
+		<small class="color-gray">Dreamt <%= time_ago_in_words @dream.created_at %> ago</small>
 		<div>
 			<% if @dream.nightmare == true %>
 				<div class="detailblock">
@@ -68,9 +68,11 @@
 			<div class="clearfix"><span class="color-gray">Tags:</span> <%= @dream.hashtag %></div>
 		<% end %>
 		<div class="borderdetails clearfix"></div>
-		<div>Photo by: <%= @dream.imageowner %></div>
-		<a href="http://500px.com/photo/<%= @image_id %>" target="_blank">
-			<small>http://500px.com/photo/<%= @image_id %></small></a>
+		<small><div>Photo by: <%= @dream.imageowner %></div>
+			<a href="http://500px.com/photo/<%= @image_id %>" target="_blank">
+				http://500px.com/photo/<%= @image_id %>
+			</a>
+		</small>
 		<div class="borderdetails clearfix"></div>
 		<% if current_user == @dream.user %>
 			<div class="margin-bottom">
