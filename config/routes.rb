@@ -8,8 +8,8 @@ Dreamwire::Application.routes.draw do
 
   get "users/new"
 
-  match 'dreams/:id/detail',   to: 'dreams#detail'
-  match '/signup',      to: 'users#new'
+  # match 'dreams/:id/detail',   to: 'dreams#detail'
+  match '/signup',             to: 'users#new'
   match '/signin',             to: 'sessions#new'
   match '/signout',            to: 'sessions#destroy', via: :delete
 
@@ -18,7 +18,6 @@ Dreamwire::Application.routes.draw do
   get 'callback' => 'pages#callback'
   get 'signout' => 'pages#home'
   get 'privacy' => 'pages#privacy'
-  get 'home_bxb848' => 'pages#home_bxb848'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
