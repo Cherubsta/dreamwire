@@ -23,7 +23,7 @@ class User < ActiveRecord::Base
   validates :username, presence: true, uniqueness: { case_sensitive: false }, on: :create, on: :update 
 
    # for sorting newest posts first
-  default_scope order: 'users.last_log_in DESC'
+  default_scope order: 'users.updated_at DESC'
 
   def capitalize_name
     self.name = name.split.map(&:capitalize).join(' ')
