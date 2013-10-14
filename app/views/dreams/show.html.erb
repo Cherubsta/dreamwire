@@ -18,6 +18,13 @@
 			</div>
 		</h2>
 		<p><%= @dream.content %></p>
+		<div class="borderdetails margin-top"></div>
+		<% if current_user == @dream.user %>
+			<div class="margin-bottom">
+				<%= link_to 'Edit', edit_dream_path(@dream), rel: "external" %> |
+				<%= link_to 'Delete', @dream, method: :delete, confirm: 'Delete this dream? Are you sure?' %>
+			</div>
+		<% end %>
 	</div>
 	<div data-role="popup" id="details" data-position-to="window" style="background: none; text-align:left;">	
 		<a href="#" data-rel="back" class="closedetails">
@@ -74,11 +81,5 @@
 			</a>
 		</small>
 		<div class="borderdetails clearfix"></div>
-		<% if current_user == @dream.user %>
-			<div class="margin-bottom">
-				<%= link_to 'Edit', edit_dream_path(@dream), rel: "external" %> |
-				<%= link_to 'Delete', @dream, method: :delete, data: {confirm: 'Delete this dream? Are you sure?'} %>
-			</div>
-		<% end %>
 	</div>
 </div>
