@@ -1,19 +1,25 @@
 <% provide(:title, ' All Users') %>
-<%= link_to 'Dreamwire', home_path, class: "margin-bottom" %>
-<h2><%= User.count %> Users | <%= Dream.count %> Dreams</h2>
+<%= link_to 'Dreamwire', home_path %>
+<h3 class="margin-top"><%= User.count %> Users | <%= Dream.count %> Dreams</h3>
 
-<ul class="users">
+<ul style="padding-left: 2px;">
 	<% User.all.each do |user| %>
 		<li class="borderbottom margin-top">
-			<%= image_tag user.avatar.url(:thumb), class: "thumbsize" %>
-			<div>
-				<%= link_to user.name, user %> (<%= user.email %>)
+			<div class="ui-grid-a">
+				<div class="ui-block-a" style="margin-right: 8px; text-align: left; width: 60px;">
+					<%= image_tag user.avatar.url(:thumb), class: "thumbsize" %>
+				</div>
+				<div class="ui-block-b" style="text-align: left; width: 250px;">	
+					<div><%= link_to user.name, user %> - <small><%= user.dreams.count %> Dreams</small></div>
+					<small>(<%= user.email %>)</small>
+					<div><small>
+						Log in <%= time_ago_in_words user.updated_at %> ago - 
+						<% if current_user.admin? && !current_user?(user) %>
+							<%= link_to "delete?", user, method: :delete, confirm: "You sure?" %>
+						<% end %>
+					</small></div>
+				</div>
 			</div>
-			<%= user.dreams.count %> Dreams | 
-			Log in <%= time_ago_in_words user.updated_at %> ago |
-			<% if current_user.admin? && !current_user?(user) %>
-				<%= link_to "delete?", user, method: :delete, confirm: "You sure?" %>
-			<% end %>
 		</li>
 	<% end %>
 </ul>
