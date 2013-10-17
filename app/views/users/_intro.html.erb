@@ -83,6 +83,7 @@
 			<img src='http://s3.amazonaws.com/DW-Assets/icon_home_intro.png' width="60px" class="margin-top">
 			<p class="color-gray margin-bottom"> <%= @user.dreams.count %> dreams</p>
 			<img src='http://s3.amazonaws.com/DW-Assets/Zs.png' alt='z Z z zZ' class="Zposition">
+			<p><a href="#" class="helptoggle buttonborder">Info?</a></p>
 		</div>
 		<script type="text/javascript">
 			$(function(){
@@ -101,6 +102,12 @@
 			  $('.thirdtoggle').click(function(){
 			     $('#HelpFour').show();
 			     $('#HelpThree').hide();
+			  });
+			});
+			$(function(){
+			  $('.helptoggle').click(function(){
+			     $('#HelpOne').show();
+			     $('#HelpFour').hide();
 			  });
 			});
 		</script>
