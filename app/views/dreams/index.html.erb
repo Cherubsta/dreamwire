@@ -18,7 +18,7 @@
 			</div>
 			<div class="ui-block-b" style="text-align: left;">
 				<h3><%= current_user.name %></h3>
-				<h4><%= current_user.dreams.count %> Dreams</h4>
+				<h4><%= current_user.dreams.count %> dreams</h4>
 			</div>
 		</div>
 		<div class="ui-grid-a center">
@@ -41,11 +41,14 @@
 				</a>
 			</div>
 			<div class="ui-block-b menublock">
-				<a rel="nofollow" data-method="delete" href="/signout/">
+				<a href="/signout/" rel="nofollow" data-method="delete">
 					<img src='http://s3.amazonaws.com/DW-Assets/icon_signout.png' class="iconsize">
 					<div>SignOut</div>
 				</a>
 			</div>
+			<a href="/info/">
+				<img src='http://s3.amazonaws.com/DW-Assets/icon_details.png' width="20px">
+			</a>
 		</div>
 	</div>
 </div>

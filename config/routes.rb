@@ -18,6 +18,7 @@ Dreamwire::Application.routes.draw do
   get 'callback' => 'pages#callback'
   get 'signout' => 'pages#home'
   get 'privacy' => 'pages#privacy'
+  get 'info' => 'pages#info'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

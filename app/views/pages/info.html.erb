@@ -1,0 +1,117 @@
+<% provide(:title, 'About Dreamwire') %>
+<div data-role="header" class="headerbar">
+  <a href="/home/">Back</a>
+  <h4 style="width: 132px">Info</h4>
+</div>
+<div id="HelpOne" class="intro">
+	<p class="margin-top"><em>Recording a dream:</em></p>
+	<div class="ui-grid-a center">
+		<div class="ui-block-a" style="height: 50px; width: 50px; padding-top: 12px;">
+			<img src='http://s3.amazonaws.com/DW-Assets/icon_eye.png' width="40px">
+		</div>
+		<div class="ui-block-b margin-bottom" style="width: 250px; text-align: left;">
+			<p class="color-orange">Wake up, spend 1-2 minutes with your eyes shut.</p>
+			<small>Recall dream images, objects, people.</small>
+		</div>
+		<div class="ui-block-a" style="height: 50px; width: 50px; padding-top: 12px;">
+			<img src='http://s3.amazonaws.com/DW-Assets/icon_record.png' width="24px">
+		</div>
+		<div class="ui-block-b margin-bottom" style="width: 250px; text-align: left;">
+			<p class="color-orange">Start typing whatever you remember.</p>
+			<small>Try and tell a story about your dream.</small>
+		</div>
+		<div class="ui-block-a" style="height: 50px; width: 50px; padding-top: 12px;">
+			<img src='http://s3.amazonaws.com/DW-Assets/magnify.png' width="24px"> 
+		</div>
+		<div class="ui-block-b margin-bottom" style="width: 250px; text-align: left;">
+			<p class="color-orange">Search for your dream's symbolic image.</p>
+			<small>Choose one that resonates the most.</small>
+		</div>
+	</div>			
+	<a class="firsttoggle margin-top">Next »</a>
+</div>
+<div id="HelpTwo" style="display: none;" class="intro">
+	<p class="margin-top"><em>Dreamwire Home:</em></p>
+	<div class="ui-grid-a center">
+		<div class="ui-block-a" style="height: 50px; width: 50px; padding-top: 12px;">
+			<img src='http://s3.amazonaws.com/DW-Assets/icon_home_intro.png' width="36px">
+		</div>
+		<div class="ui-block-b margin-bottom" style="width: 250px; text-align: left;">
+			<p class="color-orange">Your public and private dreams are saved here.</p>
+			<small>Track your dreams over time.</small>
+		</div>
+		<div class="ui-block-a" style="height: 50px; width: 50px; padding-top: 12px;">
+			<img src='http://s3.amazonaws.com/DW-Assets/icon_lock_intro.png' width="20px">
+		</div>
+		<div class="ui-block-b margin-bottom" style="width: 250px; text-align: left;">
+			<p class="color-orange">Some dreams can be a personal experience.</p>
+			<small>Private dreams are for your eyes only.</small>
+		</div>
+		<div class="ui-block-a" style="height: 50px; width: 50px; padding-top: 12px;">
+			<img src='http://s3.amazonaws.com/DW-Assets/icon_dots.png' width="36px">
+		</div>
+		<div class="ui-block-b margin-bottom" style="width: 250px; text-align: left;">
+			<p class="color-orange">DreamView gives you the full dream scope.</p>
+			<small>Edit your dreams from here too.</small>
+		</div>
+	</div>			
+	<a class="secondtoggle">Next »</a>
+</div>
+<div id="HelpThree" style="display: none;" class="intro">
+	<p class="margin-top"><em>LiveWire:</em></p>
+	<div class="ui-grid-a center">
+		<div class="ui-block-a" style="height: 50px; width: 50px; padding-top: 12px;">
+			<img src='http://s3.amazonaws.com/DW-Assets/icon_livewire_intro.png' width="32px">
+		</div>
+		<div class="ui-block-b margin-bottom" style="width: 250px; text-align: left;">
+			<p class="color-orange">Public dreams are featured on LiveWire.</p>
+			<small>Express yourself, share a great dream. </small>
+		</div>
+		<div class="ui-block-a" style="height: 50px; width: 50px; padding-top: 12px;">
+			<img src='http://s3.amazonaws.com/DW-Assets/icon_share.png' width="36px">
+		</div>
+		<div class="ui-block-b margin-bottom" style="width: 250px; text-align: left;">
+			<p class="color-orange">Explore dreams from across the globe.</p>
+			<small>Discover inspiring dreams and dreamers.</small>
+		</div>
+		<div class="ui-block-a" style="height: 50px; width: 50px; padding-top: 12px;">
+			<img src='http://s3.amazonaws.com/DW-Assets/icon_dots.png' width="36px">
+		</div>
+		<div class="ui-block-b margin-bottom" style="width: 250px; text-align: left;">
+			<p class="color-orange">Reflect on a dream or share with friends or family.</p>
+			<small>Show your love with a comment or two.</small>
+		</div>
+	</div>			
+	<a href="#" class="thirdtoggle buttonborder">Got it!</a>
+</div>
+<div id="HelpFour" style="display: none;" class="intro">	
+	<img src='http://s3.amazonaws.com/DW-Assets/icon_home_intro.png' width="60px" class="margin-top">
+	<p><img src='http://s3.amazonaws.com/DW-Assets/Zs.png' alt='z Z z zZ' class="Zposition"></p>
+	<p><a href="#" class="helptoggle buttonborder">Replay?</a></p>
+</div>
+<script type="text/javascript">
+	$(function(){
+	  $('.firsttoggle').click(function(){
+	     $('#HelpTwo').show();
+	     $('#HelpOne').hide();
+	  });
+	});
+	$(function(){
+	  $('.secondtoggle').click(function(){
+	     $('#HelpThree').show();
+	     $('#HelpTwo').hide();
+	  });
+	});
+	$(function(){
+	  $('.thirdtoggle').click(function(){
+	     $('#HelpFour').show();
+	     $('#HelpThree').hide();
+	  });
+	});
+	$(function(){
+	  $('.helptoggle').click(function(){
+	     $('#HelpOne').show();
+	     $('#HelpFour').hide();
+	  });
+	});
+</script>
