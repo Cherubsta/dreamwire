@@ -579,3 +579,18 @@ div.ui-input-text.ui-focus, .ui-input-search.ui-focus {
   text-align: left;
   width: 280px;
 }
+
+/*intro tutorial*/
+.intro {
+	background-color: #02060D;
+	display: block;
+	width: 300px;
+	height: 500px;
+	position: absolute;
+ 	top: 52%;
+ 	left: 50%;
+ 	z-index: 1002;
+  overflow:auto;
+  margin-left: -150px;
+  margin-top: -250px;
+}
