@@ -3,14 +3,11 @@
 	<div data-role="header" class="headerbar">
 		<a href="#menu" data-rel="popup" class="navbuttonborder">Menu</a>
 		<img src='http://s3.amazonaws.com/DW-Assets/logo-small.png' alt='My Dreams' width="110px">
-		<%= link_to 'New', new_dream_path, :"data-ajax" => "false", class: "navbuttonborder", style: "color: #3890E9" %>
+		<%= link_to 'New', new_dream_path, :"data-ajax" => "false", class: "navbuttonborder", style: "color: #378EEF" %>
 	</div>
 	<% if flash[:success] %>
     <div class="alert"><%= flash[:success] %></div>
   <% end %>
-	<% if !@user.dreams.any? %>
-		<%= render 'intro' %>
-	<% end %>
 	<% @dreams.each do |dream| %>
 		<div class="dreamblock">
 			<% if dream.imagesource == nil %> 
@@ -39,17 +36,17 @@
 		<div class="ui-grid-a borderbottom">
 			<div class="ui-block-a" style="text-align: left; width: 65px;">
 				<a href="<%= user_path(current_user) %>">
-					<%= image_tag @user.avatar.url(:thumb), class: "thumbsize" %>
+					<%= image_tag current_user.avatar.url(:thumb), class: "thumbsize" %>
 				</a>	
 			</div>
 			<div class="ui-block-b" style="text-align: left;">
-				<h3><%= @user.name %></h3>
-				<h4><%= @user.dreams.count %> dreams</h4>
+				<h3><%= current_user.name %></h3>
+				<h4><%= current_user.dreams.count %> dreams</h4>
 			</div>
 		</div>
 		<div class="ui-grid-a center">
 			<div class="ui-block-a menublock">
-				<a href="#" data-rel="back">
+				<a href="/home/">
 					<img src='http://s3.amazonaws.com/DW-Assets/icon_home.png' class="iconsize" style="border: 1px dotted #FBA617; border-radius: 6px;">
 					<div>Home</div>
 				</a>

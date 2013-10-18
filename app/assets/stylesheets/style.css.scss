@@ -2,10 +2,10 @@
 $textColor: white;
 $baseFontFamily: Open+Sans, Helvetica;
 $orange: #FBA617;
-$blue: #3890E9;
+$blue: #378EEF;
 $gray: #D4D4D4;
 $silver: #323E48;
-$btnPrimaryBackground: #3890E9;*/
+$btnPrimaryBackground: #378EEF;*/
 /*@import 'bootstrap';
 @import 'bootstrap-responsive';*/
 
@@ -85,7 +85,7 @@ li {
 }
 .ui-popup-container {
 	background-color: rgba(2, 6, 13, 0.9);
-  border: 1px solid #3890E9;
+  border: 1px solid #378EEF;
   left: 0;
   max-width: 600px;
   top: 0;
@@ -134,8 +134,8 @@ div.ui-input-text.ui-focus, .ui-input-search.ui-focus {
 }
 .ui-btn-up-c {
 	background: rgba(2, 6, 13, 0.1);
-	border: 1px dotted #3890E9;
-  color: #3890E9;
+	border: 1px dotted #378EEF;
+  color: #378EEF;
   font-family: 'Open Sans', sans-serif;
   font-weight: bold;
   text-shadow: none;
@@ -155,14 +155,14 @@ div.ui-input-text.ui-focus, .ui-input-search.ui-focus {
 }
 .ui-btn-hover-c {
 	background: none;
-	border: 1px dotted #3890E9;
+	border: 1px dotted #378EEF;
   color: #CCC;
   font-family: 'Open Sans', sans-serif;
   font-weight: bold;
   text-shadow: none;
 }
 .ui-btn-active {
-	background: #3890E9;
+	background: #378EEF;
 }
 .ui-field-contain .ui-controlgroup-controls {
 	display: table-row-group;
@@ -179,7 +179,7 @@ div.ui-input-text.ui-focus, .ui-input-search.ui-focus {
 	text-align: left;
 }
 .color-blue {
-	color: #3890E9;
+	color: #378EEF;
 }
 .color-orange {
 	color: #FBA617;
@@ -195,19 +195,19 @@ div.ui-input-text.ui-focus, .ui-input-search.ui-focus {
 	font-size: 1.09em;
 }
 .buttonborder {
-	border: 1px dotted #3890E9;
+	border: 1px dotted #378EEF;
 	padding: 4px;
 	border-radius: 4px;
 }
 .navbuttonborder {
 	border: none;
 	border-radius: 4px;
-	color: #3890E9;
+	color: #378EEF;
 }
 .closebuttonborder {
-	border: 2px solid #3890E9;
+	border: 2px solid #378EEF;
 	border-radius: 18px;
-	color: #3890E9;
+	color: #378EEF;
 }
 .font-hero {
 	font-size: 24px;
@@ -389,7 +389,7 @@ div.ui-input-text.ui-focus, .ui-input-search.ui-focus {
 }
 .selectavatar {
 	background-color: #02060D;
-  border: 1px dotted #3890E9;
+  border: 1px dotted #378EEF;
   bottom: 50px;
   cursor: pointer;
   display: block;
@@ -421,7 +421,7 @@ div.ui-input-text.ui-focus, .ui-input-search.ui-focus {
 }
 .changeavatar {
 	background-color: #02060D;
-  border: 1px dotted #3890E9;
+  border: 1px dotted #378EEF;
   cursor: pointer;
   display: block;
   height: 112px;
@@ -451,7 +451,7 @@ div.ui-input-text.ui-focus, .ui-input-search.ui-focus {
   padding: 0; 
 }
 #selectable li { 
-	border: 2px solid #3890E9;
+	border: 2px solid #378EEF;
   float: left;
   font-size: 4em;
   height: 140px;
@@ -501,7 +501,7 @@ div.ui-input-text.ui-focus, .ui-input-search.ui-focus {
   width: 300px;
 }
 .searchbox {
-  border: 1px solid #3890E9;
+  border: 1px solid #378EEF;
   border-radius: 0.6em 0.6em 0.6em 0.6em;
   float: left;
   font-size: 13px;

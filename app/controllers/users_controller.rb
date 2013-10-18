@@ -17,6 +17,9 @@ class UsersController < ApplicationController
   	@user = User.find(params[:id])
     @dreams = @user.dreams
     current_user.touch(:last_log_in) #sets the last log in time
+    if !@user.dreams.any?
+      render 'pages/info/'
+    end
   end
 
   def new
