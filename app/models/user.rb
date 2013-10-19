@@ -20,7 +20,7 @@ class User < ActiveRecord::Base
   validates :password, length: { minimum: 6 }, on: :create
   #on create, because was causing erros on pw_reset
   
-  validates :username, presence: true, uniqueness: { case_sensitive: false }, on: :create, on: :update 
+  validates :username, presence: true, uniqueness: { case_sensitive: false }
 
    # for sorting newest posts first
   default_scope order: 'users.updated_at DESC'
