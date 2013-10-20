@@ -90,6 +90,8 @@
 		<img src='http://s3.amazonaws.com/DW-Assets/icon_home_intro.png' width="60px" class="margin-top">
 		<p><img src='http://s3.amazonaws.com/DW-Assets/Zs.png' alt='z Z z zZ' class="Zposition"></p>
 		<p><a href="#" class="helptoggle buttonborder">Replay?</a></p>
+		<p class="margin-top margin-bottom">-or-</p>
+		<p><%= link_to 'Record a dream', new_dream_path, :"data-ajax" => "false", class: "buttonborder"%></p>
 	</div>
 	<div data-role="popup" id="menu" data-position-to="window" style="background: none;">
 		<a href="#" data-rel="back" class="closeicon">
