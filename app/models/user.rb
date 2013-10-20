@@ -14,15 +14,12 @@ class User < ActiveRecord::Base
 
   validates :name,  presence: true, length: { maximum: 50 }
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
-  validates :email, presence: true, format: { with: VALID_EMAIL_REGEX },
-                    uniqueness: { case_sensitive: false }
+  VALID_USERNAME_REGEX = /^[A-Za-z0-9]+(?:[_][A-Za-z0-9]+)*$/
+  validates :email,    presence: true, format: { with: VALID_EMAIL_REGEX },    uniqueness: { case_sensitive: false }
+  validates :username, presence: true, format: { with: VALID_USERNAME_REGEX }, uniqueness: { case_sensitive: false }
+  validates :password, length: { minimum: 6 }, on: :create #on create, because was causing erros on pw_reset
   
-  validates :password, length: { minimum: 6 }, on: :create
-  #on create, because was causing erros on pw_reset
-  
-  validates :username, presence: true, uniqueness: { case_sensitive: false }
-
-   # for sorting newest posts first
+  # for sorting newest posts first
   default_scope order: 'users.updated_at DESC'
 
   def capitalize_name

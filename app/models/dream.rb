@@ -7,7 +7,7 @@ class Dream < ActiveRecord::Base
 
   validates :content, presence: true, length: { maximum: 8000 }
   validates :title, presence: true, length: { maximum: 36 }
-  validates :imagesource, presence: { message: "Please search and choose an image :)" }, length: { maximum: 255 }
+  validates :imagesource, presence: { message: "Please search and choose an image" }, length: { maximum: 255 }
   validates_inclusion_of :privacy, :in => [true, false]
 
   # for sorting newest posts first
