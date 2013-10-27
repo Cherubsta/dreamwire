@@ -4,14 +4,14 @@ class Dream < ActiveRecord::Base
   belongs_to :user
   
   before_save :capitalize_title
-  before_validation :generate_slug
-  #before_save :generate_slug
+  #before_validation :generate_slug
+  before_save :generate_slug
 
   validates :content, presence: true, length: { maximum: 8000 }
   validates :title, presence: true, length: { maximum: 36 }
   #validates :imagesource, presence: { message: "Please search and choose an image" }, length: { maximum: 255 }
   validates_inclusion_of :privacy, :in => [true, false]
-  validates :slug, uniqueness: true, presence: true, 
+  #validates :slug, uniqueness: true, presence: true, 
                     exclusion: {in: %w[signup signin signout home info privacy]}
   
   # for sorting newest posts first
