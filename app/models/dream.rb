@@ -4,8 +4,8 @@ class Dream < ActiveRecord::Base
   belongs_to :user
   
   before_save :capitalize_title
-  #before_validation :generate_slug
-  before_save :generate_slug
+  before_validation :generate_slug
+  #before_save :generate_slug
 
   validates :content, presence: true, length: { maximum: 8000 }
   validates :title, presence: true, length: { maximum: 36 }
