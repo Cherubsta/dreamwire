@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131014043621) do
+ActiveRecord::Schema.define(:version => 20131026172016) do
 
   create_table "dreams", :force => true do |t|
     t.text     "content"
@@ -30,8 +30,10 @@ ActiveRecord::Schema.define(:version => 20131014043621) do
     t.string   "imagesource"
     t.string   "imageowner"
     t.boolean  "featured",    :default => false
+    t.string   "slug"
   end
 
+  add_index "dreams", ["slug"], :name => "index_dreams_on_slug"
   add_index "dreams", ["user_id", "created_at"], :name => "index_pins_on_user_id_and_created_at"
 
   create_table "users", :force => true do |t|

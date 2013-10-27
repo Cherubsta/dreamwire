@@ -12,7 +12,7 @@ class DreamsController < ApplicationController
 
   # GET /dreams, GET /dreams.json
   def show #DreamView - check for private dreams
-    @dream = Dream.find(params[:id])
+    @dream = Dream.find_by_slug!(params[:id])
     
     require 'uri' #this gets the photo's id from the stored uri
     @image_id = URI(@dream.imagesource).path.split('/').second
@@ -47,13 +47,9 @@ class DreamsController < ApplicationController
     end
   end
 
-  def detail
-    @dream = Dream.find(params[:id])
-  end
-
   # GET /dreams/1/edit
   def edit
-    @dream = current_user.dreams.find(params[:id])
+    @dream = current_user.dreams.find_by_slug!(params[:id])
   end
 
   # POST /dreams, POST /dreams.json
@@ -72,7 +68,7 @@ class DreamsController < ApplicationController
 
   # PUT /dreams/1, PUT /dreams/1.json
   def update
-    @dream = current_user.dreams.find(params[:id])
+    @dream = current_user.dreams.find_by_slug!(params[:id])
     respond_to do |format|
       if @dream.update_attributes(params[:dream])
         format.html { redirect_to @current_user, trailing_slash: true }
@@ -87,7 +83,7 @@ class DreamsController < ApplicationController
 
   # DELETE /dreams/1, DELETE /dreams/1.json
   def destroy
-    @dream = current_user.dreams.find(params[:id])
+    @dream = current_user.dreams.find_by_slug!(params[:id])
     @dream.destroy
     respond_to do |format|
       format.html { redirect_to @current_user }
