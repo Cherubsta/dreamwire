@@ -7,7 +7,7 @@ class Dream < ActiveRecord::Base
   before_validation :generate_slug
 
   validates :content, presence: true, length: { maximum: 8000 }
-  validates :title, presence: true, length: { maximum: 36 }
+  validates :title, presence: true, length: { maximum: 24 }
   validates :imagesource, presence: { message: "Please search and choose an image" }, length: { maximum: 255 }
   validates_inclusion_of :privacy, :in => [true, false]
   validates :slug, uniqueness: true, presence: true, 
