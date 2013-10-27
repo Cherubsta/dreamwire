@@ -12,7 +12,7 @@ class Dream < ActiveRecord::Base
   #validates :imagesource, presence: { message: "Please search and choose an image" }, length: { maximum: 255 }
   validates_inclusion_of :privacy, :in => [true, false]
   #validates :slug, uniqueness: true, presence: true, 
-                    exclusion: {in: %w[signup signin signout home info privacy]}
+                    #exclusion: {in: %w[signup signin signout home info privacy]}
   
   # for sorting newest posts first
   default_scope order: 'dreams.created_at DESC'
