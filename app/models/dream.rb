@@ -21,7 +21,10 @@ class Dream < ActiveRecord::Base
   end
 
   def generate_slug # makes the url slug address bar freindly
-    self.slug ||= title.parameterize
+    self.slug ||= loop do
+      random_token = Digest::MD5.hexdigest(Time.zone.now.to_s + title)[0..9]+"-"+"#{title}".parameterize
+      break random_token unless Dream.where(slug: random_token).exists?
+    end
   end
 
 	protected
