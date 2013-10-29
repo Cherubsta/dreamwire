@@ -173,6 +173,16 @@ div.ui-input-text.ui-focus, .ui-input-search.ui-focus {
 .ui-field-contain .ui-controlgroup-controls {
 	display: table-row-group;
 }
+.soup .ui-btn-inner {
+  padding: 0px 4px 4px 4px !important;
+}
+.headsoup .ui-btn-up-a {
+  border-radius: 0px;
+  background-image: none;
+  background-color: transparent;
+  text-shadow: none;
+  box-shadow: none;
+}
 
 /*fixes*/
 :focus{
@@ -251,7 +261,7 @@ div.ui-input-text.ui-focus, .ui-input-search.ui-focus {
 
 /*navbar*/
 .logonav {
-	width: 140px;
+	padding-top: 5px;
 }
 .headerbar {
 	border: none;
