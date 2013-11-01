@@ -1,11 +1,12 @@
-<div data-role="header" class="headerbar">
-	<a href="#" data-rel="back" data-direction="reverse" data-transition="slide">Back</a>
-	<h4>Pass Reset</h4>
+<div data-role="header" class="headerbar headsoup">
+	<a href="#" data-rel="back" data-direction="reverse" data-transition="slide" class="soup padding-top">Back</a>
+	<h4 style="width: 134px;">Password Reset</h4>
 </div>
-<div class="color-orange">
+<div class="color-orange margin-bottom">
+	<br>
 	<p>Forget your password?</p> 
 	<small>No problem... You can reset it through your email.</small>
-</div>
+</div><br>
 <% if flash[:error] %>
   <div class="alert"><%= flash[:error] %></div>
 <% end %>
@@ -18,5 +19,5 @@
 			<%= submit_tag "Reset"%>
 		</div>
 	</div>
-	<small class="margin-top">Reset your password at any time to keep it secure.</small>
+	<small class="margin-top">Reset your password any time to keep it secure.</small>
 <% end %>
