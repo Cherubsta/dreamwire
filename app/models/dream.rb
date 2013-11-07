@@ -14,7 +14,7 @@ class Dream < ActiveRecord::Base
                     exclusion: {in: %w[signup signin signout home info privacy]}
   
   # for sorting featured and newest posts first
-  scope :featured_order,   order('featured DESC, created_at DESC').limit(40)
+  scope :featured_order,   order('featured DESC, created_at DESC').limit(60)
   scope :created_at_order, order('created_at DESC')
 
   def to_param
