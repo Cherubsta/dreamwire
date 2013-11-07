@@ -32,7 +32,22 @@
 				<%= link_to 'Delete', @dream, method: :delete, confirm: 'Delete this dream? Are you sure?' %>
 			</div>
 		<% end %>
+		<% if current_user.admin? %>
+			<div class="adminblock">
+		    <%= form_for(@dream) do |f| %>
+		    	<%= f.check_box :featured %>
+		    	<a href="#" class="submit navbuttonborder admin-submit">Save</a>
+				<% end %> 
+			</div>
+			<script type="text/javascript">
+				$('.submit').unbind('click').click(function(){
+			    $('form').submit();
+			    return false;
+				});
+			</script>
+		<% end %>
 	</div>
+
 	<div data-role="popup" id="details" data-position-to="window" style="background: none; text-align:left;">	
 		<a href="#" data-rel="back" class="closedetails">
 			<img src='http://s3.amazonaws.com/DW-Assets/icon_close.png' width="20px">

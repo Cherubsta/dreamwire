@@ -3,7 +3,7 @@ class DreamsController < ApplicationController
 
   # GET /dreams, GET /dreams.json
   def index #LiveWire
-    @dreams = Dream.all
+    @dreams = Dream.featured_order
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @dreams }
@@ -68,7 +68,11 @@ class DreamsController < ApplicationController
 
   # PUT /dreams/1, PUT /dreams/1.json
   def update
-    @dream = current_user.dreams.find_by_slug!(params[:id])
+    if current_user.admin? #for admin adding featured dream 
+      @dream = Dream.find_by_slug!(params[:id])
+    else
+      @dream = current_user.dreams.find_by_slug!(params[:id])
+    end
     respond_to do |format|
       if @dream.update_attributes(params[:dream])
         format.html { redirect_to @current_user, trailing_slash: true }

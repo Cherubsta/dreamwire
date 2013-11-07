@@ -1,6 +1,6 @@
 class Dream < ActiveRecord::Base
   attr_accessible :content, :title, :privacy, :date, :nightmare, :lucid, :recurring, 
-                  :fragmented, :hashtag, :emotion, :user_id, :imagesource, :imageowner
+                  :fragmented, :hashtag, :emotion, :user_id, :imagesource, :imageowner, :featured
   belongs_to :user
   
   before_save :capitalize_title
@@ -13,8 +13,9 @@ class Dream < ActiveRecord::Base
   validates :slug, uniqueness: true, presence: true, 
                     exclusion: {in: %w[signup signin signout home info privacy]}
   
-  # for sorting newest posts first
-  default_scope order: 'dreams.created_at DESC'
+  # for sorting featured and newest posts first
+  scope :featured_order,   order('featured DESC, created_at DESC').limit(40)
+  scope :created_at_order, order('created_at DESC')
 
   def to_param
     slug # or "#{id}-#{name}".parameterize

@@ -15,7 +15,7 @@ class UsersController < ApplicationController
 
   def show
   	@user = User.find(params[:id])
-    @dreams = @user.dreams
+    @dreams = @user.dreams.created_at_order
     current_user.touch(:last_log_in) #sets the last log in time
     if !@user.dreams.any?
       render 'pages/info/'
