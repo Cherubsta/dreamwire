@@ -14,8 +14,10 @@ class Dream < ActiveRecord::Base
                     exclusion: {in: %w[signup signin signout home info privacy]}
   
   # for sorting featured and newest posts first
-  scope :featured_order,   order('featured DESC, created_at DESC').limit(60)
-  scope :created_at_order, order('created_at DESC')
+  scope :featured_scope, order('featured DESC, created_at DESC').limit(20)
+  scope :created_scope,  order('created_at DESC')
+  # for choosing only public posts
+  scope :public_scope, -> { where(privacy: false) }
 
   def to_param
     slug # or "#{id}-#{name}".parameterize
