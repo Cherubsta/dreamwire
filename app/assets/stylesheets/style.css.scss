@@ -57,6 +57,47 @@ li {
 	list-style-type: none; 
 }
 
+/* Landscape phones and down */
+@media (max-width: 480px) {
+   #media-small {
+    display: block;
+  }
+  #media-large {
+    display: none;
+  } 
+}
+
+/* Landscape phone to portrait tablet */
+@media (max-width: 767px) {
+  #media-small {
+    display: block;
+  }
+  #media-large {
+    display: none;
+  }
+}
+
+/* Portrait tablet to landscape and desktop */
+@media (min-width: 768px) {
+  #media-large {
+    display: block;
+  }
+  #media-small {
+    display: none;
+  } 
+}
+
+/* Large desktop */
+@media (min-width: 1200px) {
+  #media-large {
+    display: block;
+  }
+  #media-small {
+    display: none;
+  } 
+}
+
+
 /*Adjust input placeholder*/
 ::-webkit-input-placeholder { /* WebKit browsers */
   color:    #aaa;
@@ -387,6 +428,11 @@ div.ui-input-text.ui-focus, .ui-input-search.ui-focus {
   position: relative;
   right: 4px;
   text-decoration: none;
+}
+.featured {
+  position: absolute;
+  right: 16px;
+  width: 30px;
 }
 
 /*dreamview block*/
