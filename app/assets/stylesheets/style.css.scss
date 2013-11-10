@@ -66,7 +66,6 @@ li {
     display: none;
   } 
 }
-
 /* Landscape phone to portrait tablet */
 @media (max-width: 767px) {
   #media-small {
@@ -76,7 +75,6 @@ li {
     display: none;
   }
 }
-
 /* Portrait tablet to landscape and desktop */
 @media (min-width: 768px) {
   #media-large {
@@ -86,7 +84,6 @@ li {
     display: none;
   } 
 }
-
 /* Large desktop */
 @media (min-width: 1200px) {
   #media-large {
@@ -96,7 +93,6 @@ li {
     display: none;
   } 
 }
-
 
 /*Adjust input placeholder*/
 ::-webkit-input-placeholder { /* WebKit browsers */
@@ -431,7 +427,7 @@ div.ui-input-text.ui-focus, .ui-input-search.ui-focus {
 }
 .featured {
   position: absolute;
-  right: 16px;
+  right: 10px;
   width: 30px;
 }
 
