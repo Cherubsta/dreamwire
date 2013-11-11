@@ -13,12 +13,12 @@ Dreamwire::Application.routes.draw do
   match '/signin',             to: 'sessions#new'
   match '/signout',            to: 'sessions#destroy', via: :delete
 
-  get 'menu' => 'users#menu'
-  get 'home' => 'pages#home'
+  get 'menu'     => 'users#menu'
+  get 'home'     => 'pages#home'
+  get 'info'     => 'pages#info'
   get 'callback' => 'pages#callback'
-  get 'signout' => 'pages#home'
-  get 'privacy' => 'pages#privacy'
-  get 'info' => 'pages#info'
+  get 'signout'  => 'pages#home'
+  get 'privacy'  => 'pages#privacy'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

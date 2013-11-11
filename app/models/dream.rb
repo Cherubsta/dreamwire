@@ -16,8 +16,7 @@ class Dream < ActiveRecord::Base
   # for sorting featured and newest posts first
   scope :featured_scope, order('featured DESC, created_at DESC').limit(42)
   scope :created_scope,  order('created_at DESC')
-  # for choosing only public posts
-  scope :public_scope, -> { where(privacy: false) }
+  scope :public_scope, -> { where(privacy: false) } # for choosing only public posts
 
   def to_param
     slug # or "#{id}-#{name}".parameterize
