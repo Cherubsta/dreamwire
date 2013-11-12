@@ -10,7 +10,9 @@
 			<%= render 'shared/error_messages', object: @dream %>
 		<% end %>
 		<div class="dreamrecord">
-			<%= f.text_field :title,   placeholder: "Dream title", style: "border-bottom: 1px dotted #FBA617; padding-bottom: 0px; border-radius: 0; position: relative; left: -47px;", maxlength: 23 %>
+			<div class="float-left">
+				<%= f.text_field :title, placeholder: "Dream title", style: "border-bottom: 1px dotted #FBA617; padding-bottom: 0px; border-radius: 0;", maxlength: 23 %>
+			</div>
 			<%= f.text_area  :content, placeholder: "Narrate your dream...", style: "padding-top: 0px;", maxlength: 8000%>
 		</div>
 		<div class="searchblock">
@@ -109,11 +111,11 @@
 				<% @menu_blank = "Emotion upon waking" %>
 			<% end %>
 			<div class="recordmargin">
-				<%= f.select :emotion, ([["Happy", "Happy"], ["Satisfied", "Satisfied"], ["Inspired", "Inspired"], ["Relieved", "Relieved"], ["Afraid", "Afraid"], ["Sad", "Sad"], ["Surprised", "Surprised"], ["Confused", "Confused"]]), :include_blank => @menu_blank %>
+				<%= f.select :emotion, ([["Happy", "Happy"], ["Satisfied", "Satisfied"], ["Unsatisfied", "Unsatisfied"], ["Inspired", "Inspired"], ["Relieved", "Relieved"], ["Afraid", "Afraid"], ["Sad", "Sad"], ["Surprised", "Surprised"], ["Confused", "Confused"]]), :include_blank => @menu_blank %>
 			</div>
 		</div>
-		<div class="field margin-top">
-			<%= f.text_area :hashtag, :placeholder => "#characters, #activities, #objects", style: "border: 1px dotted #FBA617; border-radius: 0.6em; padding-left: 4px; height: 80px;" %>
+		<div class="dreamrecord margin-top">
+			<%= f.text_area :hashtag, :placeholder => "#characters, #activities, #objects, notes" %>
 		</div>
 		<div class="footerpadding">
 			<a href="#record" data-transition="slidedown" style="width: 40px;">Less ^ </a>

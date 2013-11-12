@@ -160,7 +160,7 @@ textarea.ui-input-text {
 	height: 148px;
 	margin: 0 auto;
 	transition: height 200ms linear 0s;
-	width: 290px;
+	/*width: 290px;*/
 }
 .ui-body-c, .ui-overlay-c {
 	border: none;
@@ -570,9 +570,14 @@ div.ui-input-text.ui-focus, .ui-input-search.ui-focus {
 /*dream recorder*/
 .dreamrecord {
 	border: 1px solid #FBA617;
-  border-radius: 0.6em 0.6em 0.6em 0.6em;
+  border-radius: 4px;
   margin: 10px auto 4px;
-  width: 300px;
+  max-width: 600px;
+}
+.dreamtitle {
+  border-bottom: 1px dotted #FBA617; 
+  padding-bottom: 0px; 
+  border-radius: 0;
 }
 .thumbbox {
 	float: right;
