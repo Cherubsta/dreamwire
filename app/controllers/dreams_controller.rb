@@ -3,7 +3,7 @@ class DreamsController < ApplicationController
 
   # GET /dreams, GET /dreams.json
   def index #LiveWire
-    @dreams = Dream.featured_scope.public_scope
+    @dreams = Dream.featured_scope.public_scope.page(params[:page]).per_page(42)
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @dreams }

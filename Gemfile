@@ -7,6 +7,7 @@ gem 'jquery_mobile_rails'
 gem "paperclip", "~> 3.0"
 gem 'aws-sdk'
 gem 'bcrypt-ruby'
+gem 'will_paginate'
 
 group :production do
   gem 'pg'

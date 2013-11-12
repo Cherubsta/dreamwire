@@ -14,7 +14,7 @@ class Dream < ActiveRecord::Base
                     exclusion: {in: %w[signup signin signout home info privacy]}
   
   # for sorting featured and newest posts first
-  scope :featured_scope, order('featured DESC, created_at DESC').limit(42)
+  scope :featured_scope, order('featured DESC, created_at DESC')#.limit(42)
   scope :created_scope,  order('created_at DESC')
   scope :public_scope, -> { where(privacy: false) } # for choosing only public posts
 
