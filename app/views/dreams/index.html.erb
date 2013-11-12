@@ -10,7 +10,7 @@
 		</a>
 	</div>
 	<%= render @dreams %>
-	<% if current_user.admin? %> <%= will_paginate @dreams %> <% end %>
+	<% if current_user.admin? %> <%= will_paginate @dreams, class: "margin-bottom" %> <% end %>
 	<div data-role="popup" id="menu" data-position-to="window" style="background: none;">
 		<a href="#" data-rel="back" class="closeicon">
 			<img src='http://s3.amazonaws.com/DW-Assets/icon_close.png' width="20px">
