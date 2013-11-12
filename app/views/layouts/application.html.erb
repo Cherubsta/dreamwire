@@ -4,17 +4,15 @@
   <link rel="icon" type="image/ico" href="https://s3.amazonaws.com/DW-Assets/favicon.png"/>
   <link rel="apple-touch-icon-precomposed" href="https://s3.amazonaws.com/DW-Assets/favicon.png">
   <title> <%= yield(:title) %> </title>
+  <meta name="description" content="Dreamwire helps you capture and journal your most memorable dreams in a simple way. Start recording your dreams to discover the hidden meanings within you.">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-	<%# flash.each do |key, value| %>
-    <%#= content_tag(:div, value, class: "alert alert-#{key}") %>
-	<%# end %>
 	<%= yield %>
-	<%#= debug(params) if Rails.env.development? %>
+	<%= debug(params) if Rails.env.development? %>
 
   <!-- Spinnakr Analytics -->
   <script>var _spinnakr_site_id='177793585';(function(d,t,a){var g=d.createElement(t), s=d.getElementsByTagName(t)[0];g[a]=a;g.src='//s5.spn.ee/js/so.js'; s.parentNode.insertBefore(g,s)}(document,'script','async'));</script>
