@@ -211,10 +211,11 @@ div.ui-input-text.ui-focus, .ui-input-search.ui-focus {
 	display: table-row-group;
 }
 .soup .ui-btn-inner {
-  padding: 0px 4px 4px 4px !important;
+  padding: 2px;
 }
 .headsoup .ui-btn-up-a {
   border-radius: 0px;
+  border: none;
   background-image: none;
   background-color: transparent;
   text-shadow: none;
@@ -448,6 +449,11 @@ div.ui-input-text.ui-focus, .ui-input-search.ui-focus {
  	text-align: center;
  	margin-right: 10px;
  	margin-top: 8px;
+}
+.detailname {
+  bottom: 25px;
+  margin-left: 4px;
+  position: relative;
 }
 .closedetails {
  	left: 90%;

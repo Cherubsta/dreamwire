@@ -54,7 +54,7 @@
 		</a>
 		<div>
 			<%= image_tag @dream.user.avatar.url(:thumb), class: "thumbsize" %>
-			<%= @dream.user.username %>
+			<span class="detailname"><%= @dream.user.username %></span>
 		</div>
 		<div class="borderdetails"></div>
 		<div><strong>"<%= @dream.title %>"</strong>
