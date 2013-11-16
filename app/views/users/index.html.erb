@@ -11,7 +11,7 @@
 				</div>
 				<div class="ui-block-b" style="text-align: left; width: 250px;">	
 					<div><%= link_to user.name, user %> - <small><%= user.dreams.count %> Dreams</small></div>
-					<small><%= user.email %></small> - <small>(<%= user.username %>)</small>
+					<small><a href="mailto:<%= user.email %>"><%= user.email %></a> - (<%= user.username %>)</small>
 					<div><small>
 						Log in <%= time_ago_in_words user.updated_at %> ago - 
 						<% if current_user.admin? && !current_user?(user) %>
