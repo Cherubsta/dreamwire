@@ -18,6 +18,7 @@ class UsersController < ApplicationController
     @dreams = @user.dreams.created_scope
     current_user.touch(:last_log_in) #sets the last log in time
     if !@user.dreams.any?
+      flash[:success] = "Welcome to Dreamwire"
       render 'pages/info/'
     end
   end
@@ -31,7 +32,6 @@ class UsersController < ApplicationController
   	if @user.save
       UserMailer.registration_confirmation(@user).deliver
       sign_in @user
-      flash[:success] = "Welcome to Dreamwire"
   		redirect_to @user
   	else
   		render 'new' 

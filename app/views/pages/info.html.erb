@@ -9,6 +9,9 @@
 			<img src='http://s3.amazonaws.com/DW-Assets/icon_record.png' width="28px">
 		</a>
 	</div>
+	<% if flash[:success] %>
+    <div class="alert"><%= flash[:success] %></div>
+  <% end %>
 	<div id="HelpOne" class="intro">
 		<p class="margin-top"><span class="color-blue">1</span> - <span>2</span> - <span>3</span></p>
 		<div class="ui-grid-a center">
