@@ -1,30 +1,33 @@
 <% provide(:title, 'Sign Up, and discover your dreams') %>
 <div data-role="header" class="headerbar">
 	<a href="#" data-rel="back" data-direction="reverse" data-transition="slide" class="navbuttonborder">Back</a>
-	<h4>Sign Up</h4>
+	<h4 class="color-darkgray">Sign Up</h4>
 </div>
 <%= form_for(@user, :html => {"data-ajax" => false}) do |f| %>
 	<%= render 'shared/error_messages', object: @user %>
 	<div class="aligncenter">
-		<div class="margin-bottom">
+		<div>
 			<%=	f.text_field :username, placeholder: "username", style: "border: 1px dotted #FBA617; width: 172px; border-radius: 0; padding-left: 4px;" %>
 			<div class="labelright">Be unique.</div>
 		</div>	
-		<div class="margin-bottom">
+		<dix class="wire"></dix>
+		<div>
 			<%=	f.password_field :password, placeholder: "password", style: "border: 1px dotted #FBA617; width: 172px; border-radius: 0; padding-left: 4px;" %>
 			<div class="labelright">Be secure.</div>
 		</div>
-		<div class="margin-bottom">
+		<dix class="wire"></dix>
+		<div>
 			<%=	f.text_field :email, placeholder: "email", style: "border: 1px dotted #FBA617; width: 172px; border-radius: 0; padding-left: 4px;" %>
 			<div class="labelright">Be notified.</div>
 		</div>
-		<div>
-			<%=	f.text_field :name, placeholder: "full name", style: "border: 1px dotted #FBA617; width: 172px; border-radius: 0; padding-left: 4px;" %>
-				<div class="labelright">Be you.</div>
-		</div>
+		
 		<div style="height: 60px;">		
 			<%= f.file_field :avatar, style: "color: #02060D;" %>
-			<div class="labelright">Residual self image.</div>
+			<div class="magicbox">
+				<div class="magiclabel">Be you.</div>
+				<div> <%=	f.text_field :name, placeholder: "full name", style: "border: 1px dotted #FBA617; width: 172px; border-radius: 0; padding-left: 4px;" %></div>
+				<!-- Residual self image. -->
+			</div>
 		</div>
 		<div class="selectavatar" onclick="chooseFile();">
 			<div id="currentavatar"><p class="selectavatarvert">add photo</p></div>

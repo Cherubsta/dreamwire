@@ -4,6 +4,7 @@ $baseFontFamily: Open+Sans, Helvetica;
 $orange: #FBA617;
 $blue: #378EEF;
 $gray: #D4D4D4;
+$darkgray: #5C5E61;
 $silver: #323E48;
 $btnPrimaryBackground: #378EEF;*/
 /*@import 'bootstrap';
@@ -242,6 +243,9 @@ div.ui-input-text.ui-focus, .ui-input-search.ui-focus {
 .color-gray { 
 	color: #aaa;
 }
+.color-darkgray { 
+  color: #5C5E61;
+}
 .font-large {
 	font-size: 1.7em;
 	line-height: 1.2em;
@@ -322,7 +326,15 @@ div.ui-input-text.ui-focus, .ui-input-search.ui-focus {
 }
 .logosize {
 	width: 90%;
-	max-width: 600px;
+	max-width: 372px;
+}
+.logosubtext {
+  font-size: 1.3em;
+  letter-spacing: 0.2em;
+}
+.herotext {
+  letter-spacing: 0.13em;
+  line-height: 1.9em;
 }
 .landing-button {
 	height: 50px;
@@ -479,17 +491,18 @@ div.ui-input-text.ui-focus, .ui-input-search.ui-focus {
   bottom: 50px;
   cursor: pointer;
   display: block;
-  height: 112px;
+  height: 90px;
   margin-left: 0.4em;
   position: relative;
   text-align: center;
-  width: 112px;
+  width: 90px;
 }
 .selectavatarvert {
-	color: #AAAAAA;
-  padding: 26px;
+  @extend .color-darkgray;
+	font-size: 14px;
+  margin: 0 auto;
+  padding-top: 26px;
   width: 40px;
-  margin: 2px auto 0 auto;
 }
 .aligncenter {
 	height: 550px;
@@ -500,7 +513,21 @@ div.ui-input-text.ui-focus, .ui-input-search.ui-focus {
 .privacytext {
 	width: 150px;
 }
-
+.wire {
+  border-left: 1px dashed #FBA617;
+  margin-left: 94px;
+  padding-bottom: 6px;
+  padding-top: 10px;
+}
+.magicbox {
+  bottom: 22px;
+  left: 106px;
+  position: relative;
+}
+.magiclabel {
+  @extend .color-orange;
+  margin-left: 6px;
+}
 /*Settings*/
 .changeavatarvert {
 	padding: 7px;
