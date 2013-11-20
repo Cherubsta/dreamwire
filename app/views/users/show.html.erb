@@ -29,10 +29,12 @@
 					<% end %>
 					<div class="float-right dots"><%= link_to '...', dream, :"data-transition" => "slide" %></div>
 				</h2>
-				<p><%= dream.content %></p>
+				<!-- <p><%#= dream.content[0..120].gsub(/\s\w+$/,'...') %></p> -->
+				<p><%= truncate(dream.content, length: 126, separator: "...") %></p>
 			</div>
 		</div>	
 	<% end %>
+	<img src='http://s3.amazonaws.com/DW-Assets/minilogo.png' width="40px">
 	<div data-role="popup" id="menu" data-position-to="window" style="background: none;">
 		<a href="#" data-rel="back" class="closeicon">
 			<img src='http://s3.amazonaws.com/DW-Assets/icon_close.png' width="20px">
