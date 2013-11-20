@@ -29,8 +29,7 @@
 					<% end %>
 					<div class="float-right dots"><%= link_to '...', dream, :"data-transition" => "slide" %></div>
 				</h2>
-				<!-- <p><%#= dream.content[0..120].gsub(/\s\w+$/,'...') %></p> -->
-				<p><%= truncate(dream.content, length: 126, separator: "...") %></p>
+				<p><%= truncate(dream.content, length: 130, separator: "...") %></p>
 			</div>
 		</div>	
 	<% end %>
