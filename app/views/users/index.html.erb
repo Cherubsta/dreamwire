@@ -10,14 +10,16 @@
 					<%= image_tag user.avatar.url(:thumb), class: "thumbsize" %>
 				</div>
 				<div class="ui-block-b" style="text-align: left; width: 250px;">	
-					<div><%= link_to user.name, user %> - <small><%= user.dreams.count %> Dreams</small></div>
-					<small><a href="mailto:<%= user.email %>"><%= user.email %></a> - (<%= user.username %>)</small>
-					<div><small>
+					<div><%= link_to user.name, user %> - <small><%= user.dreams.count %> Dreams - (<%= user.username %>)</small></div>
+					<small><a href="mailto:<%= user.email %>"><%= user.email %></a> <%= request.remote_ip %></small>
+					<div>
+						<small> 
 						Log in <%= time_ago_in_words user.updated_at %> ago - 
 						<% if current_user.admin? && !current_user?(user) %>
 							<%= link_to "delete?", user, method: :delete, confirm: "You sure?" %>
 						<% end %>
-					</small></div>
+						</small>
+					</div>
 				</div>
 			</div>
 		</li>
