@@ -7,6 +7,7 @@ class UsersController < ApplicationController
     if !current_user.admin?
       redirect_to root_path
     end
+    @client_ip = request.remote_ip
   end
 
   def menu
