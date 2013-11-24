@@ -7,7 +7,6 @@ class UsersController < ApplicationController
     if !current_user.admin?
       redirect_to root_path
     end
-    @client_ip = request.remote_ip
   end
 
   def menu
@@ -31,7 +30,7 @@ class UsersController < ApplicationController
   def create
   	@user = User.new(params[:user])
   	if @user.save
-      UserMailer.registration_confirmation(@user).deliver
+      UserMailer.registration_confirmation(@user, request.remote_ip).deliver
       sign_in @user
   		redirect_to @user
   	else
