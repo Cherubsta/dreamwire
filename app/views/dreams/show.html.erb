@@ -1,4 +1,5 @@
 <%# provide(:title, @dream.title ) %>
+<meta property="og:title" content="<%= @dream.title %>"/>
 <div data-role="page" id="dreamview">
 	<% if !signed_in? %>
 		<div data-role="header" class="headerbar headsoup">
