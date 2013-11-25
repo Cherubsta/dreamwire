@@ -1,5 +1,5 @@
-<%# provide(:title, @dream.title ) %>
-<title></title>
+<% provide(:title, @dream.title ) %>
+<title><%= @dream.title %></title>
 <div data-role="page" id="dreamview" data-title="<%= @dream.title %>">
 	<% if !signed_in? %>
 		<div data-role="header" class="headerbar headsoup">
