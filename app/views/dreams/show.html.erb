@@ -1,5 +1,4 @@
-<% provide(:title, @dream.title ) %>
-<div data-role="page" id="dreamview">
+<div data-role="page" id="dreamview" data-title="<%= @dream.title %>">
 	<% if !signed_in? %>
 		<div data-role="header" class="headerbar headsoup">
 			<%= link_to 'Log In', signin_path, class: 'soup padding-top' %>
