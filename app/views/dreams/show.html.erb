@@ -1,6 +1,6 @@
-<% provide(:title, @dream.title ) %>
+<%# provide(:title, @dream.title ) %>
 <!-- <title><%= @dream.title %></title> -->
-<div data-role="page" id="dreamview">
+<div data-role="page" id="dreamview">  <!-- data-title="<%= @dream.title %>" -->
 	<% if !signed_in? %>
 		<div data-role="header" class="headerbar headsoup">
 			<%= link_to 'Log In', signin_path, class: 'soup padding-top' %>
@@ -10,7 +10,7 @@
 	<% else %>
 		<div data-role="header" class="headerbar headsoup">
 			<a href="#" data-rel="back" data-direction="reverse" data-transition="slide" class="soup padding-top">Back</a>
-			<h4>DreamView</h4>
+			<h4><%= @dream.title %></h4>
 		</div>
 	<% end %>
 	<img class="imagecrop" src="<%= @dream.imagesource %>">
