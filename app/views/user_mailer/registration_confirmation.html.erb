@@ -3,45 +3,51 @@
 	body {
 	   font-family: Open Sans;
 	   font-size: 12px;
+	   max-width: 600px;
+	   display: block;
 	}
 	.button {
 		background-color: #378EEF;
 		padding: 4px;
 		border-radius: 4px;
-		color: #fff;
 		width: 120px;
 		text-align: center;
 		cursor: pointer;
 	}
+	.font-white {
+		color: #fff;
+		text-decoration: none;
+		font-size: 14px;
+	}
 </style>
-<p>Hi <%= @user.name.split[0] %>,</p>
+<p>Hi<!-- <%#= @user.name.split[0] %> -->,</p>
 <p>
 	Somehow through all the noise, you discovered dreamwire. Let's start tapping the unconscious...
 </p>
 <strong>Dreams are a new science.</strong>
 <div>
-	 About a third of life is spent asleep and dreaming. That's a big chunk, but it's not all <a href="https://medium.com/better-humans/dfb12da75a3d">wasted</a>. Dream exploration (including <a href="http://en.wikipedia.org/wiki/Stephen_LaBerge" target="_blank">lucid dreaming</a>), has been around, but is a practice that takes time and discipline. Still, we're no closer to deciphering dreams as we are to understanding the universe. We're setting out to change that.
+	 About a third of life is spent asleep and dreaming. That's a big chunk, but it's not <em>all</em> <a href="https://medium.com/better-humans/dfb12da75a3d">wasted</a>. Dream exploration (including <a href="http://en.wikipedia.org/wiki/Stephen_LaBerge" target="_blank">lucid dreaming</a>), has been around, but is a practice that takes time and discipline. Still, we're no closer to deciphering dreams then we are to understanding the universe. Let's set out to change that.
 </div>
 <br />
 <strong>A photo's worth a thousands words.</strong>
 <div>
-	What if you could wake up one day and <em>see</em> your dream? The images of dreams are reflections of your waking life and <a href="http://en.wikipedia.org/wiki/Jungian_archetypes" target="_blank">symbols</a> engrained within you. Dreamwire lets you capture the images and reflect on them in your journal of dreams. Think of it as taking a picture to save a memorable moment. This is only the begining.
+	What if you could wake up one day and <em>see</em> your dream...? The images of dreams are reflections of your waking life plus <a href="http://en.wikipedia.org/wiki/Jungian_archetypes" target="_blank">symbols</a> engrained within you. Dreamwire lets you discover these images and reflect on them in your journal of dreams. Think of it as taking a picture to save a memorable moment, yet the camera is in your dream. This is only the beginning.
 </div>
 <br />
 <strong>The impossible is possible.</strong>
 <div>
-	It's no mystery that some of the greatest <a href="http://www.nndb.com/people/934/000100634/" target="_blank">scientific</a>, <a href="http://en.wikipedia.org/wiki/Yesterday" target="_blank">musical</a> and <a href="http://blog.dreamwire.co/day/2013/01/28" target="_blank">artistic</a> discoveries came from dreams (<a href="http://news.bbc.co.uk/2/hi/uk_news/magazine/8092029.stm" target="_blank">the list goes on</a>). These are the kinds of gems that dreamwire will help you find and hold on to. 
+	It's no mystery that some of the biggest <a href="http://dreamtraining.blogspot.com/2010/12/inventions-that-came-in-dreams-largest.html" target="_blank">scientific, musical, and artistic</a> breakthroughs came in the form of a dream. These are the kinds of gems that dreamwire will help you find and hold on to. 
 </div>
 <br />
 <div>
-	 We're pretty new at this and just as curious as you. We don't have all the answers, but we know they're there, in our dreams, waiting to be uncovered.
+	 Like you, we're fairly new at this and just as curious. We don't have all the answers, but we know they're there, in our dreams, waiting to be uncovered.
 </div>
 <br />
 <p>
-	Have inspiring dreams tonight,
+	For the inspiring ones,
 </p>
 <p class="button"> 
-	<a href="http://www.dreamwire.co/dreams/new/" target="_blank"></a> Record a dream
+	<a href="http://www.dreamwire.co/dreams/new/" target="_blank" class="font-white">Capture a dream</a>
 </p>
 <br />
 <p>
@@ -49,5 +55,5 @@
 </p>
 <br />
 <a href="http://www.dreamwire.co" target="_blank">
-	<img src='http://s3.amazonaws.com/DW-Assets/minilogo.png' alt='http://www.dreamwire.co' width="40px" height="40px">
+	<img src='http://s3.amazonaws.com/DW-Assets/minilogo.png' alt='http://www.dreamwire.co/' width="40px" height="40px">
 </a>
