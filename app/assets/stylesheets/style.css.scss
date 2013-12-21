@@ -234,6 +234,9 @@ div.ui-input-text.ui-focus, .ui-input-search.ui-focus {
 .alignleft {
 	text-align: left;
 }
+.color-white {
+  color: #FFFFFF;
+}
 .color-blue {
 	color: #378EEF;
 }
@@ -254,9 +257,17 @@ div.ui-input-text.ui-focus, .ui-input-search.ui-focus {
 	font-size: 1.09em;
 }
 .buttonborder {
-	border: 1px dotted #378EEF;
-	padding: 4px;
-	border-radius: 4px;
+	background-color: #FFFFFF;
+  border-radius: 4px;
+  padding: 6px 30px;
+  width: 253px;
+  background: -webkit-linear-gradient(#49C0F0, #378EEF);
+  background: -moz-linear-gradient(#49C0F0, #378EEF);
+  background: -ms-linear-gradient(#49C0F0, #378EEF);
+  background: -o-linear-gradient(#49C0F0, #378EEF);
+  background: linear-gradient(#49C0F0, #378EEF);
+  color: #FFFFFF;
+  text-decoration: none;
 }
 .navbuttonborder {
 	border: none;

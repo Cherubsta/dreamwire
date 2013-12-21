@@ -27,16 +27,16 @@
 		</p>
 	</div>
 	<div class="margin-top">
-		<%= link_to 'Start Dreaming', signup_path, class: 'buttonborder' %>  -or-  
-		<%= link_to 'Sign In', signin_path, class: "buttonborder" %>
+		<%#= link_to 'Start Dreaming', signup_path, class: 'buttonborder' %>
+		<%= link_to 'Capture a Dream', signin_path, class: "buttonborder", style: "color: #FFFFFF" %>
 	</div>
 	<div class="border-line margin-top"></div>
 	<div class="margin-top-bottom color-orange">
 		<small>
-			Questions - comments? <br /> Send a wire to 
-			<%= link_to('@dreamwireco', 'http://twitter.com/dreamwireco', :target => '_blank') %> 
-					or <%= link_to('email us', 'mailto:support@dreamwire.co') %> <br />
-				<%= link_to 'Terms and Privacy', privacy_path %> 
+			<br /> 
+			<%#= link_to('@dreamwireco', 'http://twitter.com/dreamwireco', :target => '_blank') %> 
+				<%= link_to 'Terms and Privacy ', privacy_path %> -
+				<%= link_to(' Contact Us', 'mailto:support@dreamwire.co') %>
 		</small>
 	</div>
 </div>
