@@ -249,12 +249,20 @@ div.ui-input-text.ui-focus, .ui-input-search.ui-focus {
 .color-darkgray { 
   color: #4A4A4A;
 }
+.font-hero {
+  font-size: 24px;
+  line-height: 1.7em;
+  margin-top: 1.7em;
+}
 .font-large {
 	font-size: 1.7em;
 	line-height: 1.2em;
 }
 .fontmid {
 	font-size: 1.09em;
+}
+.font-small {
+  font-size: 10px;
 }
 .buttonborder {
 	background-color: #FFFFFF;
@@ -278,14 +286,6 @@ div.ui-input-text.ui-focus, .ui-input-search.ui-focus {
 	border: 2px solid #378EEF;
 	border-radius: 18px;
 	color: #378EEF;
-}
-.font-hero {
-	font-size: 24px;
-  line-height: 1.7em;
-  margin-top: 1.7em;
-}
-.fontsmall {
-	font-size: 10px;
 }
 .margin-top-bottom {
 	margin-top: 2.1em;
@@ -707,9 +707,8 @@ div.ui-input-text.ui-focus, .ui-input-search.ui-focus {
 }
 
 .magic	{
-	background-color: #000000;
+	background-color: #02060D;
   border-radius: 6px 6px 6px 6px;
-  border-bottom: 1px dotted #FBA617;
   height: 36px;
   text-align: left;
   width: 280px;
