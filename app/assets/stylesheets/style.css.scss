@@ -264,7 +264,7 @@ div.ui-input-text.ui-focus, .ui-input-search.ui-focus {
 .font-small {
   font-size: 10px;
 }
-.buttonborder {
+/*.buttonborder {
 	background-color: #FFFFFF;
   border-radius: 4px;
   padding: 6px 30px;
@@ -276,6 +276,12 @@ div.ui-input-text.ui-focus, .ui-input-search.ui-focus {
   background: linear-gradient(#49C0F0, #378EEF);
   color: #FFFFFF;
   text-decoration: none;
+}*/
+.buttonborder {
+  border-radius: 4px;
+  padding: 6px 10px;
+  color: #378EEF;
+  border: dotted 1px #378EEF;
 }
 .navbuttonborder {
 	border: none;
