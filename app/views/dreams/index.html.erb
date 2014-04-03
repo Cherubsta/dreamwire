@@ -9,6 +9,11 @@
 			<img src='http://s3.amazonaws.com/DW-Assets/icon_record.png' width="28px">
 		</a>
 	</div>
+	<div class="dreamblock-twt">
+		<a class="twitter-timeline"  href="https://twitter.com/dreamwireco"  data-widget-id="451532510619373568" width="300" data-chrome="nofooter noheader noborders transparent" data-theme="dark" data-border-color="#FBA617" data-link-color="#378EEF" data-tweet-limit="1">Tweets by @dreamwireco</a>
+    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+  </div>
+
 	<%= render @dreams %>
 	<% if current_user.admin? %> 
 		<%= will_paginate @dreams, class: "margin-bottom" %> 
