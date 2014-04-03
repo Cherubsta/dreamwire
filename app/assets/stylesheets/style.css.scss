@@ -407,11 +407,12 @@ div.ui-input-text.ui-focus, .ui-input-search.ui-focus {
 }
 .dreamblock-twt {
   display: block;
-  border-bottom: 1px dotted #FBA617;
   margin-bottom: 20px;
   margin-left: auto;
   margin-right: auto;
-  width: 300px;
+  padding: 6px 10px 0 10px;
+  width: 280px;
+  background-color: #FFFFFF;
 }
 .adminblock {
 	display: block;
