@@ -1,4 +1,11 @@
 <%# provide(:title, @dream.title ) %>
+<meta name="twitter:card"        content="summary_large_image">
+<meta name="twitter:site"        content="@dreamwireco">
+<meta name="twitter:creator"     content="@dreamwireco">
+<meta name="twitter:title"       content="<%= @dream.title %>">
+<meta name="twitter:description" content="<%= @dream.content %>">
+<meta name="twitter:image:src"   content="<%= @dream.imagesource %>">
+
 <div data-role="page" id="dreamview">
 	<% if !signed_in? %>
 		<div data-role="header" class="headerbar headsoup">
