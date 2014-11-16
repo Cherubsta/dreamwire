@@ -420,7 +420,7 @@ div.ui-input-text.ui-focus, .ui-input-search.ui-focus {
   height: 20px;
   margin-left: auto;
   margin-right: auto;
-  width: 300px;
+  width: 100%;
 }
 .admin-bottom {
 	bottom: 0.6em;
@@ -451,7 +451,7 @@ div.ui-input-text.ui-focus, .ui-input-search.ui-focus {
   /*bottom: 127px;*/
   height: 112px;
   overflow: hidden;
-  padding: 4px 4px 6px;
+  padding: 4px 4px 20px;
   position: relative;
   text-align: left;
   width: 100%;
@@ -474,7 +474,7 @@ div.ui-input-text.ui-focus, .ui-input-search.ui-focus {
 /*dreamview block*/
 .dreamview {
 	text-align: left;
-	width: 300px;
+	width: 100%;
 	margin-right: auto;
 	margin-left: auto;
 }
