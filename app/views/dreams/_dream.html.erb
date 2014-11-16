@@ -1,7 +1,4 @@
 <div class="dreamblock">
-	<div class="avatar-position">
-		<%= image_tag dream.user.avatar.url(:thumb), class: "thumbsize" unless dream.user.nil? %>
-	</div>
 	<% if dream.featured %> 
 		<img src='http://s3.amazonaws.com/DW-Assets/icon_featured.png' class="featured">
 	<% end %>
@@ -12,9 +9,14 @@
 	<% end %>
 	<div class="titlebar">
 		<h2>
+			<div class="avatar-position float-left">
+				<%= image_tag dream.user.avatar.url(:thumb), class: "thumbsize" unless dream.user.nil? %>
+			</div>
 			<%= dream.title %>
 			<div class="float-right dots"><%= link_to '...', dream, :"data-transition" => "slide" %></div>
 		</h2>
-		<%= dream.content %>
+		<div class="dreamcontent">
+			<%= dream.content %>
+		</div>
 	</div>
 </div>

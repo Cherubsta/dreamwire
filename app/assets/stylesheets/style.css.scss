@@ -47,7 +47,7 @@ h1 {
   font-size: 2em;
 }
 h2 {
-  font-size: 1.4em;
+  font-size: 1.7em;
 }
 p {
 	font-size: 1.1em;
@@ -404,6 +404,9 @@ div.ui-input-text.ui-focus, .ui-input-search.ui-focus {
   margin-right: auto;
   /*width: 100%;*/
 }
+.dreamcontent{
+  padding: 8px 0 0 5px;
+}
 .dreamblock-twt {
   display: block;
   margin-bottom: 20px;
@@ -431,13 +434,12 @@ div.ui-input-text.ui-focus, .ui-input-search.ui-focus {
   position: relative;
 }
 .avatar-position {
-	position: absolute;
   padding: 4px;
 }
 .thumbsize {
-	width: 60px;
-	height: 60px;
-	border: 2px solid;
+	width: 24px;
+	height: 24px;
+	border: 1px solid;
 	border-radius: 30px;
 	-webkit-border-radius: 30px;
 	-moz-border-radius: 30px;
