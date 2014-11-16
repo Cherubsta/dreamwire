@@ -399,11 +399,11 @@ div.ui-input-text.ui-focus, .ui-input-search.ui-focus {
 .dreamblock {
 	display: block;
 	border-bottom: 1px dotted #FBA617;
-  height: 300px;
+  height: 100%;
   margin-bottom: 20px;
   margin-left: auto;
   margin-right: auto;
-  width: 300px;
+  width: 100%;
 }
 .dreamblock-twt {
   display: block;
@@ -411,7 +411,7 @@ div.ui-input-text.ui-focus, .ui-input-search.ui-focus {
   margin-left: auto;
   margin-right: auto;
   padding: 6px 10px 0 10px;
-  width: 280px;
+  width: 100%;
   background-color: #463954;
 }
 .adminblock {
@@ -454,7 +454,7 @@ div.ui-input-text.ui-focus, .ui-input-search.ui-focus {
   padding: 4px 4px 6px;
   position: relative;
   text-align: left;
-  width: 292px;
+  width: 100%;
 }
 .dots a {
 	bottom: 12px;
@@ -466,8 +466,8 @@ div.ui-input-text.ui-focus, .ui-input-search.ui-focus {
 }
 .featured {
   margin-top: -3px;
-  padding-left: 271px;
   position: absolute;
+  right: -3px;
   width: 32px;
 }
 
@@ -705,10 +705,10 @@ div.ui-input-text.ui-focus, .ui-input-search.ui-focus {
 
 /*images*/
 .imagecrop {
-  width: 300px;
-  height: 300px;
+  width: 100%;
+  height: 100%;
   overflow: hidden;
-  max-width: 320px;
+  /*max-width: 320px;*/
 }
 
 /*alerts*/
