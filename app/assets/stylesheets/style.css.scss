@@ -259,7 +259,7 @@ div.ui-input-text.ui-focus, .ui-input-search.ui-focus {
 	line-height: 1.2em;
 }
 .fontmid {
-	font-size: 1.09em;
+	font-size: 1.5em;
 }
 .font-small {
   font-size: 10px;
@@ -300,6 +300,9 @@ div.ui-input-text.ui-focus, .ui-input-search.ui-focus {
 .margin-top {
 	margin-top: 1.3em;
 }
+.margin-top-start {
+  margin-top:  4.0em;
+}
 .margin-bottom {
 	margin-bottom: 1em;
 }
@@ -320,6 +323,19 @@ div.ui-input-text.ui-focus, .ui-input-search.ui-focus {
 	margin-left: auto; 
 	margin-right: auto;
 	text-align: center;
+}
+.element-to-stretch {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 */
+  padding-top: 25px;
+  height: 0;
+}
+.element-to-stretch iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 96%;
+  height: 96%;
 }
 
 /*navbar*/
@@ -342,11 +358,11 @@ div.ui-input-text.ui-focus, .ui-input-search.ui-focus {
 	min-height: 570px;
 }
 .logosize {
-	width: 90%;
+	width: 35%;
 	max-width: 372px;
 }
 .logosubtext {
-  font-size: 1.3em;
+  font-size: 1.2em;
 }
 .herotext {
   letter-spacing: 0.13em;

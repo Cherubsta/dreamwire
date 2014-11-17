@@ -1,33 +1,38 @@
 <% provide(:title, 'dreamwire - wake up, and discover your dreams') %>
 <div class="background-image">
-	<a href="http://www.dreamwire.co">
-		<img src='http://s3.amazonaws.com/DW-Assets/landing-logo-blue.png' alt='dreamwire' class="logosize">
-	</a>
-	<p class="color-blue logosubtext">Journal your most memorable dreams.</p>
 	<div class="margin-top">
+		<a href="http://www.dreamwire.co" class="margin-top">
+			<img src='http://s3.amazonaws.com/DW-Assets/landing-logo-blue.png' alt='dreamwire' class="logosize">
+		</a>
+	</div>
+	<p class="color-blue logosubtext">Journal your memorable dreams.</p>
+	<div class="margin-top">
+		<div class="element-to-stretch">		
 			<div id="media-small">
 				<iframe src="http://player.vimeo.com/video/81477695?title=0&amp;byline=0&amp;portrait=0&amp;
-				             color=ff9933" width="408" height="240" frameborder="0" webkitAllowFullScreen 
-				             mozallowfullscreen allowFullScreen class="element-to-stretch">
+				             color=ff9933" width = "500" height = "281" frameborder="0" webkitAllowFullScreen 
+				             mozallowfullscreen allowFullScreen>
 				</iframe>
 			</div>
 			<div id="media-large">
 				<iframe src="http://player.vimeo.com/video/81477695?title=0&amp;byline=0&amp;portrait=0&amp;
-				             color=ff9933" width="408" height="240" frameborder="0" webkitAllowFullScreen 
-				             mozallowfullscreen allowFullScreen class="element-to-stretch">
+				             color=ff9933" width = "500" height = "281" frameborder="0" webkitAllowFullScreen 
+				             mozallowfullscreen allowFullScreen>
 				</iframe>
 			</div>		
-		<div class="font-small">
+		</div>
+		<!-- <div class="font-small">
 			photographs from <a href="http://500px.com" target="_blank">500px</a>, 
 			music by <a href="https://itunes.apple.com/us/album/a-real-hero/id515382484?i=515382567&uo=4" target="itunes_store">
 			College & Electric Youth</a>
-		</div>
+		</div> -->
 		<p class="margin-top fontmid color-orange">
-			Track your dreams, realize your acheivements
-			<div class="color-orange">share with the world.</div>
+			Have better dreams, 
+			<br /> explore your creativity,
+			<br />and realize acheivements.
 		</p>
 	</div>
-	<div class="margin-top">
+	<div class="margin-top-start">
 		<%= link_to 'Start Dreaming', signup_path, class: 'buttonborder' %>
 		<%= link_to 'Log in', signin_path, class: "buttonborder" %>
 	</div>
@@ -36,8 +41,9 @@
 		<small>
 			<br /> 
 			<%#= link_to('@dreamwireco', 'http://twitter.com/dreamwireco', :target => '_blank') %> 
-				<%= link_to 'Terms and Privacy ', privacy_path %> -
-				<%= link_to(' Contact Us', 'mailto:support@dreamwire.co') %>
+				Your dreams belong to you. 
+				<br />See our <%= link_to 'Privacy', privacy_path %> policy.
+				<%#= link_to(' Contact Us', 'mailto:support@dreamwire.co') %>
 		</small>
 	</div>
 </div>
