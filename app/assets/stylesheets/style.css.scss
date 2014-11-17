@@ -117,7 +117,6 @@ li {
 .ui-mobile .ui-page {
 	margin: 0 0 0 0px;
 	padding: 0;
-  max-width: 800px;
 }
 .ui-body-c, .ui-overlay-c {
 	background: #02060D;
@@ -419,6 +418,7 @@ div.ui-input-text.ui-focus, .ui-input-search.ui-focus {
   margin-left: auto;
   margin-right: auto;
   width: 96%;
+  max-width: 800px;
 }
 .dreamcontent{
   padding: 8px 0 0 5px;
