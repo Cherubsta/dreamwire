@@ -7,26 +7,26 @@
 	<%= render 'shared/error_messages', object: @user %>
 	<div class="aligncenter">
 		<div>
-			<%=	f.text_field :username, placeholder: "username", style: "border: 1px dotted #FBA617; width: 172px; border-radius: 0; padding-left: 4px;" %>
-			<div class="labelright">Be unique.</div>
+			<%=	f.text_field :username, placeholder: "username", style: "border: 1px solid #FBA617; width: 172px; border-radius: 4px; padding-left: 4px;" %>
+			<div class="labelright">be unique</div>
 		</div>	
-		<dix class="wire"></dix>
+		<!-- <dix class="wire"></dix> -->
 		<div>
-			<%=	f.password_field :password, placeholder: "password", style: "border: 1px dotted #FBA617; width: 172px; border-radius: 0; padding-left: 4px;" %>
-			<div class="labelright">Be secure.</div>
+			<%=	f.password_field :password, placeholder: "password", style: "border: 1px solid #FBA617; width: 172px; border-radius: 4px; padding-left: 4px;" %>
+			<div class="labelright">be secure</div>
 		</div>
-		<dix class="wire"></dix>
+		<!-- <dix class="wire"></dix> -->
 		<div>
-			<%=	f.text_field :email, placeholder: "email", style: "border: 1px dotted #FBA617; width: 172px; border-radius: 0; padding-left: 4px;" %>
-			<div class="labelright">Be notified.</div>
+			<%=	f.text_field :email, placeholder: "email", style: "border: 1px solid #FBA617; width: 172px; border-radius: 4px; padding-left: 4px;" %>
+			<div class="labelright">be notified</div>
 		</div>
 		
 		<div style="height: 60px;">		
 			<%= f.file_field :avatar, style: "color: #02060D;" %>
+			<div class="labelright">residual self image</div>
 			<div class="magicbox">
-				<div class="magiclabel">Be you.</div>
-				<div> <%=	f.text_field :name, placeholder: "full name", style: "border: 1px dotted #FBA617; width: 172px; border-radius: 0; padding-left: 4px;" %></div>
-				<!-- Residual self image. -->
+				<!-- <div class="labelright">Name</div> -->
+				<div> <%#=	f.text_field :name, placeholder: "full name", style: "border: 1px solid #FBA617; width: 172px; border-radius: 0; padding-left: 4px;" %></div>
 			</div>
 		</div>
 		<div class="selectavatar" onclick="chooseFile();">
@@ -35,10 +35,10 @@
 		</div>
 		<div class="ui-grid-a">
 			<small class="ui-block-a color-gray" style="width: 170px;">
-				Your dreams are personal, and stay private by default.
+				Dreams are personal and stay private by default.
 			</small>
-			<div class="ui-block-b" style="width: 110px; margin-top: -8px">
-				<%=	f.submit "Join" %>
+			<div class="ui-block-b" style="width: 110px; margin-top: -8px; border-radius: 4px;">
+				<%=	f.submit "Start" %>
 			</div>
 		</div>
 	</div>

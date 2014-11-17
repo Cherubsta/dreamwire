@@ -12,22 +12,22 @@
 	  <% end %>
 		<%= form_for(:session, url: sessions_path) do |f| %>
 			<div class="margin-top">
-				<div class="magic center">
-					<%=	f.text_field :username_or_email, placeholder: "username or email", autofocus: true, style: "padding: 0;"%>
+				<div class="magic center margin-bottom">
+					<%=	f.text_field :username_or_email, placeholder: " username or email", autofocus: true, style: "padding: 4; border: 1px solid #FBA617; border-radius: 4px; position: relative; left: 2px; width: 275px;"%>
 				</div>
 			</div>
 			<div class="ui-grid-a" style="width: 285px; margin: 0 auto;">
 				<div class="ui-block-a" style="width: 192px; overflow: hidden;">
-					<%=	f.password_field :password, placeholder: "password" %>
+					<%=	f.password_field :password, placeholder: " password", style: "border: 1px solid #FBA617; border-radius: 4px; position: relative; left: -6px;" %>
 					<div class="alignleft">
 						<small><%= link_to "Reset Password?", new_password_reset_path %></small>
 					</div>
 				</div>
-				<div class="ui-block-b" style="width: 83px; margin-left: 8px;">
+				<div class="ui-block-b" style="width: 94px; margin-left: -2px;">
 					<%=	f.submit "Sign In", rel: "external" %>
 				</div>
 			</div>
-			<div class="margin-top">New dreamer? <%= link_to "Sign up »", signup_path %></div>
+			<div class="margin-top">New dreamer? <%= link_to "Sign up.", signup_path %></div>
 		<% end %>
 	</div>
 	<div id="media-large" class="font-small color-orange">Dreamwire is designed for mobile (for the bedside). For the best experience, use on a phone or tablet.</div>
