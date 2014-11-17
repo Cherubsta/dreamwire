@@ -117,6 +117,7 @@ li {
 .ui-mobile .ui-page {
 	margin: 0 0 0 0px;
 	padding: 0;
+  max-width: 800px;
 }
 .ui-body-c, .ui-overlay-c {
 	background: #02060D;
@@ -346,7 +347,7 @@ div.ui-input-text.ui-focus, .ui-input-search.ui-focus {
 	border: none;
   height: 34px;
   margin: 8px auto;
-  max-width: 600px;
+  max-width: 800px;
   padding-top: 2px;
   vertical-align: middle;
 }
