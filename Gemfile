@@ -8,6 +8,7 @@ gem "paperclip", "~> 3.0"
 gem 'aws-sdk'
 gem 'bcrypt-ruby'
 gem 'will_paginate'
+gem 'test-unit'
 
 group :production do
   gem 'pg'
